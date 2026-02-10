@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Tutorial</title>
+    <style>
+      :root {
+        --bg: #070a17;
+        --text: #f8fafc;
+        --muted: rgba(248, 250, 252, 0.76);
+        --accent: #22c55e;
+        --accent-2: #38bdf8;
+        --accent-3: #a78bfa;
+        --header-h: 70px;
+        --gap: 10px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: radial-gradient(circle at 15% 0%, rgba(56, 189, 248, 0.25), transparent 45%),
+          radial-gradient(circle at 85% 0%, rgba(167, 139, 250, 0.24), transparent 50%),
+          radial-gradient(circle at 50% 120%, rgba(34, 197, 94, 0.18), transparent 55%),
+          var(--bg);
+        color: var(--text);
+      }
+
+      a {
+        color: var(--accent-2);
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        height: var(--header-h);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background:
+          radial-gradient(circle at 10% 0%, rgba(56, 189, 248, 0.55), transparent 55%),
+          radial-gradient(circle at 90% 0%, rgba(167, 139, 250, 0.55), transparent 55%),
+          linear-gradient(90deg, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.86));
+        color: var(--text);
+        padding: 14px 20px;
+        box-shadow: 0 18px 36px rgba(0, 0, 0, 0.55);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .header-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 65px;
+        height: 65px;
+        flex-shrink: 0;
+      }
+
+      .header-logo svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      .header-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 28px;
+        font-weight: 500;
+        font-family: 'Segoe UI', 'Helvetica Neue', -apple-system, sans-serif;
+        letter-spacing: -0.8px;
+        color: #f8fcf9;
+        text-shadow: 0 2px 8px rgba(251, 3, 251, 0.591);
+      }
+
+      header p {
+        margin: 4px 0 0;
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      nav {
+        position: fixed;
+        top: calc(var(--header-h) + var(--gap));
+        left: 0;
+        right: 0;
+        z-index: 9;
+        padding: 6px 12px;
+        background: rgba(15, 23, 42, 0.7);
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(12px);
+      }
+
+      nav a {
+        display: inline-block;
+        padding: 8px 12px;
+        font-size: 12px;
+        color: rgba(248, 250, 252, 0.9);
+        border-radius: 999px;
+      }
+
+      nav a.active {
+        background: linear-gradient(90deg, rgba(34, 197, 94, 0.95), rgba(56, 189, 248, 0.9));
+        color: #06121a;
+        box-shadow: 0 10px 18px rgba(34, 197, 94, 0.25),
+          0 10px 22px rgba(56, 189, 248, 0.18);
+        font-weight: 700;
+      }
+
+      main {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: calc(var(--header-h) + var(--gap) + 56px + 22px) 16px 40px;
+      }
+
+      h2 {
+        font-size: 20px;
+        margin-top: 0;
+      }
+
+      .section {
+        margin-bottom: 24px;
+        padding: 12px 16px 16px;
+        background: rgba(255, 255, 255, 0.06);
+        border-left: 4px solid rgba(56, 189, 248, 0.85);
+        border-radius: 14px;
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+      }
+
+      .section h3 {
+        margin-top: 0;
+        font-size: 18px;
+      }
+
+      .badge {
+        display: inline-block;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        color: #06121a;
+        background: linear-gradient(90deg, rgba(34, 197, 94, 0.95), rgba(56, 189, 248, 0.9));
+        padding: 2px 6px;
+        border-radius: 3px;
+        margin-left: 8px;
+      }
+
+      .meta {
+        font-size: 11px;
+        color: rgba(248, 250, 252, 0.7);
+        margin-bottom: 4px;
+      }
+
+      .section p {
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      ul {
+        font-size: 13px;
+      }
+
+      .code {
+        margin-top: 8px;
+        background: rgba(2, 6, 23, 0.75);
+        border-left: 4px solid rgba(34, 197, 94, 0.85);
+        padding: 8px 10px;
+        font-family: Consolas, "Courier New", monospace;
+        font-size: 13px;
+        overflow-x: auto;
+        border-radius: 10px;
+      }
+
+      .code pre {
+        margin: 0;
+      }
+
+      footer {
+        border-top: 1px solid rgba(255, 255, 255, 0.14);
+        margin-top: 20px;
+        padding-top: 10px;
+        font-size: 11px;
+        color: rgba(248, 250, 252, 0.72);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-logo">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="35" fill="none" stroke="url(#grad)" stroke-width="1.2" opacity="0.8"/>
+          <g transform="translate(50, 50)">
+            <path d="M 0,-20 L 8,-5 L 8,10 L -8,10 L -8,-5 Z" fill="#22c55e" opacity="0.9"/>
+            <circle cx="0" cy="-22" r="4" fill="#38bdf8"/>
+            <path d="M -6,11 L -10,18 L -4,15 Z" fill="#f97316" opacity="0.85"/>
+            <path d="M -8,11 L -12,20 L -6,16 Z" fill="#fb923c" opacity="0.70"/>
+            <path d="M 6,11 L 10,18 L 4,15 Z" fill="#f97316" opacity="0.85"/>
+            <path d="M 8,11 L 12,20 L 6,16 Z" fill="#fb923c" opacity="0.70"/>
+            <circle cx="0" cy="-8" r="3" fill="#38bdf8" opacity="0.95"/>
+            <path d="M -8,-2 L -14,-4 L -10,2 Z" fill="#a78bfa" opacity="0.8"/>
+            <path d="M 8,-2 L 14,-4 L 10,2 Z" fill="#a78bfa" opacity="0.8"/>
+          </g>
+          <defs>
+            <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#38bdf8;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#22c55e;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="header-content">
+        <h1>Skill Booster</h1>
+        <p>Quick Reference for Interviews...</p>
+      </div>
+    </header>
+
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../java/index.html">Java</a>
+      <a href="../python/index.html">Python</a>
+      <a href="../html5/index.html">HTML5</a>
+      <a href="../css/index.html" class="active">CSS</a>
+      <a href="../javascript/index.html">JavaScript</a>
+    </nav>
+
+    <main>
+      <h2>Getting Started with CSS</h2>
+
+      <section class="section">
+        <h3>
+          CSS Basics
+          <span class="badge">selectors</span>
+        </h3>
+        <div class="meta">Selectors, properties, cascade</div>
+        <p>
+          <strong>CSS</strong> (Cascading Style Sheets) controls how HTML elements look. Selectors
+          target elements, then you define properties and values.
+        </p>
+        <div class="code">
+          <pre>body {
+  font-family: system-ui, sans-serif;
+  margin: 0;
+}
+
+h1 {
+  color: #0f172a;
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: white;
+}</pre>
+        </div>
+        <p>
+          The “cascading” part of CSS means that multiple rules can apply to the same element, and
+          the browser decides which one wins based on specificity and order.
+        </p>
+      </section>
+
+      <section class="section">
+        <h3>
+          Box Model &amp; Spacing
+          <span class="badge">layout</span>
+        </h3>
+        <div class="meta">Margin, border, padding, content</div>
+        <p>
+          Every element in CSS is a rectangular box with content, padding, border, and margin. Use
+          these properties to control spacing.
+        </p>
+        <div class="code">
+          <pre>.card {
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 12px;
+}</pre>
+        </div>
+      </section>
+
+      <section class="section">
+        <h3>
+          Flexbox Layout
+          <span class="badge">modern</span>
+        </h3>
+        <div class="meta">1‑dimensional layouts</div>
+        <p>
+          <code>display: flex</code> lays out children along a main axis (row or column). It is ideal
+          for navbars, cards, and columns that should align nicely.
+        </p>
+        <div class="code">
+          <pre>.container {
+  display: flex;
+  gap: 1rem;
+}
+
+.container &gt; div {
+  flex: 1;
+}</pre>
+        </div>
+        <p>
+          Adjust <code>justify-content</code> (main axis) and <code>align-items</code> (cross axis)
+          to control alignment.
+        </p>
+      </section>
+
+      <footer>
+        Back to <a href="../index.html">Home Page</a> | © 2026 skills.enviz.in. All rights reserved.
+      </footer>
+    </main>
+  </body>
+</html>
+
