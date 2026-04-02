@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Angular Tutorial</title>
+    <style>
+      :root {
+        --bg: #070a17;
+        --text: #f8fafc;
+        --muted: rgba(248, 250, 252, 0.76);
+        --accent: #22c55e;
+        --accent-2: #38bdf8;
+        --accent-3: #a78bfa;
+        --header-h: 70px;
+        --gap: 10px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: radial-gradient(circle at 15% 0%, rgba(56, 189, 248, 0.25), transparent 45%),
+          radial-gradient(circle at 85% 0%, rgba(167, 139, 250, 0.24), transparent 50%),
+          radial-gradient(circle at 50% 120%, rgba(34, 197, 94, 0.18), transparent 55%),
+          var(--bg);
+        color: var(--text);
+      }
+
+      a {
+        color: var(--accent-2);
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        height: var(--header-h);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background:
+          radial-gradient(circle at 10% 0%, rgba(56, 189, 248, 0.55), transparent 55%),
+          radial-gradient(circle at 90% 0%, rgba(167, 139, 250, 0.55), transparent 55%),
+          linear-gradient(90deg, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.86));
+        color: var(--text);
+        padding: 14px 20px;
+        box-shadow: 0 18px 36px rgba(0, 0, 0, 0.55);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .header-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 65px;
+        height: 65px;
+        flex-shrink: 0;
+      }
+
+      .header-logo svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      .header-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 28px;
+        font-weight: 500;
+        font-family: 'Segoe UI', 'Helvetica Neue', -apple-system, sans-serif;
+        letter-spacing: -0.8px;
+        color: #f8fcf9;
+        text-shadow: 0 2px 8px rgba(251, 3, 251, 0.591);
+      }
+
+      header p {
+        margin: 4px 0 0;
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      nav {
+        position: fixed;
+        top: calc(var(--header-h) + var(--gap));
+        left: 0;
+        right: 0;
+        z-index: 9;
+        padding: 6px 12px;
+        background: rgba(15, 23, 42, 0.7);
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(12px);
+      }
+
+      nav a {
+        display: inline-block;
+        padding: 8px 12px;
+        font-size: 12px;
+        color: rgba(248, 250, 252, 0.9);
+        border-radius: 999px;
+      }
+
+      nav a.active {
+        background: linear-gradient(90deg, rgba(34, 197, 94, 0.95), rgba(56, 189, 248, 0.9));
+        color: #06121a;
+        box-shadow: 0 10px 18px rgba(34, 197, 94, 0.25),
+          0 10px 22px rgba(56, 189, 248, 0.18);
+        font-weight: 700;
+      }
+
+      main {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: calc(var(--header-h) + var(--gap) + 56px + 22px) 16px 40px;
+      }
+
+      h2 {
+        font-size: 20px;
+        margin-top: 0;
+      }
+
+      .section {
+        margin-bottom: 24px;
+        padding: 12px 16px 16px;
+        background: rgba(255, 255, 255, 0.06);
+        border-left: 4px solid rgba(56, 189, 248, 0.85);
+        border-radius: 14px;
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+      }
+
+      .section h3 {
+        margin-top: 0;
+        font-size: 18px;
+      }
+
+      .badge {
+        display: inline-block;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        color: #06121a;
+        background: linear-gradient(90deg, rgba(34, 197, 94, 0.95), rgba(56, 189, 248, 0.9));
+        padding: 2px 6px;
+        border-radius: 3px;
+        margin-left: 8px;
+      }
+
+      .meta {
+        font-size: 11px;
+        color: rgba(248, 250, 252, 0.7);
+        margin-bottom: 4px;
+      }
+
+      .section p {
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      footer {
+        border-top: 1px solid rgba(255, 255, 255, 0.14);
+        margin-top: 20px;
+        padding-top: 10px;
+        font-size: 11px;
+        color: rgba(248, 250, 252, 0.72);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-logo">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="35" fill="none" stroke="url(#grad)" stroke-width="1.2" opacity="0.8"/>
+          <g transform="translate(50, 50)">
+            <polygon points="0,-15 12,-3 12,15 -12,15 -12,-3" fill="#dd0031" opacity="0.9"/>
+            <circle cx="0" cy="-15" r="4" fill="#c3002f"/>
+            <path d="M -8,15 L -12,23 L -4,18 Z" fill="#22c55e" opacity="0.85"/>
+            <path d="M 8,15 L 12,23 L 4,18 Z" fill="#22c55e" opacity="0.85"/>
+            <path d="M -10,-2 L -16,-8 L -12,4 Z" fill="#a78bfa" opacity="0.8"/>
+            <path d="M 10,-2 L 16,-8 L 12,4 Z" fill="#a78bfa" opacity="0.8"/>
+          </g>
+          <defs>
+            <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#38bdf8;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#22c55e;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="header-content">
+        <h1>Skill Booster</h1>
+        <p>Quick Reference for Interviews...</p>
+      </div>
+    </header>
+
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../java/index.html">Java</a>
+      <a href="../python/index.html">Python</a>
+      <a href="../go/index.html">Go</a>
+      <a href="../react/index.html">React</a>
+      <a href="../angular/index.html" class="active">Angular</a>
+      <a href="../spring boot/index.html">Spring Boot</a>
+    </nav>
+
+    <main>
+      <h2>Top 100 Angular Interview Questions and Answers</h2>
+
+      <section class="section" id="q1">
+        <h3>Q1: What is Angular? <span class="badge">basics</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>Angular is a TypeScript-based open-source framework for building dynamic web applications with a component-based architecture and powerful tooling.</p>
+      </section>
+      <section class="section" id="q2">
+        <h3>Q2: What is a component? <span class="badge">components</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>A component is a basic UI building block in Angular that encapsulates template, styles, and logic, marked with @Component decorator.</p>
+      </section>
+      <section class="section" id="q3">
+        <h3>Q3: What is a service? <span class="badge">services</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>A service is a reusable class marked with @Injectable that provides shared functionality, often used for API calls and data sharing.</p>
+      </section>
+      <section class="section" id="q4">
+        <h3>Q4: What is dependency injection? <span class="badge">core</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>Dependency injection is a design pattern where Angular automatically provides dependencies to components/services, improving testability and decoupling.</p>
+      </section>
+      <section class="section" id="q5">
+        <h3>Q5: What is a module? <span class="badge">modules</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>A module is a container for components, services, and other code organized with @NgModule decorator to group related features.</p>
+      </section>
+      <section class="section" id="q6">
+        <h3>Q6: What is @NgModule? <span class="badge">decorators</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>@NgModule is a decorator that defines a module, declaring components, services, imports, exports, and providers.</p>
+      </section>
+      <section class="section" id="q7">
+        <h3>Q7: What is @Component? <span class="badge">decorators</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>@Component is a decorator that marks a class as a component and defines its selector, template, and styles.</p>
+      </section>
+      <section class="section" id="q8">
+        <h3>Q8: What is @Injectable? <span class="badge">decorators</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>@Injectable is a decorator that marks a class as a service eligible for dependency injection.</p>
+      </section>
+      <section class="section" id="q9">
+        <h3>Q9: What is a directive? <span class="badge">directives</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>A directive is a marker on a DOM element that tells Angular to attach behavior or transform the DOM, like *ngIf or *ngFor.</p>
+      </section>
+      <section class="section" id="q10">
+        <h3>Q10: What are structural directives? <span class="badge">directives</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>Structural directives change DOM structure by adding/removing elements, e.g., *ngIf, *ngFor, *ngSwitch.</p>
+      </section>
+      <section class="section" id="q11">
+        <h3>Q11: What are attribute directives? <span class="badge">directives</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>Attribute directives change element appearance or behavior without affecting DOM structure, e.g., ngStyle, ngClass.</p>
+      </section>
+      <section class="section" id="q12">
+        <h3>Q12: What is *ngIf? <span class="badge">directives</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>*ngIf conditionally renders an element based on a boolean expression.</p>
+      </section>
+      <section class="section" id="q13">
+        <h3>Q13: What is *ngFor? <span class="badge">directives</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>*ngFor repeats template for each item in a list, e.g., *ngFor="let item of items".</p>
+      </section>
+      <section class="section" id="q14">
+        <h3>Q14: What is *ngSwitch? <span class="badge">directives</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>*ngSwitch conditionally renders different templates based on a switch value.</p>
+      </section>
+      <section class="section" id="q15">
+        <h3>Q15: What is ngStyle? <span class="badge">directives</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>ngStyle dynamically sets inline styles on an element based on an expression object.</p>
+      </section>
+      <section class="section" id="q16">
+        <h3>Q16: What is ngClass? <span class="badge">directives</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>ngClass dynamically applies CSS classes based on conditions or an object.</p>
+      </section>
+      <section class="section" id="q17">
+        <h3>Q17: What is data binding? <span class="badge">binding</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>Data binding synchronizes data between component class and template in one or two-way direction.</p>
+      </section>
+      <section class="section" id="q18">
+        <h3>Q18: What is property binding? <span class="badge">binding</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>Property binding sets a component/DOM property to a template expression using [property]="value" syntax.</p>
+      </section>
+      <section class="section" id="q19">
+        <h3>Q19: What is event binding? <span class="badge">binding</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>Event binding triggers a method when a DOM event occurs using (event)="handler()" syntax.</p>
+      </section>
+      <section class="section" id="q20">
+        <h3>Q20: What is two-way binding? <span class="badge">binding</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>Two-way binding syncs data bidirectionally using [(ngModel)]="property" syntax.</p>
+      </section>
+      <section class="section" id="q21">
+        <h3>Q21: What is string interpolation? <span class="badge">binding</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>String interpolation displays component data in template using {{expression}} syntax.</p>
+      </section>
+      <section class="section" id="q22">
+        <h3>Q22: What is a template reference variable? <span class="badge">templates</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>A template reference variable (#varName) provides direct access to a DOM element in the component class.</p>
+      </section>
+      <section class="section" id="q23">
+        <h3>Q23: What is a pipe? <span class="badge">pipes</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>A pipe transforms data in templates using the | syntax, e.g., {{ date | date:'short' }}.</p>
+      </section>
+      <section class="section" id="q24">
+        <h3>Q24: What is the async pipe? <span class="badge">pipes</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>The async pipe automatically subscribes to observables and displays their latest value in templates.</p>
+      </section>
+      <section class="section" id="q25">
+        <h3>Q25: What is the date pipe? <span class="badge">pipes</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>The date pipe formats dates according to locale rules, e.g., {{ date | date:'dd/MM/yyyy' }}.</p>
+      </section>
+      <section class="section" id="q26">
+        <h3>Q26: What is the currency pipe? <span class="badge">pipes</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>The currency pipe formats numbers as currency, e.g., {{ price | currency:'USD' }}.</p>
+      </section>
+      <section class="section" id="q27">
+        <h3>Q27: What is the uppercase pipe? <span class="badge">pipes</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>The uppercase pipe converts text to uppercase, e.g., {{ text | uppercase }}.</p>
+      </section>
+      <section class="section" id="q28">
+        <h3>Q28: What is the lowercase pipe? <span class="badge">pipes</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>The lowercase pipe converts text to lowercase, e.g., {{ text | lowercase }}.</p>
+      </section>
+      <section class="section" id="q29">
+        <h3>Q29: What is RxJS? <span class="badge">rxjs</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>RxJS is a library for reactive programming using observables, enabling handling of asynchronous operations.</p>
+      </section>
+      <section class="section" id="q30">
+        <h3>Q30: What is an Observable? <span class="badge">rxjs</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>An Observable is a lazy collection of events that can be observed over time using subscribe().</p>
+      </section>
+      <section class="section" id="q31">
+        <h3>Q31: What is a Subject? <span class="badge">rxjs</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>A Subject is a special observable that multicasts values to multiple subscribers.</p>
+      </section>
+      <section class="section" id="q32">
+        <h3>Q32: What is a BehaviorSubject? <span class="badge">rxjs</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>A BehaviorSubject is a subject that emits its current value to new subscribers immediately.</p>
+      </section>
+      <section class="section" id="q33">
+        <h3>Q33: What is a ReplaySubject? <span class="badge">rxjs</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>A ReplaySubject buffers and replays a specified number of values to new subscribers.</p>
+      </section>
+      <section class="section" id="q34">
+        <h3>Q34: What is an AsyncSubject? <span class="badge">rxjs</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>An AsyncSubject emits the last value of a sequence only when the observable completes.</p>
+      </section>
+      <section class="section" id="q35">
+        <h3>Q35: What are operators? <span class="badge">rxjs</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>Operators are functions that transform, filter, or combine observable values, e.g., map, filter, switchMap.</p>
+      </section>
+      <section class="section" id="q36">
+        <h3>Q36: What is the map operator? <span class="badge">rxjs</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>The map operator transforms observable values using a projection function.</p>
+      </section>
+      <section class="section" id="q37">
+        <h3>Q37: What is the filter operator? <span class="badge">rxjs</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>The filter operator emits only observable values that pass a predicate test.</p>
+      </section>
+      <section class="section" id="q38">
+        <h3>Q38: What is the switchMap operator? <span class="badge">rxjs</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>The switchMap operator projects each source value to an observable and flattens, canceling previous inner observables.</p>
+      </section>
+      <section class="section" id="q39">
+        <h3>Q39: What is the mergeMap operator? <span class="badge">rxjs</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>The mergeMap operator projects each value to an observable and flattens all inner observables.</p>
+      </section>
+      <section class="section" id="q40">
+        <h3>Q40: What is the concat operator? <span class="badge">rxjs</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>The concat operator sequentially concatenates multiple observables in order.</p>
+      </section>
+      <section class="section" id="q41">
+        <h3>Q41: What is the merge operator? <span class="badge">rxjs</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>The merge operator combines multiple observables and emits values from all simultaneously.</p>
+      </section>
+      <section class="section" id="q42">
+        <h3>Q42: What is reactive forms? <span class="badge">forms</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>Reactive forms provide a model-driven approach using FormGroup, FormControl for complex form handling.</p>
+      </section>
+      <section class="section" id="q43">
+        <h3>Q43: What is template-driven forms? <span class="badge">forms</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>Template-driven forms use directives in templates with ngModel for simpler form handling.</p>
+      </section>
+      <section class="section" id="q44">
+        <h3>Q44: What is FormGroup? <span class="badge">forms</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>FormGroup manages a group of FormControls, allowing validation and status tracking of the entire form.</p>
+      </section>
+      <section class="section" id="q45">
+        <h3>Q45: What is FormControl? <span class="badge">forms</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>FormControl is the lowest-level unit tracking value and validation status of an individual form field.</p>
+      </section>
+      <section class="section" id="q46">
+        <h3>Q46: What is FormBuilder? <span class="badge">forms</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>FormBuilder provides shortcuts for creating FormGroup and FormControl instances.</p>
+      </section>
+      <section class="section" id="q47">
+        <h3>Q47: What are validators? <span class="badge">forms</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>Validators are functions that check form control values and return errors if validation fails.</p>
+      </section>
+      <section class="section" id="q48">
+        <h3>Q48: What is async validation? <span class="badge">forms</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>Async validation validates form controls asynchronously, e.g., checking username availability from server.</p>
+      </section>
+      <section class="section" id="q49">
+        <h3>Q49: What is the HttpClient? <span class="badge">http</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>HttpClient is Angular's service for making HTTP requests to servers for communication.</p>
+      </section>
+      <section class="section" id="q50">
+        <h3>Q50: What is an interceptor? <span class="badge">http</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>An interceptor intercepts HTTP requests/responses to add headers, handle errors, or transform data.</p>
+      </section>
+      <section class="section" id="q51">
+        <h3>Q51: What is the async pipe? <span class="badge">pipes</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>The async pipe subscribes to observables and automatically unsubscribes when components destroy.</p>
+      </section>
+      <section class="section" id="q52">
+        <h3>Q52: What is routing? <span class="badge">routing</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>Routing enables navigation between different components/pages using URLs without full page reload.</p>
+      </section>
+      <section class="section" id="q53">
+        <h3>Q53: What is RouterModule? <span class="badge">routing</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>RouterModule provides routing functionality including Router, ActivatedRoute services and routes configuration.</p>
+      </section>
+      <section class="section" id="q54">
+        <h3>Q54: What is the Router service? <span class="badge">routing</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>The Router service navigates between components using navigate() or navigateByUrl() methods.</p>
+      </section>
+      <section class="section" id="q55">
+        <h3>Q55: What is ActivatedRoute? <span class="badge">routing</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>ActivatedRoute provides access to route parameters and query parameters of the current route.</p>
+      </section>
+      <section class="section" id="q56">
+        <h3>Q56: What is a route guard? <span class="badge">routing</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>A route guard (CanActivate, CanDeactivate, Resolve) controls access to routes based on conditions.</p>
+      </section>
+      <section class="section" id="q57">
+        <h3>Q57: What is CanActivate? <span class="badge">routing</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>CanActivate guard prevents access to a route based on conditions, e.g., authentication.</p>
+      </section>
+      <section class="section" id="q58">
+        <h3>Q58: What is CanDeactivate? <span class="badge">routing</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>CanDeactivate guard prevents navigation away from a route, e.g., unsaved form data warning.</p>
+      </section>
+      <section class="section" id="q59">
+        <h3>Q59: What is Resolve? <span class="badge">routing</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>Resolve guard pre-fetches data before activating a route, ensuring data is available when component loads.</p>
+      </section>
+      <section class="section" id="q60">
+        <h3>Q60: What is lazy loading? <span class="badge">routing</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>Lazy loading loads feature modules only when users navigate to them, improving initial load performance.</p>
+      </section>
+      <section class="section" id="q61">
+        <h3>Q61: What is change detection? <span class="badge">core</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>Change detection is Angular's mechanism to detect component state changes and update the view accordingly.</p>
+      </section>
+      <section class="section" id="q62">
+        <h3>Q62: What is OnInit? <span class="badge">lifecycle</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>OnInit is a lifecycle hook called once after component initialization, used for setup and initialization.</p>
+      </section>
+      <section class="section" id="q63">
+        <h3>Q63: What is OnDestroy? <span class="badge">lifecycle</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>OnDestroy is a lifecycle hook called before component destruction, used for cleanup and unsubscribing.</p>
+      </section>
+      <section class="section" id="q64">
+        <h3>Q64: What is OnChanges? <span class="badge">lifecycle</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>OnChanges is a lifecycle hook called when component receives input property changes.</p>
+      </section>
+      <section class="section" id="q65">
+        <h3>Q65: What is DoCheck? <span class="badge">lifecycle</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>DoCheck is a custom change detection hook called during every change detection cycle.</p>
+      </section>
+      <section class="section" id="q66">
+        <h3>Q66: What is AfterViewInit? <span class="badge">lifecycle</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>AfterViewInit is a lifecycle hook called after component view and child views initialize.</p>
+      </section>
+      <section class="section" id="q67">
+        <h3>Q67: What is Input decorator? <span class="badge">decorators</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>@Input allows parent components to pass data to child components via properties.</p>
+      </section>
+      <section class="section" id="q68">
+        <h3>Q68: What is Output decorator? <span class="badge">decorators</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>@Output allows child components to emit events to parent components using EventEmitter.</p>
+      </section>
+      <section class="section" id="q69">
+        <h3>Q69: What is ViewChild? <span class="badge">decorators</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>@ViewChild gets reference to a template element or child component in the component class.</p>
+      </section>
+      <section class="section" id="q70">
+        <h3>Q70: What is ViewChildren? <span class="badge">decorators</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>@ViewChildren gets references to multiple template elements or child components.</p>
+      </section>
+      <section class="section" id="q71">
+        <h3>Q71: What is ContentChild? <span class="badge">decorators</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>@ContentChild gets reference to projected content elements.</p>
+      </section>
+      <section class="section" id="q72">
+        <h3>Q72: What is ContentChildren? <span class="badge">decorators</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>@ContentChildren gets references to multiple projected content elements.</p>
+      </section>
+      <section class="section" id="q73">
+        <h3>Q73: What is content projection? <span class="badge">components</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>Content projection inserts component content into designated slots in child component template.</p>
+      </section>
+      <section class="section" id="q74">
+        <h3>Q74: What is ng-content? <span class="badge">templates</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>ng-content is a placeholder in component template where parent component content is inserted.</p>
+      </section>
+      <section class="section" id="q75">
+        <h3>Q75: What is an element reference? <span class="badge">templates</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>Element reference (template reference variable) provides direct access to DOM elements in component logic.</p>
+      </section>
+      <section class="section" id="q76">
+        <h3>Q76: What is ElementRef? <span class="badge">core</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>ElementRef wraps a native DOM element, providing access to the underlying native object.</p>
+      </section>
+      <section class="section" id="q77">
+        <h3>Q77: What is Renderer2? <span class="badge">core</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>Renderer2 is a service for safely manipulating DOM without direct native element access.</p>
+      </section>
+      <section class="section" id="q78">
+        <h3>Q78: What are lifecycle hooks? <span class="badge">lifecycle</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>Lifecycle hooks are callback methods called at specific moments during component lifecycle progression.</p>
+      </section>
+      <section class="section" id="q79">
+        <h3>Q79: What is zone.js? <span class="badge">core</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>Zone.js is a library providing execution context (zone) for change detection triggering in Angular.</p>
+      </section>
+      <section class="section" id="q80">
+        <h3>Q80: What is NgZone? <span class="badge">core</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>NgZone is Angular service for running code inside/outside Angular zone, controlling change detection.</p>
+      </section>
+      <section class="section" id="q81">
+        <h3>Q81: What is property binding vs attribute binding? <span class="badge">binding</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>Property binding sets DOM properties; attribute binding sets HTML attributes.</p>
+      </section>
+      <section class="section" id="q82">
+        <h3>Q82: What is @HostBinding? <span class="badge">decorators</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>@HostBinding binds a class property to host element's property or attribute.</p>
+      </section>
+      <section class="section" id="q83">
+        <h3>Q83: What is @HostListener? <span class="badge">decorators</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>@HostListener subscribes to host element events like click, mouseover, etc.</p>
+      </section>
+      <section class="section" id="q84">
+        <h3>Q84: What is AOT compilation? <span class="badge">build</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>AOT (Ahead-of-Time) compilation pre-compiles Angular application during build, improving performance.</p>
+      </section>
+      <section class="section" id="q85">
+        <h3>Q85: What is JIT compilation? <span class="badge">build</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>JIT (Just-in-Time) compilation compiles Angular application in the browser at runtime.</p>
+      </section>
+      <section class="section" id="q86">
+        <h3>Q86: What is a module vs a component? <span class="badge">core</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>A module organizes code; a component is an individual UI element with view and logic.</p>
+      </section>
+      <section class="section" id="q87">
+        <h3>Q87: What is tree shaking? <span class="badge">build</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>Tree shaking removes unused code during production build to reduce bundle size.</p>
+      </section>
+      <section class="section" id="q88">
+        <h3>Q88: What is lazy loading modules? <span class="badge">routing</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>Lazy loading loads feature modules only when needed, improving initial app load time.</p>
+      </section>
+      <section class="section" id="q89">
+        <h3>Q89: What is providedIn? <span class="badge">services</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>@Injectable({providedIn: 'root'}) provides service at root level, enabling tree-shaking.</p>
+      </section>
+      <section class="section" id="q90">
+        <h3>Q90: What is testing in Angular? <span class="badge">testing</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>Testing verifies Angular component behavior using Jasmine testing framework and Karma test runner.</p>
+      </section>
+      <section class="section" id="q91">
+        <h3>Q91: What is Jasmine? <span class="badge">testing</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>Jasmine is a JavaScript testing framework with describe, it, expect syntax for unit testing.</p>
+      </section>
+      <section class="section" id="q92">
+        <h3>Q92: What is Karma? <span class="badge">testing</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>Karma is a test runner that executes Jasmine tests in real browsers.</p>
+      </section>
+      <section class="section" id="q93">
+        <h3>Q93: What is TestBed? <span class="badge">testing</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>TestBed is an Angular testing utility for configuring modules and injecting services in tests.</p>
+      </section>
+      <section class="section" id="q94">
+        <h3>Q94: What is fixture? <span class="badge">testing</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>A fixture is a wrapper around a component, providing testing utilities for component interaction.</p>
+      </section>
+      <section class="section" id="q95">
+        <h3>Q95: What is DebugElement? <span class="badge">testing</span></h3>
+        <div class="meta">Angular Fundamentals</div>
+        <p>DebugElement wraps component elements, providing testing utilities for querying and debugging.</p>
+      </section>
+
+
+      <footer>Back to <a href="../index.html">Home Page</a> | © 2026 skills.enviz.in. All rights reserved.</footer>
+    </main>
+  </body>
+</html>
