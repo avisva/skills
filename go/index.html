@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Go (Golang) Tutorial</title>
+    <style>
+      :root {
+        --bg: #070a17;
+        --text: #f8fafc;
+        --muted: rgba(248, 250, 252, 0.76);
+        --accent: #22c55e;
+        --accent-2: #38bdf8;
+        --accent-3: #a78bfa;
+        --header-h: 70px;
+        --gap: 10px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: radial-gradient(circle at 15% 0%, rgba(56, 189, 248, 0.25), transparent 45%),
+          radial-gradient(circle at 85% 0%, rgba(167, 139, 250, 0.24), transparent 50%),
+          radial-gradient(circle at 50% 120%, rgba(34, 197, 94, 0.18), transparent 55%),
+          var(--bg);
+        color: var(--text);
+      }
+
+      a {
+        color: var(--accent-2);
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        height: var(--header-h);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background:
+          radial-gradient(circle at 10% 0%, rgba(56, 189, 248, 0.55), transparent 55%),
+          radial-gradient(circle at 90% 0%, rgba(167, 139, 250, 0.55), transparent 55%),
+          linear-gradient(90deg, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.86));
+        color: var(--text);
+        padding: 14px 20px;
+        box-shadow: 0 18px 36px rgba(0, 0, 0, 0.55);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .header-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 65px;
+        height: 65px;
+        flex-shrink: 0;
+      }
+
+      .header-logo svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      .header-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 28px;
+        font-weight: 500;
+        font-family: 'Segoe UI', 'Helvetica Neue', -apple-system, sans-serif;
+        letter-spacing: -0.8px;
+        color: #f8fcf9;
+        text-shadow: 0 2px 8px rgba(251, 3, 251, 0.591);
+      }
+
+      header p {
+        margin: 4px 0 0;
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      nav {
+        position: fixed;
+        top: calc(var(--header-h) + var(--gap));
+        left: 0;
+        right: 0;
+        z-index: 9;
+        padding: 6px 12px;
+        background: rgba(15, 23, 42, 0.7);
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(12px);
+      }
+
+      nav a {
+        display: inline-block;
+        padding: 8px 12px;
+        font-size: 12px;
+        color: rgba(248, 250, 252, 0.9);
+        border-radius: 999px;
+      }
+
+      nav a.active {
+        background: linear-gradient(90deg, rgba(34, 197, 94, 0.95), rgba(56, 189, 248, 0.9));
+        color: #06121a;
+        box-shadow: 0 10px 18px rgba(34, 197, 94, 0.25),
+          0 10px 22px rgba(56, 189, 248, 0.18);
+        font-weight: 700;
+      }
+
+      main {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: calc(var(--header-h) + var(--gap) + 56px + 22px) 16px 40px;
+      }
+
+      h2 {
+        font-size: 20px;
+        margin-top: 0;
+      }
+
+      .section {
+        margin-bottom: 24px;
+        padding: 12px 16px 16px;
+        background: rgba(255, 255, 255, 0.06);
+        border-left: 4px solid rgba(56, 189, 248, 0.85);
+        border-radius: 14px;
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+      }
+
+      .section h3 {
+        margin-top: 0;
+        font-size: 18px;
+      }
+
+      .badge {
+        display: inline-block;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        color: #06121a;
+        background: linear-gradient(90deg, rgba(34, 197, 94, 0.95), rgba(56, 189, 248, 0.9));
+        padding: 2px 6px;
+        border-radius: 3px;
+        margin-left: 8px;
+      }
+
+      .meta {
+        font-size: 11px;
+        color: rgba(248, 250, 252, 0.7);
+        margin-bottom: 4px;
+      }
+
+      .section p {
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      ul {
+        font-size: 13px;
+      }
+
+      .code {
+        margin-top: 8px;
+        background: rgba(2, 6, 23, 0.75);
+        border-left: 4px solid rgba(34, 197, 94, 0.85);
+        padding: 8px 10px;
+        font-family: Consolas, "Courier New", monospace;
+        font-size: 13px;
+        overflow-x: auto;
+        border-radius: 10px;
+      }
+
+      .code pre {
+        margin: 0;
+      }
+
+      footer {
+        border-top: 1px solid rgba(255, 255, 255, 0.14);
+        margin-top: 20px;
+        padding-top: 10px;
+        font-size: 11px;
+        color: rgba(248, 250, 252, 0.72);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-logo">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="35" fill="none" stroke="url(#grad)" stroke-width="1.2" opacity="0.8"/>
+          <g transform="translate(50, 50)">
+            <path d="M 0,-20 L 8,-5 L 8,10 L -8,10 L -8,-5 Z" fill="#22c55e" opacity="0.9"/>
+            <circle cx="0" cy="-22" r="4" fill="#38bdf8"/>
+            <path d="M -6,11 L -10,18 L -4,15 Z" fill="#f97316" opacity="0.85"/>
+            <path d="M -8,11 L -12,20 L -6,16 Z" fill="#fb923c" opacity="0.70"/>
+            <path d="M 6,11 L 10,18 L 4,15 Z" fill="#f97316" opacity="0.85"/>
+            <path d="M 8,11 L 12,20 L 6,16 Z" fill="#fb923c" opacity="0.70"/>
+            <circle cx="0" cy="-8" r="3" fill="#38bdf8" opacity="0.95"/>
+            <path d="M -8,-2 L -14,-4 L -10,2 Z" fill="#a78bfa" opacity="0.8"/>
+            <path d="M 8,-2 L 14,-4 L 10,2 Z" fill="#a78bfa" opacity="0.8"/>
+          </g>
+          <defs>
+            <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#38bdf8;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#22c55e;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="header-content">
+        <h1>Skill Booster</h1>
+        <p>Quick Reference for Interviews...</p>
+      </div>
+    </header>
+
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../java/index.html">Java</a>
+      <a href="../python/index.html">Python</a>
+      <a href="../html5/index.html">HTML5</a>
+      <a href="../css/index.html">CSS</a>
+      <a href="../javascript/index.html">JavaScript</a>
+      <a href="index.html" class="active">Go</a>
+    </nav>
+
+    <main>
+      <h2>Top 100 Go (Golang) Interview Questions and Answers</h2>
+
+      <!-- Go Q1-Q100 sections -->
+      <section class="section" id="q1">
+        <h3>Q1: What is Go? <span class="badge">basics</span></h3>
+        <div class="meta">Language Overview</div>
+        <p>Go is an open-source statically typed compiled language designed by Google for simplicity, efficiency, and concurrency.</p>
+      </section>
+
+      <section class="section" id="q2">
+        <h3>Q2: What are Go modules? <span class="badge">modules</span></h3>
+        <div class="meta">Dependency Management</div>
+        <p>Go modules are the dependency management system introduced in Go 1.11. A module is a collection of related Go packages with a go.mod file.</p>
+      </section>
+
+      <section class="section" id="q3">
+        <h3>Q3: What is the difference between GOPATH and Go modules? <span class="badge">modules</span></h3>
+        <div class="meta">Environment</div>
+        <p>GOPATH is the old workspace model; Go modules allow arbitrary directory layout and explicit versioned dependencies using go.mod.</p>
+      </section>
+
+      <section class="section" id="q4">
+        <h3>Q4: How do you declare a variable in Go? <span class="badge">syntax</span></h3>
+        <div class="meta">Variables</div>
+        <p>Use var name type or short form name := value. Example: var x int = 5; y := 10.</p>
+      </section>
+
+      <section class="section" id="q5">
+        <h3>Q5: What are slices in Go? <span class="badge">collections</span></h3>
+        <div class="meta">Data structures</div>
+        <p>Slices are dynamically sized, flexible views into arrays. They have length and capacity and are reference types.</p>
+      </section>
+
+      <section class="section" id="q6">
+        <h3>Q6: Explain maps in Go. <span class="badge">collections</span></h3>
+        <div class="meta">Data structures</div>
+        <p>Maps are unordered key-value stores. Declared with make(map[keyType]valueType) and accessed using map[key].</p>
+      </section>
+
+      <section class="section" id="q7">
+        <h3>Q7: What is a goroutine? <span class="badge">concurrency</span></h3>
+        <div class="meta">Concurrency</div>
+        <p>A goroutine is a lightweight thread managed by Go runtime, created with the go keyword.</p>
+      </section>
+
+      <section class="section" id="q8">
+        <h3>Q8: What are channels? <span class="badge">concurrency</span></h3>
+        <div class="meta">Concurrency</div>
+        <p>Channels allow goroutines to communicate and synchronize by sending and receiving values of a specified type.</p>
+      </section>
+
+      <section class="section" id="q9">
+        <h3>Q9: What is select statement? <span class="badge">concurrency</span></h3>
+        <div class="meta">Concurrency</div>
+        <p>Select lets you wait on multiple channel operations; it blocks until one is ready.</p>
+      </section>
+
+      <section class="section" id="q10">
+        <h3>Q10: How do you handle errors in Go? <span class="badge">errors</span></h3>
+        <div class="meta">Error handling</div>
+        <p>Go uses explicit error returns (value, error). Check error != nil and handle accordingly.</p>
+      </section>
+
+      <section class="section" id="q11">
+        <h3>Q11: What is defer? <span class="badge">controlflow</span></h3>
+        <div class="meta">Resource cleanup</div>
+        <p>defer schedules a function call to run after the enclosing function returns, commonly for cleanup (e.g., file.Close()).</p>
+      </section>
+
+      <section class="section" id="q12">
+        <h3>Q12: Explain panic and recover. <span class="badge">errors</span></h3>
+        <div class="meta">Panic/recover</div>
+        <p>panic stops normal flow and unwinds stack. recover can capture panic inside deferred function and resume execution.</p>
+      </section>
+
+      <section class="section" id="q13">
+        <h3>Q13: What are interfaces in Go? <span class="badge">types</span></h3>
+        <div class="meta">Type system</div>
+        <p>Interfaces are sets of method signatures that types implement implicitly, promoting polymorphism.</p>
+      </section>
+
+      <section class="section" id="q14">
+        <h3>Q14: What does it mean that Go has duck typing? <span class="badge">types</span></h3>
+        <div class="meta">Type system</div>
+        <p>Go uses structural typing: if a type has required methods, it satisfies an interface without explicit declaration.</p>
+      </section>
+
+      <section class="section" id="q15">
+        <h3>Q15: What is embedding in Go? <span class="badge">composition</span></h3>
+        <div class="meta">Structs</div>
+        <p>Embedding includes one struct or type within another, giving promoted methods and fields for composition.</p>
+      </section>
+
+      <section class="section" id="q16">
+        <h3>Q16: How many bytes in int, int8, int16 etc? <span class="badge">types</span></h3>
+        <div class="meta">Primitive types</div>
+        <p>int8=1, int16=2, int32=4, int64=8. int and uint are platform-dependent (32 or 64 bit).</p>
+      </section>
+
+      <section class="section" id="q17">
+        <h3>Q17: What is the zero value? <span class="badge">types</span></h3>
+        <div class="meta">Initialization</div>
+        <p>Zero value is the default value when a variable is declared without initialization (0 for numbers, "" for string, nil for pointers, maps, slices, channels, func, interface).</p>
+      </section>
+
+      <section class="section" id="q18">
+        <h3>Q18: How to clone a slice? <span class="badge">collections</span></h3>
+        <div class="meta">Slices</div>
+        <p>Use copy: dst:=make([]T,len(src)); copy(dst,src);</p>
+      </section>
+
+      <section class="section" id="q19">
+        <h3>Q19: How do you append to a slice? <span class="badge">collections</span></h3>
+        <div class="meta">Slices</div>
+        <p>Use append: s = append(s, value1, value2...).</p>
+      </section>
+
+      <section class="section" id="q20">
+        <h3>Q20: What is nil in Go? <span class="badge">types</span></h3>
+        <div class="meta">Zero values</div>
+        <p>nil is zero value for pointers, slices, maps, channels, interfaces and function types. It means no value/reference.</p>
+      </section>
+
+      <section class="section" id="q21">
+        <h3>Q21: What are pointers in Go? <span class="badge">pointers</span></h3>
+        <div class="meta">Memory</div>
+        <p>Pointers hold memory addresses. Use & to take address and * to dereference.</p>
+      </section>
+
+      <section class="section" id="q22">
+        <h3>Q22: What is a struct? <span class="badge">types</span></h3>
+        <div class="meta">Data structures</div>
+        <p>Struct is a composite data type grouping fields. Example: type User struct {Name string; Age int}.</p>
+      </section>
+
+      <section class="section" id="q23">
+        <h3>Q23: How does Go handle concurrency safety for maps? <span class="badge">concurrency</span></h3>
+        <div class="meta">Data races</div>
+        <p>Maps are not safe for concurrent write. Use sync.Mutex, sync.RWMutex, or sync.Map for concurrency protection.</p>
+      </section>
+
+      <section class="section" id="q24">
+        <h3>Q24: What is sync.WaitGroup? <span class="badge">concurrency</span></h3>
+        <div class="meta">Goroutines</div>
+        <p>WaitGroup waits for a collection of goroutines to finish. Use Add/Done/Wait.</p>
+      </section>
+
+      <section class="section" id="q25">
+        <h3>Q25: What is sync.Mutex? <span class="badge">concurrency</span></h3>
+        <div class="meta">Synchronization</div>
+        <p>Mutex provides mutual exclusion locking for critical sections to avoid race conditions.</p>
+      </section>
+
+      <section class="section" id="q26">
+        <h3>Q26: What is sync.RWMutex? <span class="badge">concurrency</span></h3>
+        <div class="meta">Synchronization</div>
+        <p>RWMutex allows multiple readers or one writer at a time for better read performance with fewer writes.</p>
+      </section>
+
+      <section class="section" id="q27">
+        <h3>Q27: What are goroutine leaks and how to avoid? <span class="badge">concurrency</span></h3>
+        <div class="meta">Best practices</div>
+        <p>A goroutine leak happens when a goroutine is blocked forever. Use cancelation via context, close channels, and ensure select with done channel.</p>
+      </section>
+
+      <section class="section" id="q28">
+        <h3>Q28: What is context.Context? <span class="badge">concurrency</span></h3>
+        <div class="meta">Cancellation</div>
+        <p>Context carries deadlines, cancellation signals, and request-scoped values across API boundaries.</p>
+      </section>
+
+      <section class="section" id="q29">
+        <h3>Q29: What is the Go toolchain command to run tests? <span class="badge">testing</span></h3>
+        <div class="meta">Testing</div>
+        <p>go test ./... runs tests in all packages; go test <pkg> runs tests for one package.</p>
+      </section>
+
+      <section class="section" id="q30">
+        <h3>Q30: How to write a table-driven test? <span class="badge">testing</span></h3>
+        <div class="meta">Testing</div>
+        <p>Create a slice of test cases and loop over it with t.Run for each case.</p>
+      </section>
+
+      <section class="section" id="q31">
+        <h3>Q31: What is benchmark testing? <span class="badge">testing</span></h3>
+        <div class="meta">Performance</div>
+        <p>Use go test -bench=. and func BenchmarkX(b *testing.B) to measure code performance across runs.</p>
+      </section>
+
+      <section class="section" id="q32">
+        <h3>Q32: What is the built-in race detector? <span class="badge">testing</span></h3>
+        <div class="meta">Debugging</div>
+        <p>go test -race enables race detection which finds data races in concurrent code at runtime.</p>
+      </section>
+
+      <section class="section" id="q33">
+        <h3>Q33: What is reflection in Go? <span class="badge">advanced</span></h3>
+        <div class="meta">Runtime</div>
+        <p>Reflection (reflect package) allows inspection and manipulation of types/values at runtime, but should be used sparingly.</p>
+      </section>
+
+      <section class="section" id="q34">
+        <h3>Q34: What is the difference between nil and empty slice? <span class="badge">collections</span></h3>
+        <div class="meta">Slices</div>
+        <p>nil slice has length/capacity 0 and is nil. empty slice has len/cap 0 but is non-nil (e.g. []int{}).</p>
+      </section>
+
+      <section class="section" id="q35">
+        <h3>Q35: What is interface{} type? <span class="badge">types</span></h3>
+        <div class="meta">Type system</div>
+        <p>interface{} is the empty interface that accepts values of any type and is used for generic containers.</p>
+      </section>
+
+      <section class="section" id="q36">
+        <h3>Q36: What are type assertions? <span class="badge">types</span></h3>
+        <div class="meta">Type conversions</div>
+        <p>Type assertion x.(T) extracts concrete type from interface. Use v,ok := x.(T) to avoid panic.</p>
+      </section>
+
+      <section class="section" id="q37">
+        <h3>Q37: What is a named return value? <span class="badge">syntax</span></h3>
+        <div class="meta">Functions</div>
+        <p>Functions may declare return names. They act as local variables and are returned by naked return statement.</p>
+      </section>
+
+      <section class="section" id="q38">
+        <h3>Q38: What is the difference between value and pointer receiver? <span class="badge">methods</span></h3>
+        <div class="meta">Methods</div>
+        <p>Value receiver gets a copy; pointer receiver can mutate original and avoid copies for large structs. Use pointer for consistency when methods modify state.</p>
+      </section>
+
+      <section class="section" id="q39">
+        <h3>Q39: Can methods be declared on non-struct types? <span class="badge">methods</span></h3>
+        <div class="meta">Methods</div>
+        <p>Yes, methods may be declared on any defined type in the same package (except built-in types), including structs and custom types.</p>
+      </section>
+
+      <section class="section" id="q40">
+        <h3>Q40: What is nil pointer dereference? <span class="badge">errors</span></h3>
+        <div class="meta">Runtime</div>
+        <p>Dereferencing a nil pointer causes a runtime panic. Check pointer before dereference or initialize before use.</p>
+      </section>
+
+      <section class="section" id="q41">
+        <h3>Q41: What is gofmt? <span class="badge">tools</span></h3>
+        <div class="meta">Formatting</div>
+        <p>gofmt automatically formats Go source code to standard style. Use gofmt -w file.go or gofmt -w .</p>
+      </section>
+
+      <section class="section" id="q42">
+        <h3>Q42: What is go vet? <span class="badge">tools</span></h3>
+        <div class="meta">Static analysis</div>
+        <p>go vet checks for suspicious constructs and potential bugs in Go code beyond compile-time errors.</p>
+      </section>
+
+      <section class="section" id="q43">
+        <h3>Q43: What is go test? <span class="badge">tools</span></h3>
+        <div class="meta">Testing</div>
+        <p>go test compiles and runs tests named *_test.go using the testing package.
+        </p>
+      </section>
+
+      <section class="section" id="q44">
+        <h3>Q44: What is go fmt vs go imports? <span class="badge">tools</span></h3>
+        <div class="meta">Formatting</div>
+        <p>gofmt formats code; goimports formats code and adds/removes import statements automatically.
+        </p>
+      </section>
+
+      <section class="section" id="q45">
+        <h3>Q45: What is a build tag? <span class="badge">build</span></h3>
+        <div class="meta">Conditional build</div>
+        <p>Build tags are comments like //go:build windows to include/exclude files per platform or condition when building.
+        </p>
+      </section>
+
+      <section class="section" id="q46">
+        <h3>Q46: How does Go support cross-compilation? <span class="badge">build</span></h3>
+        <div class="meta">Toolchain</div>
+        <p>Set GOOS and GOARCH environment variables then run go build (e.g., GOOS=linux GOARCH=amd64 go build).</p>
+      </section>
+
+      <section class="section" id="q47">
+        <h3>Q47: What is vendoring in Go? <span class="badge">modules</span></h3>
+        <div class="meta">Dependency management</div>
+        <p>Vendoring copies dependencies into vendor/ directory. go mod vendor populates it and go build can use them.
+        </p>
+      </section>
+
+      <section class="section" id="q48">
+        <h3>Q48: What is gofmt not enforcing? <span class="badge">style</span></h3>
+        <div class="meta">Coding style</div>
+        <p>gofmt enforces formatting but not naming conventions, algorithmic logic, or package organization.
+        </p>
+      </section>
+
+      <section class="section" id="q49">
+        <h3>Q49: What is the zero-value for interface? <span class="badge">types</span></h3>
+        <div class="meta">Interfaces</div>
+        <p>Zero-value of an interface is nil (both type and value nil). A non-nil interface can wrap nil pointer and not be equal to nil.
+        </p>
+      </section>
+
+      <section class="section" id="q50">
+        <h3>Q50: Explain pointer to nil interface issue. <span class="badge">types</span></h3>
+        <div class="meta">Common bug</div>
+        <p>Assigning a nil pointer to interface does not make interface nil. Check value using type assertion or compare with nil carefully.</p>
+      </section>
+
+      <section class="section" id="q51">
+        <h3>Q51: What is a type switch? <span class="badge">types</span></h3>
+        <div class="meta">Control flow</div>
+        <p>Type switch is switch v := x.(type) { case int: ... } used to branch on dynamic type of interface value.</p>
+      </section>
+
+      <section class="section" id="q52">
+        <h3>Q52: How do you declare a constant? <span class="badge">syntax</span></h3>
+        <div class="meta">Constants</div>
+        <p>Use const name type = value. Constants are compile-time and immutable.</p>
+      </section>
+
+      <section class="section" id="q53">
+        <h3>Q53: What are iota constants? <span class="badge">syntax</span></h3>
+        <div class="meta">Enums</div>
+        <p>iota is a predeclared identifier used in const blocks generating successive untyped integer constants.</p>
+      </section>
+
+      <section class="section" id="q54">
+        <h3>Q54: What is the Go memory model? <span class="badge">concurrency</span></h3>
+        <div class="meta">Races</div>
+        <p>Go memory model defines synchronization must happen via channels, mutexes, or other sync primitives for goroutine visibility and ordering.</p>
+      </section>
+
+      <section class="section" id="q55">
+        <h3>Q55: What is GC in Go? <span class="badge">runtime</span></h3>
+        <div class="meta">Garbage collection</div>
+        <p>Go uses a concurrent garbage collector that reclaims unused memory automatically while minimizing pause times.</p>
+      </section>
+
+      <section class="section" id="q56">
+        <h3>Q56: How to inspect memory usage? <span class="badge">tools</span></h3>
+        <div class="meta">Profiling</div>
+        <p>Use runtime/pprof, go tool pprof, and runtime.ReadMemStats; also Go Tour and pprof API to profile heaps and goroutines.</p>
+      </section>
+
+      <section class="section" id="q57">
+        <h3>Q57: What is freeze in Go? <span class="badge">go1.21</span></h3>
+        <div class="meta">Language law</div>
+        <p>Go freeze is a process where API compatibility is locked while new language features are introduced carefully. It refers to stability guarantee of standard library and language.
+        </p>
+      </section>
+
+      <section class="section" id="q58">
+        <h3>Q58: What is a package? <span class="badge">theory</span></h3>
+        <div class="meta">Organization</div>
+        <p>Package groups related Go source files. Each file declares package name at top. main package is an executable entry point.</p>
+      </section>
+
+      <section class="section" id="q59">
+        <h3>Q59: How do you import packages? <span class="badge">theory</span></h3>
+        <div class="meta">Organization</div>
+        <p>Use import "fmt" or import ("fmt" "os"). Packages are resolved under module cache or GOPATH.</p>
+      </section>
+
+      <section class="section" id="q60">
+        <h3>Q60: What is init() function? <span class="badge">init</span></h3>
+        <div class="meta">Initialization</div>
+        <p>init functions run before main. Package may have multiple init functions. Primarily used for initialization tasks.</p>
+      </section>
+
+      <section class="section" id="q61">
+        <h3>Q61: What is defer-panic-recover pattern? <span class="badge">error-handling</span></h3>
+        <div class="meta">Panic recovery</div>
+        <p>Use defer with recover to handle panics gracefully and prevent crashes in a controlled place.</p>
+      </section>
+
+      <section class="section" id="q62">
+        <h3>Q62: How does Go handle circular imports? <span class="badge">compile</span></h3>
+        <div class="meta">Package design</div>
+        <p>Circular imports are forbidden. Refactor code to move shared functionality into separate packages to break cycle.</p>
+      </section>
+
+      <section class="section" id="q63">
+        <h3>Q63: What are build constraints? <span class="badge">build</span></h3>
+        <div class="meta">Cross-platform</div>
+        <p>Build constraints are comments like //go:build linux that conditionally include files for OS/ARCH/etc during build.</p>
+      </section>
+
+      <section class="section" id="q64">
+        <h3>Q64: How to create custom errors? <span class="badge">errors</span></h3>
+        <div class="meta">Error handling</div>
+        <p>Create types implementing Error() string and return them. Use errors.New or fmt.Errorf with %w for wrapping.</p>
+      </section>
+
+      <section class="section" id="q65">
+        <h3>Q65: What is errors.Is and errors.As? <span class="badge">errors</span></h3>
+        <div class="meta">Error handling</div>
+        <p>errors.Is checks if an error matches a target in chain; errors.As extracts typed error from chain for type assertion.</p>
+      </section>
+
+      <section class="section" id="q66">
+        <h3>Q66: Explain pointer arithmetic in Go. <span class="badge">types</span></h3>
+        <div class="meta">Language rules</div>
+        <p>Go does not support pointer arithmetic directly to maintain safety; use slices and indexing instead.</p>
+      </section>
+
+      <section class="section" id="q67">
+        <h3>Q67: What is a blank identifier `_`? <span class="badge">syntax</span></h3>
+        <div class="meta">Language features</div>
+        <p>The blank identifier discards values and is used to ignore return values or imports (to run init). It cannot be used later.</p>
+      </section>
+
+      <section class="section" id="q68">
+        <h3>Q68: What is atomic package? <span class="badge">concurrency</span></h3>
+        <div class="meta">Low-level sync</div>
+        <p>sync/atomic supports lock-free atomic operations on integers/pointers for concurrent state updates.
+        </p>
+      </section>
+
+      <section class="section" id="q69">
+        <h3>Q69: What is a race condition? <span class="badge">concurrency</span></h3>
+        <div class="meta">Bugs</div>
+        <p>Race condition occurs when multiple goroutines access shared data concurrently and at least one write is unsynchronized, causing unpredictable behavior.</p>
+      </section>
+
+      <section class="section" id="q70">
+        <h3>Q70: How do you avoid race conditions? <span class="badge">concurrency</span></h3>
+        <div class="meta">Best practices</div>
+        <p>Use channels, mutexes, atomic operations, or design data so each goroutine owns its state (share by communicating, not communicating by sharing).</p>
+      </section>
+
+      <section class="section" id="q71">
+        <h3>Q71: What is go generate? <span class="badge">tooling</span></h3>
+        <div class="meta">Code generation</div>
+        <p>go generate runs custom generator commands declared with //go:generate comments; not run by default with go build/test.</p>
+      </section>
+
+      <section class="section" id="q72">
+        <h3>Q72: What is garbage collection pause? <span class="badge">runtime</span></h3>
+        <div class="meta">Performance</div>
+        <p>GC pause is the time execution stalls for cleanup. Go's GC aims for low pause by concurrent collection and tuning GOGC.
+        </p>
+      </section>
+
+      <section class="section" id="q73">
+        <h3>Q73: What is GOGC? <span class="badge">runtime</span></h3>
+        <div class="meta">GC tuning</div>
+        <p>GOGC controls heap growth before garbage collection; default 100 means GC runs when heap doubles in size.
+        </p>
+      </section>
+
+      <section class="section" id="q74">
+        <h3>Q74: What is pprof? <span class="badge">profiling</span></h3>
+        <div class="meta">Performance analysis</div>
+        <p>pprof is Go profiling tool for CPU, memory, goroutines, and block profiles via runtime/pprof and net/http/pprof handlers.
+        </p>
+      </section>
+
+      <section class="section" id="q75">
+        <h3>Q75: How do you start a HTTP server in Go? <span class="badge">net</span></h3>
+        <div class="meta">Web</div>
+        <p>Use net/http package; http.HandleFunc("/", handler); http.ListenAndServe(":8080", nil)</p>
+      </section>
+
+      <section class="section" id="q76">
+        <h3>Q76: What is json.Marshal and json.Unmarshal? <span class="badge">encoding</span></h3>
+        <div class="meta">Serialization</div>
+        <p>json.Marshal converts Go values to JSON bytes; json.Unmarshal parses JSON bytes into Go values with struct tags.
+        </p>
+      </section>
+
+      <section class="section" id="q77">
+        <h3>Q77: What are struct tags? <span class="badge">reflection</span></h3>
+        <div class="meta">Metadata</div>
+        <p>Struct tags are annotation strings on fields used by encoding/json and other packages to control serialization and behavior.
+        </p>
+      </section>
+
+      <section class="section" id="q78">
+        <h3>Q78: What is the difference between os.Exit and return from main? <span class="badge">runtime</span></h3>
+        <div class="meta">Program exit</div>
+        <p>os.Exit terminates immediately without running deferred calls. return from main runs deferred functions before exiting.</p>
+      </section>
+
+      <section class="section" id="q79">
+        <h3>Q79: What is a file server in net/http? <span class="badge">web</span></h3>
+        <div class="meta">Utilities</div>
+        <p>Use http.FileServer(http.Dir("./static")) to serve static files from a directory.
+        </p>
+      </section>
+
+      <section class="section" id="q80">
+        <h3>Q80: What is the difference between HTTP client and server in Go? <span class="badge">net</span></h3>
+        <div class="meta">Networking</div>
+        <p>net/http provides http.Client for requests and http.Server for handling inbound requests via handlers.
+        </p>
+      </section>
+
+      <section class="section" id="q81">
+        <h3>Q81: What is a nil map behavior? <span class="badge">collections</span></h3>
+        <div class="meta">Safety</div>
+        <p>Reading from nil map returns zero value; writing to nil map causes panic. Initialize map with make before writes.
+        </p>
+      </section>
+
+      <section class="section" id="q82">
+        <h3>Q82: What is a nil channel behavior? <span class="badge">concurrency</span></h3>
+        <div class="meta">Channels</div>
+        <p>Sending or receiving on nil channel blocks forever, useful for disabling branches in select.
+        </p>
+      </section>
+
+      <section class="section" id="q83">
+        <h3>Q83: What is buffered channel? <span class="badge">concurrency</span></h3>
+        <div class="meta">Channels</div>
+        <p>Buffered channel has fixed capacity, send blocks only when full, receive blocks only when empty. Created with make(chan T, n).
+        </p>
+      </section>
+
+      <section class="section" id="q84">
+        <h3>Q84: How do you close a channel? <span class="badge">concurrency</span></h3>
+        <div class="meta">Channels</div>
+        <p>Use close(ch). Receivers can still drain values; sends to closed channel panic.
+        </p>
+      </section>
+
+      <section class="section" id="q85">
+        <h3>Q85: What is range over channel? <span class="badge">concurrency</span></h3>
+        <div class="meta">Channels</div>
+        <p>for v := range ch reads values until channel is closed, then loop exits.
+        </p>
+      </section>
+
+      <section class="section" id="q86">
+        <h3>Q86: What is closing channel advantage? <span class="badge">concurrency</span></h3>
+        <div class="meta">Signals</div>
+        <p>Closing signals no more values; receivers can detect closure using v,ok := <-ch.
+        </p>
+      </section>
+
+      <section class="section" id="q87">
+        <h3>Q87: What are functions as first-class citizens? <span class="badge">functions</span></h3>
+        <div class="meta">Advanced</div>
+        <p>Functions can be assigned to variables, passed as arguments, and returned from other functions.
+        </p>
+      </section>
+
+      <section class="section" id="q88">
+        <h3>Q88: What is closure? <span class="badge">functions</span></h3>
+        <div class="meta">Advanced</div>
+        <p>Closure is function value that references variables from outside its body, maintaining state across calls.
+        </p>
+      </section>
+
+      <section class="section" id="q89">
+        <h3>Q89: How to create a generic function with Go 1.18? <span class="badge">generics</span></h3>
+        <div class="meta">Modern features</div>
+        <p>Use type parameters in square brackets: func Max[T constraints.Ordered](a,b T) T { if a>b {return a}; return b }.</p>
+      </section>
+
+      <section class="section" id="q90">
+        <h3>Q90: Are Go interfaces generic? <span class="badge">generics</span></h3>
+        <div class="meta">Modern features</div>
+        <p>Go 1.18 allows generic interfaces with type parameters and constraints; previous versions used non-generic interfaces.</p>
+      </section>
+
+      <section class="section" id="q91">
+        <h3>Q91: What is a type parameter constraint? <span class="badge">generics</span></h3>
+        <div class="meta">Modern features</div>
+        <p>Constraint limits types used in generics using interfaces specifying required methods or comparable operator.
+        </p>
+      </section>
+
+      <section class="section" id="q92">
+        <h3>Q92: What is a generic slice function example? <span class="badge">generics</span></h3>
+        <div class="meta">Modern features</div>
+        <p>func Filter[T any](s []T, fn func(T) bool) []T { for _, v := range s { if fn(v) {out = append(out,v)}} return out }
+        </p>
+      </section>
+
+      <section class="section" id="q93">
+        <h3>Q93: What is a nil map in a generic function? <span class="badge">generics</span></h3>
+        <div class="meta">Generics</div>
+        <p>You can pass nil maps to functions; reads return zero value, writes panic unless map is initialized.
+        </p>
+      </section>
+
+      <section class="section" id="q94">
+        <h3>Q94: What is a `go fmt` rule for `if` conditions? <span class="badge">style</span></h3>
+        <div class="meta">Formatting</div>
+        <p>gofmt enforces braces and spacing: if cond { ... }, no parentheses around conditions required.
+        </p>
+      </section>
+
+      <section class="section" id="q95">
+        <h3>Q95: What is `sync.Once`? <span class="badge">concurrency</span></h3>
+        <div class="meta">Synchronization</div>
+        <p>sync.Once ensures a function is executed only once, even with concurrent calls, useful for initialization.
+        </p>
+      </section>
+
+      <section class="section" id="q96">
+        <h3>Q96: What is `unsafe` package? <span class="badge">advanced</span></h3>
+        <div class="meta">Low-level
+        </div>
+        <p>unsafe provides low-level operations for pointer arithmetic, arbitrary memory conversions, and platform dependent behavior. Use with caution.
+        </p>
+      </section>
+
+      <section class="section" id="q97">
+        <h3>Q97: What is `go.sum`? <span class="badge">modules</span></h3>
+        <div class="meta">Dependency security</div>
+        <p>go.sum records cryptographic hashes of module versions for dependency verification and reproducible builds.
+        </p>
+      </section>
+
+      <section class="section" id="q98">
+        <h3>Q98: How do you update dependencies? <span class="badge">modules</span></h3>
+        <div class="meta">Modules</div>
+        <p>Use go get <module>@version or go get -u ./... for updating module dependencies.
+        </p>
+      </section>
+
+      <section class="section" id="q99">
+        <h3>Q99: What is the semantic import versioning scheme? <span class="badge">modules</span></h3>
+        <div class="meta">Modules</div>
+        <p>For major version V2+, module path must include /vN suffix and import path must match (e.g., github.com/user/pkg/v2).</p>
+      </section>
+
+      <section class="section" id="q100">
+        <h3>Q100: What is the difference between `go run` and `go build`? <span class="badge">tools</span></h3>
+        <div class="meta">Tooling</div>
+        <p>go run compiles and executes program directly (temp binary). go build compiles binary without running; leaves executable in current dir.</p>
+      </section>
+
+      <footer>
+        Back to <a href="../index.html">Home Page</a> | © 2026 skills.enviz.in. All rights reserved.
+      </footer>
+    </main>
+  </body>
+</html>
