@@ -243,139 +243,606 @@
     </nav>
 
     <main>
-      <h2>Getting Started with Python</h2>
+      <h2>Top 100 Python Interview Questions and Answers</h2>
 
-      <section class="section">
-        <h3>
-          Python Basics
-          <span class="badge">start here</span>
-        </h3>
-        <div class="meta">Syntax, variables, data types</div>
-        <p>
-          <strong>Python</strong> uses indentation to define blocks instead of braces. It is
-          dynamically typed (types inferred at runtime), which keeps the syntax concise and readable.
-        </p>
-        <div class="code">
-          <pre>name = "Alice"
-age = 30
-price = 19.99
-is_active = True
-
-print(f"Name: {name}, Age: {age}")</pre>
-        </div>
-        <ul>
-          <li>Booleans are written as <code>True</code> and <code>False</code>.</li>
-          <li><code>None</code> represents “no value” / null.</li>
-          <li>Use <code>#</code> for comments; triple quotes for docstrings.</li>
-        </ul>
+      <section class="section" id="q1">
+        <h3>Q1: What is Python? <span class="badge">basics</span></h3>
+        <div class="meta">Python Fundamentals</div>
+        <p>Python is a high-level, interpreted, dynamically-typed programming language known for its simple, readable syntax and versatility.</p>
       </section>
 
-      <section class="section">
-        <h3>
-          Control Flow &amp; Functions
-          <span class="badge">core</span>
-        </h3>
-        <div class="meta">if / elif / else, loops, functions</div>
-        <p>
-          Python’s control flow is straightforward and uses indentation consistently across
-          <code>if</code>, <code>for</code>, and <code>while</code>. Functions are first‑class
-          objects.
-        </p>
-        <div class="code">
-          <pre>def greet(name: str) -&gt; str:
-    return f"Hello, {name}!"
-
-for i in range(3):
-    print(i)
-
-if age &gt;= 18:
-    print("Adult")
-elif age &gt;= 13:
-    print("Teenager")
-else:
-    print("Child")</pre>
-        </div>
-        <p>
-          The <code>range</code> function produces a sequence of integers. Type hints like
-          <code>name: str</code> are optional but recommended.
-        </p>
+      <section class="section" id="q2">
+        <h3>Q2: What is PEP 8? <span class="badge">basics</span></h3>
+        <div class="meta">Style Guide</div>
+        <p>PEP 8 is Python's style guide for writing clean, consistent, and readable code with conventions on naming, indentation, and formatting.</p>
       </section>
 
-      <section class="section">
-        <h3>
-          Collections &amp; Comprehensions
-          <span class="badge">idiomatic</span>
-        </h3>
-        <div class="meta">Lists, tuples, dicts, sets, list comprehensions</div>
-        <p>
-          Python’s standard containers make it easy to represent structured data. List comprehensions
-          provide a compact way to build lists.
-        </p>
-        <div class="code">
-          <pre>nums = [1, 2, 3]
-names = ("Alice", "Bob")  # tuple
-scores = {"Alice": 90, "Bob": 85}
-unique_ids = {1, 2, 3}
-
-squares = [n * n for n in nums]
-evens = [n for n in nums if n % 2 == 0]</pre>
-        </div>
-        <ul>
-          <li><code>list</code> – ordered, mutable collection.</li>
-          <li><code>tuple</code> – ordered, immutable collection.</li>
-          <li><code>dict</code> – key–value store.</li>
-          <li><code>set</code> – unordered collection of unique items.</li>
-        </ul>
+      <section class="section" id="q3">
+        <h3>Q3: What are lists? <span class="badge">collections</span></h3>
+        <div class="meta">Data Structures</div>
+        <p>Lists are ordered, mutable collections of elements defined with square brackets []. They support indexing, slicing, and modification.</p>
       </section>
 
-      <section class="section">
-        <h3>
-          Object-Oriented Python
-          <span class="badge">objects</span>
-        </h3>
-        <div class="meta">Classes, methods, inheritance</div>
-        <p>
-          Python supports object‑oriented programming with classes and inheritance, but remains
-          flexible thanks to dynamic typing and duck typing.
-        </p>
-        <div class="code">
-          <pre>class Animal:
-    def __init__(self, name: str) -&gt; None:
-        self.name = name
-
-    def speak(self) -&gt; None:
-        print("Animal sound")
-
-
-class Dog(Animal):
-    def speak(self) -&gt; None:
-        print(f"{self.name} says: Woof!")</pre>
-        </div>
-        <p>
-          You don’t declare field types ahead of time; attributes can be added on the fly, although
-          sticking to <code>__init__</code> initialization keeps things predictable.
-        </p>
+      <section class="section" id="q4">
+        <h3>Q4: What are tuples? <span class="badge">collections</span></h3>
+        <div class="meta">Data Structures</div>
+        <p>Tuples are ordered, immutable collections defined with parentheses (). Once created, they cannot be modified.</p>
       </section>
 
-      <section class="section">
-        <h3>
-          Virtual Environments &amp; Packages
-          <span class="badge">tooling</span>
-        </h3>
-        <div class="meta">venv, pip, project structure</div>
-        <p>
-          Use a <strong>virtual environment</strong> per project to isolate dependencies, then
-          install packages with <code>pip</code>.
-        </p>
-        <div class="code">
-          <pre>python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
-pip install requests</pre>
-        </div>
-        <p>
-          Organize larger projects into packages (directories with <code>__init__.py</code>) and
-          modules (single <code>.py</code> files) to keep code maintainable and reusable.
-        </p>
+      <section class="section" id="q5">
+        <h3>Q5: What are dictionaries? <span class="badge">collections</span></h3>
+        <div class="meta">Data Structures</div>
+        <p>Dictionaries are unordered collections of key-value pairs used for fast lookups, defined with curly braces {}.</p>
+      </section>
+
+      <section class="section" id="q6">
+        <h3>Q6: What are sets? <span class="badge">collections</span></h3>
+        <div class="meta">Data Structures</div>
+        <p>Sets are unordered collections of unique elements defined with set() or {}. They support union, intersection, and difference operations.</p>
+      </section>
+
+      <section class="section" id="q7">
+        <h3>Q7: What is a function? <span class="badge">functions</span></h3>
+        <div class="meta">Reusable Code</div>
+        <p>A function is a reusable block of code defined with def keyword. Functions can accept parameters and return values.</p>
+      </section>
+
+      <section class="section" id="q8">
+        <h3>Q8: What is a lambda function? <span class="badge">functions</span></h3>
+        <div class="meta">Anonymous Functions</div>
+        <p>Lambda is an anonymous function expression for small, one-time use functions. Syntax: lambda args: expression.</p>
+      </section>
+
+      <section class="section" id="q9">
+        <h3>Q9: What is list comprehension? <span class="badge">idioms</span></h3>
+        <div class="meta">Concise Code</div>
+        <p>List comprehension is a concise syntax for building lists from iterables using expression and loop in one line.</p>
+      </section>
+
+      <section class="section" id="q10">
+        <h3>Q10: What is a generator? <span class="badge">advanced</span></h3>
+        <div class="meta">Lazy Evaluation</div>
+        <p>A generator yields values lazily using yield keyword and implements the iterator protocol for memory efficiency.</p>
+      </section>
+
+      <section class="section" id="q11">
+        <h3>Q11: What are decorators? <span class="badge">advanced</span></h3>
+        <div class="meta">Function Wrappers</div>
+        <p>Decorators wrap functions to add behavior before/after execution without changing the original function code.</p>
+      </section>
+
+      <section class="section" id="q12">
+        <h3>Q12: What is exception handling? <span class="badge">errors</span></h3>
+        <div class="meta">Error Management</div>
+        <p>Use try/except/finally blocks to catch runtime errors and handle them gracefully.</p>
+      </section>
+
+      <section class="section" id="q13">
+        <h3>Q13: What is a context manager? <span class="badge">advanced</span></h3>
+        <div class="meta">Resource Management</div>
+        <p>Context managers implement __enter__/__exit__ methods and are used with with statement for safe resource management.</p>
+      </section>
+
+      <section class="section" id="q14">
+        <h3>Q14: What are *args and **kwargs? <span class="badge">functions</span></h3>
+        <div class="meta">Variable Arguments</div>
+        <p>*args captures extra positional arguments as tuple; **kwargs captures extra keyword arguments as dictionary.</p>
+      </section>
+
+      <section class="section" id="q15">
+        <h3>Q15: What is a module? <span class="badge">organization</span></h3>
+        <div class="meta">Code Reuse</div>
+        <p>A module is a .py file containing functions, classes, and variables that can be imported for reuse.</p>
+      </section>
+
+      <section class="section" id="q16">
+        <h3>Q16: What is a package? <span class="badge">organization</span></h3>
+        <div class="meta">Code Organization</div>
+        <p>A package is a directory containing an __init__.py file and submodules for organizing related code.</p>
+      </section>
+
+      <section class="section" id="q17">
+        <h3>Q17: What is inheritance? <span class="badge">oop</span></h3>
+        <div class="meta">Object-Oriented</div>
+        <p>Inheritance lets a class derive properties and methods from a parent class using the extends mechanism.</p>
+      </section>
+
+      <section class="section" id="q18">
+        <h3>Q18: What is polymorphism? <span class="badge">oop</span></h3>
+        <div class="meta">Object-Oriented</div>
+        <p>Polymorphism allows objects of different classes to be treated via a common interface.</p>
+      </section>
+
+      <section class="section" id="q19">
+        <h3>Q19: What is encapsulation? <span class="badge">oop</span></h3>
+        <div class="meta">Object-Oriented</div>
+        <p>Encapsulation hides internal state and exposes only necessary methods through public interface.</p>
+      </section>
+
+      <section class="section" id="q20">
+        <h3>Q20: What is method overriding? <span class="badge">oop</span></h3>
+        <div class="meta">Object-Oriented</div>
+        <p>Method overriding allows subclass to redefine parent class method with different implementation.</p>
+      </section>
+
+      <section class="section" id="q21">
+        <h3>Q21: What is __init__? <span class="badge">oop</span></h3>
+        <div class="meta">Constructor</div>
+        <p>__init__ is the constructor method called when an object is created to initialize its attributes.</p>
+      </section>
+
+      <section class="section" id="q22">
+        <h3>Q22: What is __str__? <span class="badge">oop</span></h3>
+        <div class="meta">String Representation</div>
+        <p>__str__ returns human-readable string representation of object used by print() and str().</p>
+      </section>
+
+      <section class="section" id="q23">
+        <h3>Q23: What is __repr__? <span class="badge">oop</span></h3>
+        <div class="meta">Debugging</div>
+        <p>__repr__ returns unambiguous debugging string representation of object for developer use.</p>
+      </section>
+
+      <section class="section" id="q24">
+        <h3>Q24: What is __name__? <span class="badge">basics</span></h3>
+        <div class="meta">Script Execution</div>
+        <p>__name__ is set to '__main__' when script runs directly, allowing you to write code that runs only in that case.</p>
+      </section>
+
+      <section class="section" id="q25">
+        <h3>Q25: What is threading? <span class="badge">concurrency</span></h3>
+        <div class="meta">Parallelism</div>
+        <p>Threading module enables lightweight threads for I/O-bound concurrency, limited by GIL for CPU-bound tasks.</p>
+      </section>
+
+      <section class="section" id="q26">
+        <h3>Q26: What is multiprocessing? <span class="badge">concurrency</span></h3>
+        <div class="meta">Parallelism</div>
+        <p>Multiprocessing module enables true parallelism using separate processes to bypass GIL limitations.</p>
+      </section>
+
+      <section class="section" id="q27">
+        <h3>Q27: What is GIL? <span class="badge">advanced</span></h3>
+        <div class="meta">Python Internals</div>
+        <p>Global Interpreter Lock prevents multiple threads from executing Python bytecode simultaneously in CPython.</p>
+      </section>
+
+      <section class="section" id="q28">
+        <h3>Q28: What is pip? <span class="badge">tools</span></h3>
+        <div class="meta">Package Management</div>
+        <p>pip is Python package installer used to download and install dependencies from PyPI.</p>
+      </section>
+
+      <section class="section" id="q29">
+        <h3>Q29: What are virtual environments? <span class="badge">tools</span></h3>
+        <div class="meta">Dependency Management</div>
+        <p>Virtual environments provide isolated Python installations with separate dependencies per project using venv.</p>
+      </section>
+
+      <section class="section" id="q30">
+        <h3>Q30: What is requirements.txt? <span class="badge">tools</span></h3>
+        <div class="meta">Dependency Tracking</div>
+        <p>requirements.txt lists project dependencies used by pip install -r to install all packages at once.</p>
+      </section>
+
+      <section class="section" id="q31">
+        <h3>Q31: What is pyproject.toml? <span class="badge">tools</span></h3>
+        <div class="meta">Project Config</div>
+        <p>pyproject.toml is the modern configuration file for Python packaging and build system settings.</p>
+      </section>
+
+      <section class="section" id="q32">
+        <h3>Q32: What is __slots__? <span class="badge">advanced</span></h3>
+        <div class="meta">Memory Optimization</div>
+        <p>__slots__ restricts dynamic attributes on class instances and can significantly reduce memory overhead.</p>
+      </section>
+
+      <section class="section" id="q33">
+        <h3>Q33: What is dataclass? <span class="badge">oop</span></h3>
+        <div class="meta">Boilerplate Reduction</div>
+        <p>@dataclass decorator auto-generates __init__, __repr__, and other methods to reduce boilerplate code.</p>
+      </section>
+
+      <section class="section" id="q34">
+        <h3>Q34: What is type hinting? <span class="badge">advanced</span></h3>
+        <div class="meta">Code Quality</div>
+        <p>Type hinting adds optional annotations for static type checking using tools like mypy.</p>
+      </section>
+
+      <section class="section" id="q35">
+        <h3>Q35: What is isinstance? <span class="badge">basics</span></h3>
+        <div class="meta">Type Checking</div>
+        <p>isinstance() checks if an object is an instance of a class or tuple of classes.</p>
+      </section>
+
+      <section class="section" id="q36">
+        <h3>Q36: What is issubclass? <span class="badge">oop</span></h3>
+        <div class="meta">Inheritance Checking</div>
+        <p>issubclass() checks if a class is a subclass of another class.</p>
+      </section>
+
+      <section class="section" id="q37">
+        <h3>Q37: What is zip()? <span class="badge">builtins</span></h3>
+        <div class="meta">Iteration</div>
+        <p>zip() combines iterables into tuples and stops at the shortest input.</p>
+      </section>
+
+      <section class="section" id="q38">
+        <h3>Q38: What is enumerate()? <span class="badge">builtins</span></h3>
+        <div class="meta">Iteration</div>
+        <p>enumerate() returns index-element pairs for iterables in a loop.</p>
+      </section>
+
+      <section class="section" id="q39">
+        <h3>Q39: What is map()? <span class="badge">builtins</span></h3>
+        <div class="meta">Functional</div>
+        <p>map() applies a function to each element of an iterable and returns an iterator.</p>
+      </section>
+
+      <section class="section" id="q40">
+        <h3>Q40: What is filter()? <span class="badge">builtins</span></h3>
+        <div class="meta">Functional</div>
+        <p>filter() returns an iterator of items for which a predicate function returns True.</p>
+      </section>
+
+      <section class="section" id="q41">
+        <h3>Q41: What is reduce()? <span class="badge">functional</span></h3>
+        <div class="meta">functools Module</div>
+        <p>reduce() aggregates iterable elements using a binary function to accumulate a single result.</p>
+      </section>
+
+      <section class="section" id="q42">
+        <h3>Q42: What is JSON? <span class="badge">serialization</span></h3>
+        <div class="meta">Data Format</div>
+        <p>JSON module provides json.dumps/loads to serialize Python objects to JSON and vice versa.</p>
+      </section>
+
+      <section class="section" id="q43">
+        <h3>Q43: What is pickle? <span class="badge">serialization</span></h3>
+        <div class="meta">Object Serialization</div>
+        <p>pickle module serializes Python objects to byte streams and reconstructs them for storage.</p>
+      </section>
+
+      <section class="section" id="q44">
+        <h3>Q44: What is pathlib? <span class="badge">filesystem</span></h3>
+        <div class="meta">File Paths</div>
+        <p>pathlib provides object-oriented file path handling instead of string manipulation.</p>
+      </section>
+
+      <section class="section" id="q45">
+        <h3>Q45: What is datetime? <span class="badge">builtins</span></h3>
+        <div class="meta">Time Handling</div>
+        <p>datetime module provides classes for working with dates, times, and timedeltas.</p>
+      </section>
+
+      <section class="section" id="q46">
+        <h3>Q46: What is re (regex)? <span class="badge">builtins</span></h3>
+        <div class="meta">Pattern Matching</div>
+        <p>re module provides regular expression matching and substitution capabilities.</p>
+      </section>
+
+      <section class="section" id="q47">
+        <h3>Q47: What is list slicing? <span class="badge">basics</span></h3>
+        <div class="meta">Sequence Operations</div>
+        <p>Slicing uses [start:stop:step] syntax to extract subsections from sequences.</p>
+      </section>
+
+      <section class="section" id="q48">
+        <h3>Q48: What is unpacking? <span class="badge">idioms</span></h3>
+        <div class="meta">Sequence Operations</div>
+        <p>Unpacking uses * or ** to expand iterables and mappings in function calls and assignments.</p>
+      </section>
+
+      <section class="section" id="q49">
+        <h3>Q49: What is copy module? <span class="badge">advanced</span></h3>
+        <div class="meta">Object Copying</div>
+        <p>copy module provides shallow and deep copy operations for flexible object duplication.</p>
+      </section>
+
+      <section class="section" id="q50">
+        <h3>Q50: Value vs Reference? <span class="badge">basics</span></h3>
+        <div class="meta">Memory Model</div>
+        <p>Assignment binds names to objects; mutable objects can change when referenced by multiple names.</p>
+      </section>
+
+      <section class="section" id="q51">
+        <h3>Q51: What is immutable? <span class="badge">basics</span></h3>
+        <div class="meta">Data Types</div>
+        <p>Immutable objects cannot be modified after creation (str, tuple, frozenset, int).</p>
+      </section>
+
+      <section class="section" id="q52">
+        <h3>Q52: What is contextlib? <span class="badge">advanced</span></h3>
+        <div class="meta">Context Managers</div>
+        <p>contextlib provides utilities to create and manage context managers and ExitStack.</p>
+      </section>
+
+      <section class="section" id="q53">
+        <h3>Q53: What is namedtuple? <span class="badge">collections</span></h3>
+        <div class="meta">Tuple Variant</div>
+        <p>namedtuple factory creates tuple subclasses with named fields for better readability.</p>
+      </section>
+
+      <section class="section" id="q54">
+        <h3>Q54: What is Enum? <span class="badge">advanced</span></h3>
+        <div class="meta">Constants</div>
+        <p>Enum module defines enumerated constant values with symbolic constants in classes.</p>
+      </section>
+
+      <section class="section" id="q55">
+        <h3>Q55: What is abc? <span class="badge">oop</span></h3>
+        <div class="meta">Abstract Base Classes</div>
+        <p>abc module enables defining abstract base classes and abstract methods for enforcing interfaces.</p>
+      </section>
+
+      <section class="section" id="q56">
+        <h3>Q56: What is subprocess? <span class="badge">system</span></h3>
+        <div class="meta">Process Execution</div>
+        <p>subprocess module spawns processes and interacts with OS commands.</p>
+      </section>
+
+      <section class="section" id="q57">
+        <h3>Q57: What is requests? <span class="badge">libraries</span></h3>
+        <div class="meta">HTTP Client</div>
+        <p>requests is a popular third-party library for making HTTP requests.</p>
+      </section>
+
+      <section class="section" id="q58">
+        <h3>Q58: What is Flask? <span class="badge">web</span></h3>
+        <div class="meta">Web Framework</div>
+        <p>Flask is a lightweight web framework for building REST APIs and web applications.</p>
+      </section>
+
+      <section class="section" id="q59">
+        <h3>Q59: What is Django? <span class="badge">web</span></h3>
+        <div class="meta">Web Framework</div>
+        <p>Django is a full-featured web framework for building production-ready applications.</p>
+      </section>
+
+      <section class="section" id="q60">
+        <h3>Q60: What is FastAPI? <span class="badge">web</span></h3>
+        <div class="meta">Modern Web Framework</div>
+        <p>FastAPI is optimized for high-performance async APIs using pydantic for data validation.</p>
+      </section>
+
+      <section class="section" id="q61">
+        <h3>Q61: What is connection pooling? <span class="badge">database</span></h3>
+        <div class="meta">Database Optimization</div>
+        <p>Connection pooling reuses database connections to reduce overhead and improve performance.</p>
+      </section>
+
+      <section class="section" id="q62">
+        <h3>Q62: What is ORM? <span class="badge">database</span></h3>
+        <div class="meta">Database Abstraction</div>
+        <p>Object-Relational Mapping maps Python objects to database rows for easier database interaction.</p>
+      </section>
+
+      <section class="section" id="q63">
+        <h3>Q63: What is SQLAlchemy? <span class="badge">database</span></h3>
+        <div class="meta">ORM Library</div>
+        <p>SQLAlchemy is a powerful Python ORM and SQL toolkit for database operations.</p>
+      </section>
+
+      <section class="section" id="q64">
+        <h3>Q64: What is unit testing? <span class="badge">testing</span></h3>
+        <div class="meta">Code Testing</div>
+        <p>Unit testing tests small code units (functions/methods) with frameworks like unittest or pytest.</p>
+      </section>
+
+      <section class="section" id="q65">
+        <h3>Q65: What is integration testing? <span class="badge">testing</span></h3>
+        <div class="meta">Code Testing</div>
+        <p>Integration testing verifies combined components and their interactions across modules.</p>
+      </section>
+
+      <section class="section" id="q66">
+        <h3>Q66: What is pytest? <span class="badge">testing</span></h3>
+        <div class="meta">Testing Framework</div>
+        <p>pytest is a popular testing framework with simpler syntax and powerful fixtures.</p>
+      </section>
+
+      <section class="section" id="q67">
+        <h3>Q67: What is mock? <span class="badge">testing</span></h3>
+        <div class="meta">Testing Tools</div>
+        <p>unittest.mock provides mocking capabilities to simulate objects for testing.</p>
+      </section>
+
+      <section class="section" id="q68">
+        <h3>Q68: What is deadlock? <span class="badge">concurrency</span></h3>
+        <div class="meta">Concurrency Issues</div>
+        <p>Deadlock occurs when threads wait indefinitely for resources locked by each other.</p>
+      </section>
+
+      <section class="section" id="q69">
+        <h3>Q69: What is race condition? <span class="badge">concurrency</span></h3>
+        <div class="meta">Concurrency Issues</div>
+        <p>Race condition happens with unsynchronized shared data access in concurrent code.</p>
+      </section>
+
+      <section class="section" id="q70">
+        <h3>Q70: What is serialization? <span class="badge">data</span></h3>
+        <div class="meta">Data Persistence</div>
+        <p>Serialization converts object data to storable format (JSON, pickle, msgpack).</p>
+      </section>
+
+      <section class="section" id="q71">
+        <h3>Q71: What is deserialization? <span class="badge">data</span></h3>
+        <div class="meta">Data Persistence</div>
+        <p>Deserialization rebuilds objects from persisted data format.</p>
+      </section>
+
+      <section class="section" id="q72">
+        <h3>Q72: What is Cython? <span class="badge">performance</span></h3>
+        <div class="meta">Performance Optimization</div>
+        <p>Cython is a superset of Python to compile code to C for significant performance improvements.</p>
+      </section>
+
+      <section class="section" id="q73">
+        <h3>Q73: What is asyncio? <span class="badge">concurrency</span></h3>
+        <div class="meta">Async Programming</div>
+        <p>asyncio library provides asynchronous I/O using async/await and event loops.</p>
+      </section>
+
+      <section class="section" id="q74">
+        <h3>Q74: What is await? <span class="badge">advanced</span></h3>
+        <div class="meta">Async/Await</div>
+        <p>await pauses coroutine until the awaited awaitable completes.</p>
+      </section>
+
+      <section class="section" id="q75">
+        <h3>Q75: What is async def? <span class="badge">advanced</span></h3>
+        <div class="meta">Async/Await</div>
+        <p>async def defines an asynchronous coroutine function that can use await.</p>
+      </section>
+
+      <section class="section" id="q76">
+        <h3>Q76: What is pydantic? <span class="badge">libraries</span></h3>
+        <div class="meta">Data Validation</div>
+        <p>pydantic provides data validation and settings management using Python type annotations.</p>
+      </section>
+
+      <section class="section" id="q77">
+        <h3>Q77: What is Black? <span class="badge">tools</span></h3>
+        <div class="meta">Code Formatting</div>
+        <p>Black is a code formatter enforcing consistent style for Python projects automatically.</p>
+      </section>
+
+      <section class="section" id="q78">
+        <h3>Q78: What is isort? <span class="badge">tools</span></h3>
+        <div class="meta">Import Management</div>
+        <p>isort automatically sorts imports alphabetically and keeps imports organized.</p>
+      </section>
+
+      <section class="section" id="q79">
+        <h3>Q79: What is mypy? <span class="badge">tools</span></h3>
+        <div class="meta">Type Checking</div>
+        <p>mypy is a static type checker that validates type hints in Python code.</p>
+      </section>
+
+      <section class="section" id="q80">
+        <h3>Q80: What is Bandit? <span class="badge">security</span></h3>
+        <div class="meta">Security Linting</div>
+        <p>Bandit is a security linter for Python code detecting vulnerabilities.</p>
+      </section>
+
+      <section class="section" id="q81">
+        <h3>Q81: What is openpyxl? <span class="badge">libraries</span></h3>
+        <div class="meta">Excel Library</div>
+        <p>openpyxl is a library to read and write Excel files programmatically.</p>
+      </section>
+
+      <section class="section" id="q82">
+        <h3>Q82: What is garbage collection? <span class="badge">advanced</span></h3>
+        <div class="meta">Memory Management</div>
+        <p>Garbage collection automatically reclaims memory by removing unreferenced objects.</p>
+      </section>
+
+      <section class="section" id="q83">
+        <h3>Q83: What is memory profiling? <span class="badge">performance</span></h3>
+        <div class="meta">Performance Analysis</div>
+        <p>Memory profiling tools track memory usage to identify leaks and optimize usage.</p>
+      </section>
+
+      <section class="section" id="q84">
+        <h3>Q84: What is Protocol? <span class="badge">advanced</span></h3>
+        <div class="meta">Structural Typing</div>
+        <p>Protocol from typing module enables structural typing for duck-type compatibility.</p>
+      </section>
+
+      <section class="section" id="q85">
+        <h3>Q85: What is monkey patching? <span class="badge">advanced</span></h3>
+        <div class="meta">Runtime Modification</div>
+        <p>Monkey patching involves dynamically modifying modules or classes at runtime.</p>
+      </section>
+
+      <section class="section" id="q86">
+        <h3>Q86: What is lazy loading? <span class="badge">optimization</span></h3>
+        <div class="meta">Resource Management</div>
+        <p>Lazy loading defers initialization until first use to save resources.</p>
+      </section>
+
+      <section class="section" id="q87">
+        <h3>Q87: What is __enter__/__exit__? <span class="badge">oop</span></h3>
+        <div class="meta">Context Managers</div>
+        <p>Context manager methods for resource acquisition and cleanup with with statement.</p>
+      </section>
+
+      <section class="section" id="q88">
+        <h3>Q88: What is __iter__/__next__? <span class="badge">oop</span></h3>
+        <div class="meta">Iterator Protocol</div>
+        <p>Iterator protocol methods for making objects iterable in loops.</p>
+      </section>
+
+      <section class="section" id="q89">
+        <h3>Q89: What is mutable default argument? <span class="badge">gotchas</span></h3>
+        <div class="meta">Common Mistake</div>
+        <p>Default mutable arguments persist across calls; use None sentinel as workaround.</p>
+      </section>
+
+      <section class="section" id="q90">
+        <h3>Q90: What is default_factory? <span class="badge">advanced</span></h3>
+        <div class="meta">Dataclass Fields</div>
+        <p>default_factory in dataclass defines default values for mutable fields.</p>
+      </section>
+
+      <section class="section" id="q91">
+        <h3>Q91: What is __all__? <span class="badge">modules</span></h3>
+        <div class="meta">Module API</div>
+        <p>__all__ defines public API symbols exportable with from module import *.</p>
+      </section>
+
+      <section class="section" id="q92">
+        <h3>Q92: What is code coverage? <span class="badge">testing</span></h3>
+        <div class="meta">Test Metrics</div>
+        <p>Code coverage percentage represents how much code is executed during tests (measured by coverage.py).</p>
+      </section>
+
+      <section class="section" id="q93">
+        <h3>Q93: What is CI/CD? <span class="badge">devops</span></h3>
+        <div class="meta">Automation</div>
+        <p>Continuous Integration/Deployment automates testing and deployment on code changes.</p>
+      </section>
+
+      <section class="section" id="q94">
+        <h3>Q94: What isinstance mutable types? <span class="badge">types</span></h3>
+        <div class="meta">Type Properties</div>
+        <p>Mutable types (list, dict, set) can be modified after creation.</p>
+      </section>
+
+      <section class="section" id="q95">
+        <h3>Q95: What is production deployment? <span class="badge">devops</span></h3>
+        <div class="meta">Deployment</div>
+        <p>Use Docker, CI/CD pipelines, and environment config to deploy stable Python services.</p>
+      </section>
+
+      <section class="section" id="q96">
+        <h3>Q96: What is getattr/setattr? <span class="badge">advanced</span></h3>
+        <div class="meta">Dynamic Attributes</div>
+        <p>getattr/setattr dynamically access and set object attributes by name.</p>
+      </section>
+
+      <section class="section" id="q97">
+        <h3>Q97: What is hasattr? <span class="badge">basics</span></h3>
+        <div class="meta">Attribute Checking</div>
+        <p>hasattr checks if object has a specific attribute by name.</p>
+      </section>
+
+      <section class="section" id="q98">
+        <h3>Q98: What is vars? <span class="badge">advanced</span></h3>
+        <div class="meta">Object Inspection</div>
+        <p>vars() returns __dict__ of object or module showing all attributes.</p>
+      </section>
+
+      <section class="section" id="q99">
+        <h3>Q99: What is dir? <span class="badge">basics</span></h3>
+        <div class="meta">Introspection</div>
+        <p>dir() lists names defined in module or attributes of object.</p>
+      </section>
+
+      <section class="section" id="q100">
+        <h3>Q100: What is inspect? <span class="badge">advanced</span></h3>
+        <div class="meta">Code Inspection</div>
+        <p>inspect module provides functions for getting source code, signatures, and debugging info.</p>
       </section>
 
       <footer>
