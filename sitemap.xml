@@ -1,49 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://skills.enviz.in/index.html</loc>
+    <loc>https://skills.enviz.in</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://skills.enviz.in/angular/index.html</loc>
+    <loc>https://skills.enviz.in/angular</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://skills.enviz.in/go/index.html</loc>
+    <loc>https://skills.enviz.in/go</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://skills.enviz.in/java/index.html</loc>
+    <loc>https://skills.enviz.in/java</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://skills.enviz.in/python/index.html</loc>
+    <loc>https://skills.enviz.in/python</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://skills.enviz.in/react/index.html</loc>
+    <loc>https://skills.enviz.in/react</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://skills.enviz.in/spring%20boot/index.html</loc>
+    <loc>https://skills.enviz.in/spring%20boot</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://skills.enviz.in/sql/index.html</loc>
+    <loc>https://skills.enviz.in/sql</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

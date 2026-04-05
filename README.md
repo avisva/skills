@@ -47,19 +47,19 @@ Each tutorial page is optimized to attract:
 ## Available Tutorials
 
 ### Web Development
-- **Angular** ([angular/](angular/index.html)) - Angular framework tutorials and best practices
-- **React** ([react/](react/index.html)) - React framework tutorials and components
+- **Angular** ([angular/](angular)) - Angular framework tutorials and best practices
+- **React** ([react/](react)) - React framework tutorials and components
 
 ### Programming Languages
-- **Java** ([java/](java/index.html)) - Java & J2EE Tutorial
-- **Python** ([python/](python/index.html)) - Python Tutorial
-- **Go** ([go/](go/index.html)) - Go programming language tutorials
+- **Java** ([java/](java)) - Java & J2EE Tutorial
+- **Python** ([python/](python)) - Python Tutorial
+- **Go** ([go/](go)) - Go programming language tutorials
 
 ### Backend Framework
-- **Spring Boot** ([spring boot/](spring%20boot/index.html)) - Spring Boot framework tutorials
+- **Spring Boot** ([spring boot/](spring%20boot)) - Spring Boot framework tutorials
 
 ### Databases
-- **SQL** ([sql/](sql/index.html)) - SQL database tutorials and queries
+- **SQL** ([sql/](sql)) - SQL database tutorials and queries
 
 ## Project Structure
 
@@ -113,7 +113,7 @@ Visit the live version at your GitHub Pages domain (configured via CNAME file).
 
 ## Available Tutorials
 
-### [Java & J2EE](java/index.html)
+### [Java & J2EE](java)
 - Platform Overview
 - Syntax & Data Types
 - OOP Concepts
@@ -123,7 +123,7 @@ Visit the live version at your GitHub Pages domain (configured via CNAME file).
 - File I/O
 - J2EE Basics
 
-### [Python](python/index.html)
+### [Python](python)
 - Introduction & Setup
 - Data Types & Variables
 - Functions & Scope
@@ -132,7 +132,7 @@ Visit the live version at your GitHub Pages domain (configured via CNAME file).
 - File Handling
 - Web Development Basics
 
-### [HTML5](html5/index.html)
+### [HTML5](html5)
 - HTML Basics
 - Semantic Elements
 - Forms & Input Types
@@ -140,7 +140,7 @@ Visit the live version at your GitHub Pages domain (configured via CNAME file).
 - Multimedia
 - APIs
 
-### [CSS](css/index.html)
+### [CSS](css)
 - Selectors & Properties
 - Box Model
 - Flexbox
@@ -148,7 +148,7 @@ Visit the live version at your GitHub Pages domain (configured via CNAME file).
 - Animations & Transitions
 - Responsive Design
 
-### [JavaScript](javascript/index.html)
+### [JavaScript](javascript)
 - Syntax Fundamentals
 - DOM Manipulation
 - Events & Handlers
