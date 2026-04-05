@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P9RFVBCR7D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P9RFVBCR7D');
+</script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Skill Booster Home</title>
@@ -191,11 +200,16 @@
 
       footer {
         border-top: 1px solid rgba(255, 255, 255, 0.14);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.14);
         margin-top: 24px;
         padding-top: 10px;
+        margin-bottom: 24px;
+        padding-bottom: 10px;
         font-size: 11px;
         color: rgba(248, 250, 252, 0.72);
       }
+      .footer-logo { height: 40px; /* adjust logo size */ margin-top: 5px; /* spacing above logo */ transition: transform 0.3s ease; /* smooth hover effect */ } 
+      .footer-logo:hover { transform: scale(1.1); /* slight zoom on hover */ }
     </style>
   </head>
   <body>
@@ -304,6 +318,10 @@
       <footer>
         © 2026 skills.enviz.in. All rights reserved.
       </footer>
+      <div align="center" style="text-align: center; margin-top: 8px; color: rgba(248, 250, 252, 0.72); font-size: 11px;">
+      ⚡powered by<br>
+      <a href="https://enviz.in" target="_blank"><img src="enviz-l-logo.png" alt="enviz.in" class="footer-logo"></a>
+      </div> 
     </main>
   </body>
 </html>
