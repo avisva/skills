@@ -1,32 +1,57 @@
 # Skill Booster - Quick Reference Tutorials
 
-A modern, clean tutorial collection for web development and programming languages. Perfect for quick reference during interviews or learning.
+A modern, clean tutorial collection for web development, programming languages, and databases. Perfect for quick reference during interviews or learning.
 
 ## Features
 
 - **Modern Design** - Dark theme with vibrant gradient accents
-- **Multiple Languages** - Covers Java, Python, HTML5, CSS, and JavaScript
+- **Multiple Languages** - Covers Angular, Go, Java, Python, React, Spring Boot, and SQL
 - **Professional Branding** - Consistent styling with animated rocket logo
 - **Responsive Layout** - Works seamlessly on all devices
 - **Quick Navigation** - Easy-to-use navigation across tutorials
 - **Code Examples** - Real-world code snippets and practical examples
 
+## Available Tutorials
+
+### Web Development
+- **Angular** ([angular/](angular/index.html)) - Angular framework tutorials and best practices
+- **React** ([react/](react/index.html)) - React framework tutorials and components
+
+### Programming Languages
+- **Java** ([java/](java/index.html)) - Java & J2EE Tutorial
+- **Python** ([python/](python/index.html)) - Python Tutorial
+- **Go** ([go/](go/index.html)) - Go programming language tutorials
+
+### Backend Framework
+- **Spring Boot** ([spring boot/](spring%20boot/index.html)) - Spring Boot framework tutorials
+
+### Databases
+- **SQL** ([sql/](sql/index.html)) - SQL database tutorials and queries
+
 ## Project Structure
 
 ```
-tutorials/
-├── index.html                 # Homepage
+skills/
+├── index.html                      # Homepage
+├── angular/
+│   └── index.html                 # Angular Tutorial
+├── go/
+│   └── index.html                 # Go Tutorial
 ├── java/
-│   └── index.html            # Java & J2EE Tutorial
+│   ├── index.html                 # Java Tutorial
+│   └── index copy.html            # Backup copy
 ├── python/
-│   └── index.html            # Python Tutorial
-├── html5/
-│   └── index.html            # HTML5 Tutorial
-├── css/
-│   └── index.html            # CSS Tutorial
-├── javascript/
-│   └── index.html            # JavaScript Tutorial
-└── README.md                 # This file
+│   └── index.html                 # Python Tutorial
+├── react/
+│   └── index.html                 # React Tutorial
+├── spring boot/
+│   └── index.html                 # Spring Boot Tutorial
+├── sql/
+│   └── index.html                 # SQL Tutorial
+├── CNAME                          # GitHub Pages domain config
+├── enviz-l-logo.png               # Project logo
+├── README.md                      # This file
+└── .git/                          # Git repository
 ```
 
 ## Getting Started
@@ -48,6 +73,10 @@ python -m http.server 8000
 ```
 
 Then visit `http://localhost:8000` in your browser.
+
+## Live Access
+
+Visit the live version at your GitHub Pages domain (configured via CNAME file).
 
 ## Available Tutorials
 
