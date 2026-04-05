@@ -10,6 +10,17 @@ A modern, clean tutorial collection for web development, programming languages, 
 - **Responsive Layout** - Works seamlessly on all devices
 - **Quick Navigation** - Easy-to-use navigation across tutorials
 - **Code Examples** - Real-world code snippets and practical examples
+- **SEO Optimized** - Includes sitemap.xml for search engine indexing
+
+## SEO & Meta Tags
+
+The project includes a `sitemap.xml` file that lists all available pages for search engine crawling. The sitemap contains:
+- Homepage and all tutorial pages
+- Last modification dates
+- Change frequencies and priority levels
+- Proper URL encoding for special characters
+
+**Sitemap URL:** `https://skills.enviz.in/sitemap.xml`
 
 ## Available Tutorials
 
