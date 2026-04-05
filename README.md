@@ -11,6 +11,7 @@ A modern, clean tutorial collection for web development, programming languages, 
 - **Quick Navigation** - Easy-to-use navigation across tutorials
 - **Code Examples** - Real-world code snippets and practical examples
 - **SEO Optimized** - Includes sitemap.xml for search engine indexing
+- **Custom Favicon** - Professional rocket favicon for brand recognition
 
 ## SEO & Meta Tags
 
