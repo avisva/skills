@@ -25,8 +25,10 @@ The project includes comprehensive SEO optimization for interview preparation:
 - **Canonical URLs**: Proper URL canonicalization for search engine indexing
 - **Robots Meta Tags**: Configured for optimal search engine crawling
 - **Sitemap Integration**: All pages linked in sitemap.xml for better discoverability
+- **Robots.txt**: Configured to guide search engine crawlers and prevent indexing of unnecessary files
 
 **Sitemap URL:** `https://skills.enviz.in/sitemap.xml`
+**Robots.txt URL:** `https://skills.enviz.in/robots.txt`
 
 ### SEO Strategy for Interview Preparation
 

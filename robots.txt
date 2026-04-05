@@ -1,0 +1,11 @@
+# Robots.txt for Skill Booster - Interview Preparation Guide
+# https://skills.enviz.in
+
+# Allow all search engines to crawl the entire site
+User-agent: *
+Allow: /
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Reference to sitemap for better discoverability
+Sitemap: https://skills.enviz.in/sitemap.xml
