@@ -14,13 +14,34 @@ A modern, clean tutorial collection for web development, programming languages, 
 
 ## SEO & Meta Tags
 
-The project includes a `sitemap.xml` file that lists all available pages for search engine crawling. The sitemap contains:
-- Homepage and all tutorial pages
-- Last modification dates
-- Change frequencies and priority levels
-- Proper URL encoding for special characters
+The project includes comprehensive SEO optimization for interview preparation:
+
+- **Interview-Focused Titles**: Each page title is optimized for interview-related searches
+- **Detailed Meta Descriptions**: Compelling descriptions targeting both interviewers and interviewees
+- **Strategic Keywords**: Relevant keywords for programming interviews, coding questions, and technical interviews
+- **Open Graph Tags**: Optimized for social media sharing with interview-focused content
+- **Twitter Cards**: Enhanced social sharing for interview preparation content
+- **Canonical URLs**: Proper URL canonicalization for search engine indexing
+- **Robots Meta Tags**: Configured for optimal search engine crawling
+- **Sitemap Integration**: All pages linked in sitemap.xml for better discoverability
 
 **Sitemap URL:** `https://skills.enviz.in/sitemap.xml`
+
+### SEO Strategy for Interview Preparation
+
+Each tutorial page is optimized to attract:
+- **Interviewers** looking for comprehensive question banks
+- **Interviewees** seeking quick reference guides before interviews
+- **Developers** preparing for technical interviews
+- **Students** learning programming concepts for job interviews
+
+### Search Engine Optimization Features
+
+- **Target Keywords**: "interview questions", "coding interview", "technical interview", "programming interview"
+- **Long-tail Keywords**: Specific to each technology (e.g., "Python interview questions", "Java coding interview")
+- **User Intent**: Pages optimized for both informational and transactional search intents
+- **Mobile Optimization**: Responsive design with proper viewport meta tags
+- **Performance**: Fast-loading pages with optimized meta tags
 
 ## Available Tutorials
 
