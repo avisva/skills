@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P9RFVBCR7D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P9RFVBCR7D');
+</script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="../favicon.png" />
+    <title>Interview Essentials & Non-Technical Questions and Answers - Comprehensive Guide | Avisva Skills</title>
+    <meta name="description" content="Master interview essentials and non-technical questions with comprehensive interview questions and answers! Learn professional communication, team collaboration, system design thinking, and career development. Essential interview guide for professionals preparing for technical and leadership interviews." />
+    <meta name="keywords" content="interview essentials, non-technical interview questions, professional communication interview, team collaboration, career development interview, system design thinking, STAR method interview, behavioral interview questions" />
+    <meta name="author" content="Skill Booster" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+    <link rel="canonical" href="https://skills.enviz.in/general" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://skills.enviz.in/general" />
+    <meta property="og:title" content="Interview Essentials & Non-Technical Questions | Interview Guide" />
+    <meta property="og:description" content="Master interview essentials and non-technical questions with comprehensive interview questions and answers covering professional communication, team collaboration, and career development." />
+    <meta property="og:image" content="https://skills.enviz.in/enviz-l-logo.png" />
+    <meta property="og:site_name" content="Skill Booster" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://skills.enviz.in/general" />
+    <meta property="twitter:title" content="Interview Essentials & Non-Technical Questions" />
+    <meta property="twitter:description" content="Master interview essentials with comprehensive interview questions and answers covering professional communication and team collaboration." />
+    <meta property="twitter:image" content="https://skills.enviz.in/enviz-l-logo.png" />
+
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#22c55e" />
+    <meta name="msapplication-TileColor" content="#22c55e" />
+    <link rel="icon" type="image/png" href="/favicon.ico" />
+    <link rel="sitemap" type="application/xml" href="https://skills.enviz.in/sitemap.xml" />
+    <style>
+      :root {
+        --bg: #070a17;
+        --text: #f8fafc;
+        --muted: rgba(248, 250, 252, 0.76);
+        --accent: #22c55e;
+        --accent-2: #38bdf8;
+        --accent-3: #a78bfa;
+        --header-h: 70px;
+        --gap: 10px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: radial-gradient(circle at 15% 0%, rgba(56, 189, 248, 0.25), transparent 45%),
+          radial-gradient(circle at 85% 0%, rgba(167, 139, 250, 0.24), transparent 50%),
+          radial-gradient(circle at 50% 120%, rgba(34, 197, 94, 0.18), transparent 55%),
+          var(--bg);
+        color: var(--text);
+      }
+
+      a {
+        color: var(--accent-2);
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        height: var(--header-h);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background:
+          radial-gradient(circle at 10% 0%, rgba(56, 189, 248, 0.55), transparent 55%),
+          radial-gradient(circle at 90% 0%, rgba(167, 139, 250, 0.55), transparent 55%),
+          linear-gradient(90deg, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.86));
+        color: var(--text);
+        padding: 14px 20px;
+        box-shadow: 0 18px 36px rgba(0, 0, 0, 0.55);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .header-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 65px;
+        height: 65px;
+        flex-shrink: 0;
+      }
+
+      .header-logo svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      .header-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 28px;
+        font-weight: 500;
+        font-family: 'Segoe UI', 'Helvetica Neue', -apple-system, sans-serif;
+        letter-spacing: -0.8px;
+        color: #f8fcf9;
+        text-shadow: 0 2px 8px rgba(251, 3, 251, 0.591);
+      }
+
+      header p {
+        margin: 4px 0 0;
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      nav {
+        position: fixed;
+        top: calc(var(--header-h) + var(--gap));
+        left: 0;
+        right: 0;
+        z-index: 9;
+        padding: 6px 12px;
+        background: rgba(15, 23, 42, 0.7);
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(12px);
+      }
+
+      nav a {
+        display: inline-block;
+        padding: 8px 12px;
+        font-size: 12px;
+        color: rgba(248, 250, 252, 0.9);
+        border-radius: 999px;
+      }
+
+      nav a.active {
+        background: linear-gradient(90deg, rgba(34, 197, 94, 0.95), rgba(56, 189, 248, 0.9));
+        color: #06121a;
+        box-shadow: 0 10px 18px rgba(34, 197, 94, 0.25),
+          0 10px 22px rgba(56, 189, 248, 0.18);
+        font-weight: 700;
+      }
+
+      main {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: calc(var(--header-h) + var(--gap) + 56px + 22px) 16px 40px;
+      }
+
+      h2 {
+        font-size: 18px;
+        margin-top: 0;
+      }
+
+      .category-title {
+        font-size: 16px;
+        margin-top: 28px;
+        margin-bottom: 12px;
+        color: var(--accent-2);
+        font-weight: 600;
+      }
+
+      main p {
+        font-size: 12px;
+        line-height: 1.6;
+      }
+
+      .intro-text {
+        font-size: 11px;
+        color: #bbb;
+      }
+
+      .section {
+        margin-bottom: 24px;
+        padding: 12px 16px 16px;
+        background: rgba(255, 255, 255, 0.06);
+        border-left: 4px solid rgba(56, 189, 248, 0.85);
+        border-radius: 14px;
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+      }
+
+      .section h3 {
+        margin-top: 0;
+        font-size: 16px;
+      }
+
+      .badge {
+        display: inline-block;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        color: #06121a;
+        background: linear-gradient(90deg, rgba(34, 197, 94, 0.95), rgba(56, 189, 248, 0.9));
+        padding: 2px 6px;
+        border-radius: 3px;
+        margin-left: 8px;
+      }
+
+      .meta {
+        font-size: 11px;
+        color: rgba(248, 250, 252, 0.7);
+        margin-bottom: 4px;
+      }
+
+      .section p {
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      ul {
+        font-size: 12px;
+      }
+
+      footer {
+        border-top: 1px solid rgba(255, 255, 255, 0.14);
+        margin-top: 20px;
+        padding-top: 10px;
+        font-size: 11px;
+        color: rgba(248, 250, 252, 0.72);
+      }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Interview Essentials & Non-Technical Questions and Answers - Comprehensive Guide",
+      "description": "Master interview essentials and non-technical questions with comprehensive interview questions and answers! Learn professional communication, team collaboration, system design thinking, and career development. Essential interview guide for professionals preparing for technical and leadership interviews.",
+      "author": {
+        "@type": "Person",
+        "name": "Avisva"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Avisva Skills"
+      },
+      "datePublished": "2026-01-01",
+      "dateModified": "2026-01-01",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://skills.enviz.in/general/"
+      },
+      "url": "https://skills.enviz.in/general/"
+    }
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="header-logo">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="35" fill="none" stroke="url(#grad)" stroke-width="1.2" opacity="0.8"/>
+          <g transform="translate(50, 50)">
+            <circle cx="0" cy="-15" r="8" fill="#22c55e" opacity="0.9"/>
+            <path d="M -12,-8 L -15,0 L -8,0 Z" fill="#38bdf8" opacity="0.85"/>
+            <path d="M 12,-8 L 15,0 L 8,0 Z" fill="#38bdf8" opacity="0.85"/>
+            <path d="M -8,8 L -12,18 L -4,12 Z" fill="#a78bfa" opacity="0.8"/>
+            <path d="M 8,8 L 12,18 L 4,12 Z" fill="#a78bfa" opacity="0.8"/>
+            <circle cx="0" cy="0" r="3" fill="#f97316" opacity="0.9"/>
+          </g>
+          <defs>
+            <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#38bdf8;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#22c55e;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="header-content">
+        <h1>Skill Booster</h1>
+        <p>Quick Reference for Interviews...</p>
+      </div>
+    </header>
+
+    <nav>
+      <a href="..">Home</a>
+      <a href="../java">Java</a>
+      <a href="../python">Python</a>
+      <a href="../go">Go</a>
+      <a href="../react">React</a>
+      <a href="../angular">Angular</a>
+      <a href="../sql">SQL</a>
+      <a href="../spring-boot">Spring Boot</a>
+      <a href="../general" class="active">General</a>
+    </nav>
+
+    <main>
+      <h2>Interview Essentials & Non-Technical Questions and Answers</h2>
+
+      <p class="intro-text">Prepare for your interviews with this comprehensive collection of general and non-technical interview questions and answers. Master essential concepts like professional communication, team collaboration, project management, system design thinking, and career development. Whether you're preparing for technical interviews, behavioral assessments, or leadership positions, this guide covers everything from basic self-introduction to advanced system architecture discussions. Boost your confidence with detailed explanations and practical examples for each question.</p>
+
+      <!-- 🟢 General and Basic Questions -->
+      <div class="category-title">🟢 General and Basic Questions (18 Questions)</div>
+
+      <section class="section" id="q1">
+        <h3>Q1: Can you briefly introduce yourself and share your academic and professional background? <span class="badge">basics</span></h3>
+        <div class="meta">Self-Introduction</div>
+        <p>"I completed my degree in Computer Science and have been working as a software developer. My experience includes building web applications, working with databases, and collaborating in agile teams."</p>
+      </section>
+
+      <section class="section" id="q2">
+        <h3>Q2: Tell me about a project you've worked on recently. What was your role, and what technologies did you use? <span class="badge">experience</span></h3>
+        <div class="meta">Project Overview</div>
+        <p>"I worked on an e-commerce application where I developed the order management module using Java and MySQL. A challenge I faced was handling concurrent requests, which I solved by implementing proper database transactions and indexing."</p>
+      </section>
+
+      <section class="section" id="q3">
+        <h3>Q3: Can you describe the overall architecture of your project? How did the different components interact? <span class="badge">architecture</span></h3>
+        <div class="meta">System Design</div>
+        <p>"The project followed a three-tier architecture: the frontend handled user interactions, the backend managed business logic, and the database stored information. The frontend communicated with the backend via APIs, and the backend interacted with the database."</p>
+      </section>
+
+      <section class="section" id="q4">
+        <h3>Q4: If you had to improve or scale your project, what changes would you make? <span class="badge">planning</span></h3>
+        <div class="meta">Scalability Thinking</div>
+        <p>"I would add caching to reduce database load, containerize the application for easier deployment, and use load balancing to handle more users."</p>
+      </section>
+
+      <section class="section" id="q5">
+        <h3>Q5: What's the difference between a database and a file system? When would you use each? <span class="badge">fundamentals</span></h3>
+        <div class="meta">Data Storage Concepts</div>
+        <p>"A database stores structured data with relationships and supports queries, while a file system stores files in directories. Databases are used for applications needing transactions and complex queries, while file systems are better for storing documents or media files."</p>
+      </section>
+
+      <section class="section" id="q6">
+        <h3>Q6: Can you explain the client-server model in simple terms? <span class="badge">fundamentals</span></h3>
+        <div class="meta">Basic Concepts</div>
+        <p>"In the client-server model, the client sends requests, and the server processes them and sends back responses. For example, when you open a website, your browser is the client and the web server provides the page."</p>
+      </section>
+
+      <section class="section" id="q7">
+        <h3>Q7: How did you collaborate with your team during the project? <span class="badge">teamwork</span></h3>
+        <div class="meta">Team Collaboration</div>
+        <p>"We used daily stand-ups to share progress, version control for code collaboration, and regular reviews to ensure quality. Communication was done through chat tools and meetings."</p>
+      </section>
+
+      <section class="section" id="q8">
+        <h3>Q8: What new skills or tools did you learn while working on it? <span class="badge">learning</span></h3>
+        <div class="meta">Professional Growth</div>
+        <p>"I learned how to use Docker for containerization and improved my knowledge of Git workflows for managing code changes."</p>
+      </section>
+
+      <section class="section" id="q9">
+        <h3>Q9: When you're assigned a new task or feature, how do you usually begin working on it? <span class="badge">methodology</span></h3>
+        <div class="meta">Work Process</div>
+        <p>"I start by understanding the requirements, breaking them into smaller steps, and then planning the implementation before writing code."</p>
+      </section>
+
+      <section class="section" id="q10">
+        <h3>Q10: Can you explain how you break down a larger project into smaller, manageable tasks? <span class="badge">planning</span></h3>
+        <div class="meta">Task Management</div>
+        <p>"I divide the project into modules, then break each module into features, and finally into individual tasks. This makes it easier to track progress and assign responsibilities."</p>
+      </section>
+
+      <section class="section" id="q11">
+        <h3>Q11: What steps do you take to test your code before submitting it? <span class="badge">quality</span></h3>
+        <div class="meta">Testing Practices</div>
+        <p>"I run the code locally, write unit tests for key functions, and check edge cases to ensure it works correctly."</p>
+      </section>
+
+      <section class="section" id="q12">
+        <h3>Q12: Have you written unit tests or integration tests? Can you explain the difference? <span class="badge">testing</span></h3>
+        <div class="meta">Testing Types</div>
+        <p>"Yes. Unit tests check individual functions or modules in isolation, while integration tests verify that different modules work together correctly."</p>
+      </section>
+
+      <section class="section" id="q13">
+        <h3>Q13: Can you walk me through the process of creating a pull request in your past projects? <span class="badge">collaboration</span></h3>
+        <div class="meta">Code Review Process</div>
+        <p>"I pushed my changes to a branch, created a pull request on GitHub, added a description of the changes, and requested reviews from teammates before merging."</p>
+      </section>
+
+      <section class="section" id="q14">
+        <h3>Q14: How do you handle feedback from code reviews? <span class="badge">communication</span></h3>
+        <div class="meta">Feedback Management</div>
+        <p>"I carefully read the feedback, make the suggested changes, and ask clarifying questions if needed. I see reviews as a way to improve code quality."</p>
+      </section>
+
+      <section class="section" id="q15">
+        <h3>Q15: What's your experience with version control systems like Git? How do you push code changes safely? <span class="badge">tools</span></h3>
+        <div class="meta">Version Control</div>
+        <p>"I use Git regularly. I commit changes with clear messages, push to a feature branch, and create pull requests for review before merging into the main branch."</p>
+      </section>
+
+      <section class="section" id="q16">
+        <h3>Q16: Have you been involved in a release cycle? What steps did you follow? <span class="badge">deployment</span></h3>
+        <div class="meta">Release Management</div>
+        <p>"Yes. We finalized features, tested thoroughly, merged into the release branch, tagged the version, and deployed after approval."</p>
+      </section>
+
+      <section class="section" id="q17">
+        <h3>Q17: How do you prepare for daily stand-up meetings? <span class="badge">communication</span></h3>
+        <div class="meta">Meeting Preparation</div>
+        <p>"I note down what I completed yesterday, what I plan to do today, and any blockers I'm facing. This keeps the update clear and concise."</p>
+      </section>
+
+      <section class="section" id="q18">
+        <h3>Q18: Can you share an example of how you communicated blockers to your team? <span class="badge">communication</span></h3>
+        <div class="meta">Problem Communication</div>
+        <p>"In one project, I was stuck due to missing API documentation. I informed the team during stand-up, and the lead provided the details, which helped me continue my work."</p>
+      </section>
+
+      <!-- 🟡 Intermediate Questions -->
+      <div class="category-title">🟡 Intermediate Questions (7 Questions)</div>
+
+      <section class="section" id="q19">
+        <h3>Q1: Which software development methodology have you followed in your projects — for example, Agile, Scrum, or Waterfall? <span class="badge">methodology</span></h3>
+        <div class="meta">Development Process</div>
+        <p>"We followed Agile with Scrum. Work was divided into sprints of two weeks, with daily stand-ups to track progress. At the end of each sprint, we had reviews and retrospectives to improve the process."</p>
+      </section>
+
+      <section class="section" id="q20">
+        <h3>Q2: Is your project designed as a monolithic application or using microservices? <span class="badge">architecture</span></h3>
+        <div class="meta">Architecture Design</div>
+        <p>"Our project used microservices. Each service handled a specific function, like user management or payments, and they communicated through APIs. This made it easier to scale and update individual parts without affecting the whole system."</p>
+      </section>
+
+      <section class="section" id="q21">
+        <h3>Q3: What do you see as the main differences between a microservices-based architecture and a traditional monolithic application? <span class="badge">comparison</span></h3>
+        <div class="meta">Architecture Comparison</div>
+        <p>"In a monolithic application, all features are bundled together and deployed as one unit, which is simple but harder to scale. Microservices split the system into smaller independent services, making it easier to maintain and scale, though it adds complexity in communication and monitoring."</p>
+      </section>
+
+      <section class="section" id="q22">
+        <h3>Q4: Have you worked with REST APIs? How would you explain the difference between REST-based communication and a more traditional approach? <span class="badge">apis</span></h3>
+        <div class="meta">API Design</div>
+        <p>"Yes, I've worked with REST APIs. REST uses HTTP methods like GET and POST to interact with resources, and it's lightweight and stateless. Traditional approaches like SOAP are heavier, require XML, and have more overhead compared to REST."</p>
+      </section>
+
+      <section class="section" id="q23">
+        <h3>Q5: Can you explain the difference between HTTP and HTTPS, and why HTTPS is important in modern applications? <span class="badge">security</span></h3>
+        <div class="meta">Web Security</div>
+        <p>"HTTP is the basic protocol for communication, but it's not secure. HTTPS adds encryption using SSL/TLS, which protects data from being intercepted. It's important for security, especially when handling sensitive information like passwords or payments."</p>
+      </section>
+
+      <section class="section" id="q24">
+        <h3>Q6: Have you used databases in your projects? What is the difference between SQL and NoSQL databases? <span class="badge">databases</span></h3>
+        <div class="meta">Database Types</div>
+        <p>"Yes, I've used both. SQL databases are relational and enforce schemas, making them good for structured data and transactions. NoSQL databases are flexible and scale horizontally, making them better for large amounts of unstructured or rapidly changing data."</p>
+      </section>
+
+      <section class="section" id="q25">
+        <h3>Q7: Have you used any cloud services in your projects? If yes, could you share how they were applied? <span class="badge">cloud</span></h3>
+        <div class="meta">Cloud Computing</div>
+        <p>"Yes, we used AWS. EC2 was used for hosting applications, S3 for storing files, and RDS for managing databases. We also set up CI/CD pipelines to deploy code automatically to the cloud."</p>
+      </section>
+
+      <!-- 🔵 Senior-Level Questions -->
+      <div class="category-title">🔵 Senior-Level Questions (10 Questions)</div>
+
+      <section class="section" id="q26">
+        <h3>Q1: Could you walk me through your professional journey and highlight the experiences most relevant to this role? <span class="badge">career</span></h3>
+        <div class="meta">Career Journey</div>
+        <p>"I started as a junior developer working on small web applications, then moved into backend development with Java and microservices. Over time, I took on leadership roles, guiding teams in building scalable systems and deploying applications on the cloud. These experiences helped me develop strong skills in architecture and team collaboration."</p>
+      </section>
+
+      <section class="section" id="q27">
+        <h3>Q2: What do you consider your strongest technical skill, and how has it contributed to your past projects? <span class="badge">strengths</span></h3>
+        <div class="meta">Core Competencies</div>
+        <p>"My strongest skill is system design. It has helped me break down complex requirements into clear, scalable architectures. For example, I designed a microservices-based system that improved performance and made deployments easier."</p>
+      </section>
+
+      <section class="section" id="q28">
+        <h3>Q3: Describe a complex technical challenge you encountered. How did you analyze the problem and arrive at a solution? <span class="badge">problem-solving</span></h3>
+        <div class="meta">Challenge Resolution</div>
+        <p>"In one project, we faced performance issues due to heavy database queries. I analyzed logs, identified bottlenecks, and introduced caching along with optimized queries. This reduced response time significantly."</p>
+      </section>
+
+      <section class="section" id="q29">
+        <h3>Q4: How do you ensure the quality, security, and reliability of the solutions you build? <span class="badge">quality</span></h3>
+        <div class="meta">Quality Assurance</div>
+        <p>"I follow coding standards, write automated tests, and use CI/CD pipelines. For security, I enforce HTTPS, authentication, and role-based access. Reliability is ensured through monitoring, logging, and fallback mechanisms."</p>
+      </section>
+
+      <section class="section" id="q30">
+        <h3>Q5: In your view, what are the most important considerations when designing scalable systems? <span class="badge">scalability</span></h3>
+        <div class="meta">System Design Principles</div>
+        <p>"Key considerations are stateless design, horizontal scaling, efficient data storage, caching, and monitoring. It's also important to plan for fault tolerance and load balancing."</p>
+      </section>
+
+      <section class="section" id="q31">
+        <h3>Q6: When you're faced with a new technical problem, what's your first step in approaching it? <span class="badge">methodology</span></h3>
+        <div class="meta">Problem Approach</div>
+        <p>"I start by understanding the requirements clearly, then break the problem into smaller parts. I research possible solutions, evaluate trade-offs, and choose the most practical approach."</p>
+      </section>
+
+      <section class="section" id="q32">
+        <h3>Q7: Tell me about a time you had to learn a new technology quickly. How did you go about it? <span class="badge">learning</span></h3>
+        <div class="meta">Continuous Learning</div>
+        <p>"I had to learn Docker for containerization. I started with official documentation, practiced with small examples, and applied it to our project. Within a week, I was able to set up containers and integrate them into our workflow."</p>
+      </section>
+
+      <section class="section" id="q33">
+        <h3>Q8: How do you explain a complex technical concept to someone without a technical background? <span class="badge">communication</span></h3>
+        <div class="meta">Communication Skills</div>
+        <p>"I simplify the concept by using analogies. For example, I explain APIs as a restaurant menu — you order what you want, and the kitchen prepares it without you needing to know the details."</p>
+      </section>
+
+      <section class="section" id="q34">
+        <h3>Q9: Imagine you have two possible solutions to a problem: one is faster to implement but less scalable, the other is slower but more robust. How would you decide? <span class="badge">decision-making</span></h3>
+        <div class="meta">Decision Making</div>
+        <p>"I would evaluate based on project requirements. If scalability is critical, I'd choose the robust solution. If it's a short-term project or proof of concept, the faster option may be better. I'd also discuss trade-offs with stakeholders."</p>
+      </section>
+
+      <section class="section" id="q35">
+        <h3>Q10: Can you share an example of a project where you took ownership beyond your assigned tasks? <span class="badge">ownership</span></h3>
+        <div class="meta">Proactive Contribution</div>
+        <p>"In one project, I was responsible for backend development, but I also helped set up CI/CD pipelines and improved documentation. This ensured smoother collaboration and faster deployments for the whole team."</p>
+      </section>
+
+      <!-- 🔴 Expert-Level Questions -->
+      <div class="category-title">🔴 Expert-Level Questions (8 Questions)</div>
+
+      <section class="section" id="q36">
+        <h3>Q1: How would you design a system that can handle millions of concurrent users while maintaining low latency? <span class="badge">advanced</span></h3>
+        <div class="meta">Ultra-Scale Systems</div>
+        <p>"I would use a distributed architecture with load balancers, CDNs for static content, and caching layers like Redis. Services would be stateless to allow horizontal scaling, and databases would be sharded or replicated to handle high throughput."</p>
+      </section>
+
+      <section class="section" id="q37">
+        <h3>Q2: What approaches would you take to ensure high availability and disaster recovery in a distributed system? <span class="badge">reliability</span></h3>
+        <div class="meta">Disaster Recovery</div>
+        <p>"I'd deploy across multiple regions and availability zones, use replication for databases, and set up automated failover. Regular backups, monitoring, and disaster recovery drills would ensure readiness."</p>
+      </section>
+
+      <section class="section" id="q38">
+        <h3>Q3: How would you design a data storage solution for an application that requires both transactional consistency and large-scale analytics? <span class="badge">data-design</span></h3>
+        <div class="meta">Hybrid Data Architecture</div>
+        <p>"I'd use a hybrid approach: a relational database like PostgreSQL for transactions, and a data warehouse or NoSQL system like BigQuery or MongoDB for analytics. ETL pipelines would sync data between them."</p>
+      </section>
+
+      <section class="section" id="q39">
+        <h3>Q4: If you were designing APIs for a large enterprise platform, how would you ensure they are secure, scalable, and easy to consume? <span class="badge">api-design</span></h3>
+        <div class="meta">Enterprise API Design</div>
+        <p>"I'd use REST or GraphQL with proper versioning, authentication (OAuth/JWT), and rate limiting. Documentation and API gateways would make them easy to consume, while monitoring ensures scalability."</p>
+      </section>
+
+      <section class="section" id="q40">
+        <h3>Q5: What are the key challenges in moving from a monolithic architecture to microservices, and how would you address them? <span class="badge">migration</span></h3>
+        <div class="meta">Architecture Migration</div>
+        <p>"Challenges include defining service boundaries, managing inter-service communication, and ensuring observability. I'd address them with clear domain-driven design, API gateways, centralized logging, and container orchestration tools like Kubernetes."</p>
+      </section>
+
+      <section class="section" id="q41">
+        <h3>Q6: How would you leverage cloud services to design a cost-effective, scalable architecture for a global application? <span class="badge">cloud-design</span></h3>
+        <div class="meta">Global Cloud Architecture</div>
+        <p>"I'd use cloud-native services like serverless functions for event-driven tasks, auto-scaling groups for compute, and managed databases. CDNs would reduce latency globally, and monitoring tools would help optimize costs."</p>
+      </section>
+
+      <section class="section" id="q42">
+        <h3>Q7: What architectural considerations would you make to ensure data security and compliance with regulations such as GDPR or HIPAA? <span class="badge">compliance</span></h3>
+        <div class="meta">Security & Compliance</div>
+        <p>"I'd enforce encryption in transit and at rest, role-based access control, and audit logging. Data residency requirements would be respected by storing data in compliant regions, and regular security reviews would ensure compliance."</p>
+      </section>
+
+      <section class="section" id="q43">
+        <h3>Q8: Suppose your system is experiencing performance bottlenecks. How would you identify and resolve them at the architectural level? <span class="badge">optimization</span></h3>
+        <div class="meta">Performance Optimization</div>
+        <p>"I'd start with monitoring tools to locate bottlenecks, such as slow queries or overloaded services. Solutions could include adding caching, optimizing queries, scaling services horizontally, or redesigning the architecture to reduce dependencies."</p>
+      </section>
+
+      <footer>Back to <a href="..">Home Page</a> | © 2026 skills.enviz.in. All rights reserved | Powered by <a href="https://enviz.in" target="_blank">enviz</a></footer>
+    </main>
+  </body>
+</html>
