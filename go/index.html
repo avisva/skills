@@ -342,7 +342,7 @@
       <section class="section" id="q10">
         <h3>Q10: How do you handle errors in Go? <span class="badge">errors</span></h3>
         <div class="meta">Error handling</div>
-        <p>Go uses explicit error returns (value, error). Check error != nil and handle accordingly.</p>
+        <p>Go uses explicit error returns (value, error). Check error != nil and handle accordingly. Go does not have exceptions. It uses explicit error values and sometimes panic/recover for abnormal conditions, keeping normal control flow simple.</p>
       </section>
 
       <section class="section" id="q11">
@@ -1049,206 +1049,200 @@
         <p>GOROOT points to the Go installation directory containing bin, pkg, and src. It identifies the SDK root used by the go tool.</p>
       </section>
 
-      <section class="section" id="q123">
-        <h3>Q123: Does Go have exceptions? How does Go handle errors? <span class="badge">errors</span></h3>
-        <div class="meta">Error handling</div>
-        <p>Go does not have exceptions. It uses explicit error values and sometimes panic/recover for abnormal conditions, keeping normal control flow simple.</p>
-      </section>
-
-      <section class="section" id="q124">
-        <h3>Q124: When would you use a break statement in Go? <span class="badge">controlflow</span></h3>
+            <section class="section" id="q123">
+        <h3>Q123: When would you use a break statement in Go? <span class="badge">controlflow</span></h3>
         <div class="meta">Loop control</div>
         <p>Use break to exit a for loop, switch, or select block early when a condition is met or when you need to stop processing.</p>
       </section>
 
-      <section class="section" id="q125">
-        <h3>Q125: What is the difference between C arrays and Go slices? <span class="badge">collections</span></h3>
+      <section class="section" id="q124">
+        <h3>Q124: What is the difference between C arrays and Go slices? <span class="badge">collections</span></h3>
         <div class="meta">Data structures</div>
         <p>C arrays have fixed size and value semantics. Go slices are dynamic, reference views over arrays with length and capacity and can grow with append.</p>
       </section>
 
-      <section class="section" id="q126">
-        <h3>Q126: Does Go support method overloading? <span class="badge">methods</span></h3>
+      <section class="section" id="q125">
+        <h3>Q125: Does Go support method overloading? <span class="badge">methods</span></h3>
         <div class="meta">Language feature</div>
         <p>No. Go does not support method or function overloading. Each identifier in a package must be unique, so use different names or interfaces.</p>
       </section>
 
-      <section class="section" id="q127">
-        <h3>Q127: How do you implement command-line arguments in Go? <span class="badge">tools</span></h3>
+      <section class="section" id="q126">
+        <h3>Q126: How do you implement command-line arguments in Go? <span class="badge">tools</span></h3>
         <div class="meta">CLI</div>
         <p>Use os.Args for raw arguments or the flag package to parse flags and options from the command line.</p>
       </section>
 
-      <section class="section" id="q128">
-        <h3>Q128: How does Go handle dependencies? <span class="badge">modules</span></h3>
+      <section class="section" id="q127">
+        <h3>Q127: How does Go handle dependencies? <span class="badge">modules</span></h3>
         <div class="meta">Dependency management</div>
         <p>Go uses modules with go.mod and go.sum. The go command resolves versions, downloads modules into the cache, and ensures reproducible builds.</p>
       </section>
 
-      <section class="section" id="q129">
-        <h3>Q129: What is a unique benefit of Go’s compiler? <span class="badge">tools</span></h3>
+      <section class="section" id="q128">
+        <h3>Q128: What is a unique benefit of Go’s compiler? <span class="badge">tools</span></h3>
         <div class="meta">Compiler</div>
         <p>Go’s compiler builds fast static binaries with a single toolchain and minimal configuration, making compilation and deployment simple.</p>
       </section>
 
-      <section class="section" id="q130">
-        <h3>Q130: Name one Go feature that would be helpful for DevOps. <span class="badge">devops</span></h3>
+      <section class="section" id="q129">
+        <h3>Q129: Name one Go feature that would be helpful for DevOps. <span class="badge">devops</span></h3>
         <div class="meta">Automation</div>
         <p>Static binaries are a key DevOps benefit: they simplify deployment, reduce runtime dependencies, and make containers and server deployments easier.</p>
       </section>
 
-      <section class="section" id="q131">
-        <h3>Q131: What is a workspace? <span class="badge">environment</span></h3>
+      <section class="section" id="q130">
+        <h3>Q130: What is a workspace? <span class="badge">environment</span></h3>
         <div class="meta">Project layout</div>
         <p>A Go workspace groups module directories and optionally uses go.work to manage multiple modules together. In legacy mode, it is the GOPATH root.</p>
       </section>
 
-      <section class="section" id="q132">
-        <h3>Q132: What is in the src directory? <span class="badge">workspace</span></h3>
+      <section class="section" id="q131">
+        <h3>Q131: What is in the src directory? <span class="badge">workspace</span></h3>
         <div class="meta">Source code</div>
         <p>In GOPATH mode, src contains source code packages under import paths. In module mode, source files live in the module root and go.work can reference module directories.</p>
       </section>
 
-      <section class="section" id="q133">
-        <h3>Q133: What is an advantage of Go evaluating implicit types at compile time? <span class="badge">types</span></h3>
+      <section class="section" id="q132">
+        <h3>Q132: What is an advantage of Go evaluating implicit types at compile time? <span class="badge">types</span></h3>
         <div class="meta">Type safety</div>
         <p>Compile-time type inference keeps code concise while catching type errors early, improving safety without sacrificing readability.</p>
       </section>
 
-      <section class="section" id="q134">
-        <h3>Q134: Describe the crypto capabilities of Go. <span class="badge">security</span></h3>
+      <section class="section" id="q133">
+        <h3>Q133: Describe the crypto capabilities of Go. <span class="badge">security</span></h3>
         <div class="meta">Cryptography</div>
         <p>Go’s standard library includes crypto packages for hashing, HMAC, TLS, x509 certificates, encryption, and random number generation.</p>
       </section>
 
-      <section class="section" id="q135">
-        <h3>Q135: What is the Go version you used? <span class="badge">tools</span></h3>
+      <section class="section" id="q134">
+        <h3>Q134: What is the Go version you used? <span class="badge">tools</span></h3>
         <div class="meta">Versioning</div>
         <p>Use the go version command to display the installed version, for example go version go1.22 windows/amd64. The actual version depends on your environment.</p>
       </section>
 
-      <section class="section" id="q136">
-        <h3>Q136: How do you integrate with AWS? <span class="badge">cloud</span></h3>
+      <section class="section" id="q135">
+        <h3>Q135: How do you integrate with AWS? <span class="badge">cloud</span></h3>
         <div class="meta">Integration</div>
         <p>Use the AWS SDK for Go or the AWS APIs directly. Common integration points include S3, DynamoDB, Lambda, and IAM using the aws-sdk-go-v2 library.</p>
       </section>
 
-      <section class="section" id="q137">
-        <h3>Q137: How is deployment managed in your project? <span class="badge">deployment</span></h3>
+      <section class="section" id="q136">
+        <h3>Q136: How is deployment managed in your project? <span class="badge">deployment</span></h3>
         <div class="meta">Deployment</div>
         <p>Go deployment is typically managed by building a binary, containerizing it if needed, and deploying through cloud or infrastructure pipelines.</p>
       </section>
 
-      <section class="section" id="q138">
-        <h3>Q138: Do you use any CI/CD in your project? <span class="badge">devops</span></h3>
+      <section class="section" id="q137">
+        <h3>Q137: Do you use any CI/CD in your project? <span class="badge">devops</span></h3>
         <div class="meta">Automation</div>
         <p>CI/CD pipelines run go test, lint, build, and deploy steps automatically. Common tools include GitHub Actions, GitLab CI, and Jenkins.</p>
       </section>
 
-      <section class="section" id="q139">
-        <h3>Q139: What is the repo used and how do you manage release of new code? <span class="badge">versioning</span></h3>
+      <section class="section" id="q138">
+        <h3>Q138: What is the repo used and how do you manage release of new code? <span class="badge">versioning</span></h3>
         <div class="meta">Release management</div>
         <p>Use Git repositories, branches, tags, and semantic versioning to manage code and releases. Automate deployments from tagged releases or merge events.</p>
       </section>
 
-      <section class="section" id="q140">
-        <h3>Q140: What is the static type declaration of a variable and dynamic variable declaration? <span class="badge">syntax</span></h3>
+      <section class="section" id="q139">
+        <h3>Q139: What is the static type declaration of a variable and dynamic variable declaration? <span class="badge">syntax</span></h3>
         <div class="meta">Declaration</div>
         <p>Static declaration uses var x int = 5. Dynamic declaration uses x := 5, letting the compiler infer the type at compile time.</p>
       </section>
 
-      <section class="section" id="q141">
-        <h3>Q141: Is Go case sensitive? <span class="badge">syntax</span></h3>
+      <section class="section" id="q140">
+        <h3>Q140: Is Go case sensitive? <span class="badge">syntax</span></h3>
         <div class="meta">Language rules</div>
         <p>Yes. Go is case sensitive, and identifiers such as myVar and MyVar are distinct. Capitalized names are exported from packages.</p>
       </section>
 
-      <section class="section" id="q142">
-        <h3>Q142: What is a constant variable in Go? <span class="badge">constants</span></h3>
+      <section class="section" id="q141">
+        <h3>Q141: What is a constant variable in Go? <span class="badge">constants</span></h3>
         <div class="meta">Constants</div>
         <p>A constant is declared with const and cannot change. It holds a compile-time value, such as const Pi = 3.14 or const Greeting = "Hello".</p>
       </section>
 
-      <section class="section" id="q143">
-        <h3>Q143: What is a receiver function in Go? <span class="badge">methods</span></h3>
+      <section class="section" id="q142">
+        <h3>Q142: What is a receiver function in Go? <span class="badge">methods</span></h3>
         <div class="meta">Methods</div>
         <p>A receiver function is a method attached to a type using syntax func (t Type) Method() {}. It allows the function to operate on the receiver’s value or pointer.</p>
       </section>
 
-      <section class="section" id="q144">
-        <h3>Q144: Explain methods in Golang. What is the difference between Go methods and Go functions? <span class="badge">methods</span></h3>
+      <section class="section" id="q143">
+        <h3>Q143: Explain methods in Golang. What is the difference between Go methods and Go functions? <span class="badge">methods</span></h3>
         <div class="meta">Methods vs functions</div>
         <p>Functions are independent with no receiver. Methods are functions with a receiver and belong to a type, enabling behavior tied to that type.</p>
       </section>
 
-      <section class="section" id="q145">
-        <h3>Q145: How does garbage collection work? What is memory management process in Go? How is Go GC different than Java? <span class="badge">runtime</span></h3>
+      <section class="section" id="q144">
+        <h3>Q144: How does garbage collection work? What is memory management process in Go? How is Go GC different than Java? <span class="badge">runtime</span></h3>
         <div class="meta">Memory management</div>
         <p>Go uses a concurrent mark-and-sweep garbage collector that automatically reclaims unused heap memory. Compared to Java, Go has a simpler runtime with native static binaries and lower pause targets, without a JVM layer.</p>
       </section>
 
-      <section class="section" id="q146">
-        <h3>Q146: How can we declare multiple types of variables in a single code line in Golang? <span class="badge">syntax</span></h3>
+      <section class="section" id="q145">
+        <h3>Q145: How can we declare multiple types of variables in a single code line in Golang? <span class="badge">syntax</span></h3>
         <div class="meta">Declaration</div>
         <p>Use multi-assignment with inference: x, y := 1, "two". You can also declare several variables in one var statement: var a, b, c = 1, 2, "three".</p>
       </section>
 
-      <section class="section" id="q147">
-        <h3>Q147: What are the built-in supports in Golang? <span class="badge">standard library</span></h3>
+      <section class="section" id="q146">
+        <h3>Q146: What are the built-in supports in Golang? <span class="badge">standard library</span></h3>
         <div class="meta">Packages</div>
         <p>Go includes a rich standard library with packages like net/http, encoding/json, database/sql, crypto, compress/gzip, container/list, sync, os, fmt, and many more.</p>
       </section>
 
-      <section class="section" id="q148">
-        <h3>Q148: What are the decision-making statements in Golang? <span class="badge">controlflow</span></h3>
+      <section class="section" id="q147">
+        <h3>Q147: What are the decision-making statements in Golang? <span class="badge">controlflow</span></h3>
         <div class="meta">Flow control</div>
         <p>Go supports if, else, switch, and select statements for decision-making. Switch can branch on values or types, while select handles channel communication.</p>
       </section>
 
-      <section class="section" id="q149">
-        <h3>Q149: Explain structures in Golang. How is it different than a variable? <span class="badge">structs</span></h3>
+      <section class="section" id="q148">
+        <h3>Q148: Explain structures in Golang. How is it different than a variable? <span class="badge">structs</span></h3>
         <div class="meta">Data structures</div>
         <p>A struct is a composite type with named fields and methods. A variable holds a single value, while a struct groups multiple related values together.</p>
       </section>
 
-      <section class="section" id="q150">
-        <h3>Q150: Why do we use the continue statement in Golang? <span class="badge">controlflow</span></h3>
+      <section class="section" id="q149">
+        <h3>Q149: Why do we use the continue statement in Golang? <span class="badge">controlflow</span></h3>
         <div class="meta">Loop control</div>
         <p>continue skips the rest of the current loop iteration and proceeds to the next iteration. It is useful when a condition means the current item should be ignored.</p>
       </section>
 
-      <section class="section" id="q151">
-        <h3>Q151: Why do we use a goto statement in Golang? <span class="badge">controlflow</span></h3>
+      <section class="section" id="q150">
+        <h3>Q150: Why do we use a goto statement in Golang? <span class="badge">controlflow</span></h3>
         <div class="meta">Low-level control</div>
         <p>goto jumps to a labeled statement within the same function. It is rarely used, but can simplify cleanup or retry logic in low-level code.</p>
       </section>
 
-      <section class="section" id="q152">
-        <h3>Q152: What is the order of execution of defer statements if our program has multiple defer statements? <span class="badge">controlflow</span></h3>
+      <section class="section" id="q151">
+        <h3>Q151: What is the order of execution of defer statements if our program has multiple defer statements? <span class="badge">controlflow</span></h3>
         <div class="meta">Defer order</div>
         <p>Deferred calls execute in last-in, first-out order when the surrounding function returns. The last deferred call runs first.</p>
       </section>
 
-      <section class="section" id="q153">
-        <h3>Q153: Explain switch statement in Golang. <span class="badge">controlflow</span></h3>
+      <section class="section" id="q152">
+        <h3>Q152: Explain switch statement in Golang. <span class="badge">controlflow</span></h3>
         <div class="meta">Decision making</div>
         <p>A switch selects the first matching case. Cases do not fall through by default; use fallthrough explicitly when needed.</p>
       </section>
 
-      <section class="section" id="q154">
-        <h3>Q154: What is CGo in Golang? <span class="badge">interop</span></h3>
+      <section class="section" id="q153">
+        <h3>Q153: What is CGo in Golang? <span class="badge">interop</span></h3>
         <div class="meta">C interoperability</div>
         <p>CGo lets Go packages call C code. Import "C" and write C code in a comment block to interoperate with existing C libraries.</p>
       </section>
 
-      <section class="section" id="q155">
-        <h3>Q155: What is Rune in Golang? <span class="badge">types</span></h3>
+      <section class="section" id="q154">
+        <h3>Q154: What is Rune in Golang? <span class="badge">types</span></h3>
         <div class="meta">Unicode</div>
         <p>Rune is an alias for int32 and represents a Unicode code point in Go. It is used for working with characters beyond ASCII.</p>
       </section>
 
-      <section class="section" id="q156">
-        <h3>Q156: How do you compare two structs? <span class="badge">types</span></h3>
+      <section class="section" id="q155">
+        <h3>Q155: How do you compare two structs? <span class="badge">types</span></h3>
         <div class="meta">Comparison</div>
         <p>Structs can be compared with == if all fields are comparable. For complex fields like slices or maps, use reflect.DeepEqual or implement custom comparison logic.</p>
       </section>
