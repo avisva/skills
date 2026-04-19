@@ -209,14 +209,24 @@
 
       .lang-list ul {
         list-style: none;
-        padding-left: 0;
+        padding-left: 24px;
         margin: 8px 0 0;
       }
 
       .lang-list li {
-        padding: 6px 0;
+        padding: 6px 0 6px 24px;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
         font-size: 13px;
+        position: relative;
+      }
+
+      .lang-list li::before {
+        content: "💡";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 14px;
       }
 
       .lang-list li:first-child {
@@ -304,41 +314,41 @@
       <section class="intro">
         <h2>Welcome</h2>
         <p>
-          <b>Welcome to Skill Booster — your quick reference hub for interview preparation.</b><br><br>
+          Welcome to <b>Skill Booster</b>🚀🎯 — your quick reference hub for interview preparation.<br><br>
           Use the navigation above or the list below to access focused guides for each topic. Each section is designed to give you clear, last-minute insights whether you're interviewing or being interviewed. Dive in and boost your skills before the big day!
         </p>
       </section>
 
       <section class="lang-list" aria-label="All tutorials">
-        <h3>Interview Guides</h3>
+        <h3>Interview Guides📘📗📙</h3>
         <ul>
           <li>
             <span class="lang-name">Java &amp; J2EE</span> –
-            <a href="java">open</a>
+            <a href="java">open guide</a>
           </li>
           <li>
             <span class="lang-name">Python</span> –
-            <a href="python">open</a>
+            <a href="python">open guide</a>
           </li>
           <li>
             <span class="lang-name">Go</span> –
-            <a href="go">open</a>
+            <a href="go">open guide</a>
           </li>
           <li>
             <span class="lang-name">React</span> –
-            <a href="react">open</a>
+            <a href="react">open guide</a>
           </li>
           <li>
             <span class="lang-name">Angular</span> –
-            <a href="angular">open</a>
+            <a href="angular">open guide</a>
           </li>
           <li>
             <span class="lang-name">SQL &amp; Database</span> –
-            <a href="sql">open</a>
+            <a href="sql">open guide</a>
           </li>
           <li>
             <span class="lang-name">Spring Boot</span> –
-            <a href="spring-boot">open</a>
+            <a href="spring-boot">open guide</a>
           </li>
         </ul>
       </section>
