@@ -205,7 +205,36 @@
       .section h3 {
         margin-top: 0;
         font-size: 16px;
+        cursor: pointer;
+        user-select: none;
+        display: flex;
+        align-items: center;
+        padding: 8px 0;
+        transition: color 0.3s ease;
       }
+
+      .section h3:hover {
+        color: rgba(56, 189, 248, 1);
+      }
+
+      .section h3::before {
+        content: "▼";
+        display: inline-block;
+        margin-right: 10px;
+        font-size: 12px;
+        transition: transform 0.3s ease;
+        min-width: 14px;
+      }
+
+      .section.collapsed h3::before {
+        transform: rotate(-90deg);
+      }
+
+      .section.collapsed .meta,
+      .section.collapsed .section p {
+        display: none;
+      }
+
 
       .badge {
         display: inline-block;
@@ -223,11 +252,28 @@
         font-size: 11px;
         color: rgba(248, 250, 252, 0.7);
         margin-bottom: 4px;
+        transition: opacity 0.3s ease, max-height 0.3s ease;
+        max-height: 1000px;
+      }
+
+      .section.collapsed .meta {
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        margin-bottom: 0;
       }
 
       .section p {
         font-size: 13px;
         line-height: 1.6;
+        transition: opacity 0.3s ease, max-height 0.3s ease;
+        max-height: 1000px;
+      }
+
+      .section.collapsed p {
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
       }
 
       ul {
@@ -242,6 +288,27 @@
         color: rgba(248, 250, 252, 0.72);
       }
     </style>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Add collapsed state to all sections by default
+        const sections = document.querySelectorAll('main .section');
+        
+        sections.forEach(section => {
+          // Add collapsed class to hide answers by default
+          section.classList.add('collapsed');
+          
+          // Get the h3 element
+          const h3 = section.querySelector('h3');
+          
+          if (h3) {
+            // Add click listener to toggle collapsed state
+            h3.addEventListener('click', function() {
+              section.classList.toggle('collapsed');
+            });
+          }
+        });
+      });
+    </script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
