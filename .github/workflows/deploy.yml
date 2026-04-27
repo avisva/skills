@@ -1,0 +1,54 @@
+name: Minify HTML and Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  minify-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install HTML minifier
+        run: npm install -g html-minifier-terser
+
+      - name: Create minified build directory
+        run: |
+          mkdir -p dist
+          cp -r angular general go java python react spring-boot sql CNAME sitemap.xml favicon.png dist/ 2>/dev/null || true
+
+      - name: Minify HTML files
+        run: |
+          cd dist
+          find . -name "*.html" -type f | while read file; do
+            html-minifier-terser \
+              --collapse-whitespace \
+              --remove-comments \
+              --remove-optional-tags \
+              --remove-redundant-attributes \
+              --remove-script-type-attributes \
+              --remove-tag-whitespace \
+              --minify-css true \
+              --minify-js true \
+              "$file" -o "$file"
+            echo "Minified: $file"
+          done
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
