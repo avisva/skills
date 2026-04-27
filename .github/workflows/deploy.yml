@@ -34,7 +34,6 @@ jobs:
           find . -name "*.html" -type f | while read file; do
             html-minifier-terser \
               --collapse-whitespace \
-              --remove-comments \
               --remove-optional-tags \
               --remove-redundant-attributes \
               --remove-script-type-attributes \
