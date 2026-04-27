@@ -1,0 +1,662 @@
+<!DOCTYPE html><html lang="en"><head><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-P9RFVBCR7D"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-P9RFVBCR7D")</script><meta charset="UTF-8"><meta name="viewport"content="width=device-width,initial-scale=1"><link rel="icon"type="image/png"href="../favicon.png"><title>Java & J2EE Interview Questions and Answers - Comprehensive Guide | Avisva Skills</title><meta name="description"content="Ace Java & J2EE interviews with comprehensive interview questions and answers! Learn core Java concepts, OOP principles, J2EE patterns, Spring framework, collections, multithreading, and coding problems. Essential coding interview guide for Java developers preparing for software engineering roles."><meta name="keywords"content="Java interview questions, J2EE interview, Java coding interview, Spring interview questions, Java OOP interview, Java collections interview, Java multithreading interview, Java streams interview, Java generics interview, software engineer interview Java, Java design patterns"><meta name="author"content="Skill Booster"><meta name="robots"content="index, follow"><meta name="language"content="English"><meta name="revisit-after"content="7 days"><link rel="canonical"href="https://skills.enviz.in/java"><!-- Open Graph / Facebook --><meta property="og:type"content="article"><meta property="og:url"content="https://skills.enviz.in/java"><meta property="og:title"content="Java & J2EE Interview Questions | Java Programming Interview Guide"><meta property="og:description"content="Ace Java & J2EE interviews with comprehensive tutorial covering core concepts, OOP, J2EE patterns, and coding problems. Essential for Java developers."><meta property="og:image"content="https://skills.enviz.in/enviz-l-logo.png"><meta property="og:site_name"content="Skill Booster"><!-- Twitter --><meta property="twitter:card"content="summary_large_image"><meta property="twitter:url"content="https://skills.enviz.in/java"><meta property="twitter:title"content="Java & J2EE Interview Questions"><meta property="twitter:description"content="Ace Java & J2EE interviews with comprehensive tutorial covering core concepts, OOP, J2EE patterns, and coding problems."><meta property="twitter:image"content="https://skills.enviz.in/enviz-l-logo.png"><!-- Additional SEO --><meta name="theme-color"content="#22c55e"><meta name="msapplication-TileColor"content="#22c55e"><link rel="icon"type="image/png"href="/favicon.ico"><link rel="sitemap"type="application/xml"href="https://skills.enviz.in/sitemap.xml"><style>:root{--bg:#070a17;--text:#f8fafc;--muted:rgba(248, 250, 252, 0.76);--accent:#22c55e;--accent-2:#38bdf8;--accent-3:#a78bfa;--header-h:70px;--gap:10px}*{box-sizing:border-box}body,html{font-family:Verdana,Geneva,Tahoma,sans-serif;margin:0;padding:0;background:radial-gradient(circle at 15% 0,rgba(56,189,248,.25),transparent 45%),radial-gradient(circle at 85% 0,rgba(167,139,250,.24),transparent 50%),radial-gradient(circle at 50% 120%,rgba(34,197,94,.18),transparent 55%),var(--bg);color:var(--text)}a{color:var(--accent-2);text-decoration:none}a:hover{text-decoration:underline}header{position:fixed;top:0;left:0;right:0;z-index:10;height:var(--header-h);display:flex;align-items:center;gap:12px;background:radial-gradient(circle at 10% 0,rgba(56,189,248,.55),transparent 55%),radial-gradient(circle at 90% 0,rgba(167,139,250,.55),transparent 55%),linear-gradient(90deg,rgba(15,23,42,.92),rgba(15,23,42,.86));color:var(--text);padding:14px 20px;box-shadow:0 18px 36px rgba(0,0,0,.55);border-bottom:1px solid rgba(255,255,255,.08)}.header-logo{display:flex;align-items:center;justify-content:center;width:65px;height:65px;flex-shrink:0}.header-logo svg{width:100%;height:100%}.header-content{display:flex;flex-direction:column;justify-content:center}header h1{margin:0;font-size:28px;font-weight:500;font-family:'Segoe UI','Helvetica Neue',-apple-system,sans-serif;letter-spacing:-.8px;color:#f8fcf9;text-shadow:0 2px 8px rgba(251,3,251,.591)}header p{margin:4px 0 0;font-size:12px;color:var(--muted)}nav{position:fixed;top:calc(var(--header-h) + var(--gap));left:0;right:0;z-index:9;padding:6px 12px;background:rgba(15,23,42,.7);border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.12);backdrop-filter:blur(12px)}nav a{display:inline-block;padding:8px 12px;font-size:12px;color:rgba(248,250,252,.9);border-radius:999px}nav a.active{background:linear-gradient(90deg,rgba(34,197,94,.95),rgba(56,189,248,.9));color:#06121a;box-shadow:0 10px 18px rgba(34,197,94,.25),0 10px 22px rgba(56,189,248,.18);font-weight:700}main{max-width:900px;margin:0 auto;padding:calc(var(--header-h) + var(--gap) + 56px + 22px) 16px 40px}h2{font-size:18px;margin-top:0}main p{font-size:12px;line-height:1.6}.intro-text{font-size:11px;color:#bbb}.section{margin-bottom:24px;padding:12px 16px 16px;background:rgba(255,255,255,.06);border-left:4px solid rgba(56,189,248,.85);border-radius:14px;box-shadow:0 20px 45px rgba(0,0,0,.35)}.section h3{margin-top:0;font-size:16px}.badge{display:inline-block;font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:#06121a;background:linear-gradient(90deg,rgba(34,197,94,.95),rgba(56,189,248,.9));padding:2px 6px;border-radius:3px;margin-left:8px}.meta{font-size:11px;color:rgba(248,250,252,.7);margin-bottom:4px}.section p{font-size:13px;line-height:1.6}ul{font-size:12px}.code{margin-top:8px;background:rgba(2,6,23,.75);border-left:4px solid rgba(34,197,94,.85);padding:8px 10px;font-family:Consolas,"Courier New",monospace;font-size:13px;overflow-x:auto;border-radius:10px}.code pre{margin:0}footer{border-top:1px solid rgba(255,255,255,.14);margin-top:20px;padding-top:10px;font-size:11px;color:rgba(248,250,252,.72)}</style><script type="application/ld+json">{
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Java & J2EE Interview Questions and Answers - Comprehensive Guide for Software Engineers",
+      "description": "Ace Java & J2EE interviews with comprehensive interview questions and answers! Learn core Java concepts, OOP principles, J2EE patterns, Spring framework, collections, multithreading, and coding problems. Essential coding interview guide for Java developers preparing for software engineering roles.",
+      "author": {
+        "@type": "Person",
+        "name": "Avisva"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Avisva Skills"
+      },
+      "datePublished": "2026-01-01",
+      "dateModified": "2026-01-01",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://skills.enviz.in/java/"
+      },
+      "url": "https://skills.enviz.in/java/"
+    }</script><header><div class="header-logo"><svg viewBox="0 0 100 100"xmlns="http://www.w3.org/2000/svg"><circle cx="50"cy="50"r="35"fill="none"stroke="url(#grad)"stroke-width="1.2"opacity="0.8"/><g transform="translate(50, 50)"><path d="M 0,-20 L 8,-5 L 8,10 L -8,10 L -8,-5 Z"fill="#22c55e"opacity="0.9"/><circle cx="0"cy="-22"r="4"fill="#38bdf8"/><path d="M -6,11 L -10,18 L -4,15 Z"fill="#f97316"opacity="0.85"/><path d="M -8,11 L -12,20 L -6,16 Z"fill="#fb923c"opacity="0.70"/><path d="M 6,11 L 10,18 L 4,15 Z"fill="#f97316"opacity="0.85"/><path d="M 8,11 L 12,20 L 6,16 Z"fill="#fb923c"opacity="0.70"/><circle cx="0"cy="-8"r="3"fill="#38bdf8"opacity="0.95"/><path d="M -8,-2 L -14,-4 L -10,2 Z"fill="#a78bfa"opacity="0.8"/><path d="M 8,-2 L 14,-4 L 10,2 Z"fill="#a78bfa"opacity="0.8"/></g><defs><linearGradient id="grad"x1="0%"y1="0%"x2="100%"y2="100%"><stop offset="0%"style="stop-color:#38bdf8;stop-opacity:1"/><stop offset="100%"style="stop-color:#22c55e;stop-opacity:1"/></linearGradient></defs></svg></div><div class="header-content"><h1>Skill Booster</h1><p>Quick Reference for Interviews...</div></header><nav><a href="..">Home</a> <a href="../java"class="active">Java</a> <a href="../python">Python</a> <a href="../go">Go</a> <a href="../react">React</a> <a href="../angular">Angular</a> <a href="../sql">SQL</a> <a href="../spring-boot">Spring Boot</a> <a href="../general">General</a></nav><main><h2>Top 100 Java Interview Question and Answers</h2><p class="intro-text">Prepare for your Java software engineering interviews with this comprehensive collection of 100 Java & J2EE interview questions and answers. Master essential concepts like OOP principles, collections, multithreading, streams, generics, design patterns, and Spring framework. Whether you're preparing for backend engineering roles or Java developer positions, this guide covers everything from basic Java syntax to advanced enterprise patterns. Boost your confidence with detailed explanations and practical examples for each question.</p><!--
+      <section class="section">
+        <h3>
+          Java Overview
+          <span class="badge">start here</span>
+        </h3>
+        <div class="meta">Platform, JVM &amp; JDK, first program</div>
+        <p>
+          <strong>Java</strong> is a statically typed, object-oriented language that compiles to
+          bytecode, which runs on the <strong>Java Virtual Machine (JVM)</strong>. You write source
+          code (<code>.java</code>), compile it with the <strong>JDK</strong> (Java Development
+          Kit) into <code>.class</code> files, and the JVM executes them on any platform that has a
+          compatible runtime.
+        </p>
+        <ul>
+          <li><strong>JDK</strong>: Compiler (<code>javac</code>) + tools + JVM.</li>
+          <li><strong>JRE</strong>: JVM + core libraries (runtime only).</li>
+          <li><strong>WORA</strong> – “Write once, run anywhere” with bytecode on the JVM.</li>
+        </ul>
+        <div class="code">
+          <pre>public class HelloWorld {
+  public static void main(String[] args) {
+    System.out.println("Hello, Java!");
+  }
+}</pre>
+        </div>
+      </section>
+
+      <section class="section">
+        <h3>
+          Syntax &amp; Data Types
+          <span class="badge">basics</span>
+        </h3>
+        <div class="meta">Variables, types, operators, control flow</div>
+        <p>
+          Java has <strong>primitive</strong> types (e.g. <code>int</code>, <code>double</code>,
+          <code>boolean</code>) and <strong>reference</strong> types (objects, arrays). Control
+          structures (if, loops, switch) are similar to C/C++ but with strict compile‑time type
+          checking.
+        </p>
+        <div class="code">
+          <pre>int age = 30;
+double price = 19.99;
+boolean active = true;
+char grade = 'A';
+String name = "Alice"; // reference type
+
+if (age &gt;= 18) {
+  System.out.println("Adult");
+} else {
+  System.out.println("Minor");
+}
+
+for (int i = 0; i &lt; 3; i++) {
+  System.out.println("i = " + i);
+}</pre>
+        </div>
+        <ul>
+          <li>Use <code>final</code> for constants.</li>
+          <li>Arrays: <code>int[] nums = {1, 2, 3};</code> or <code>new int[10];</code></li>
+          <li>Enhanced loop: <code>for (int n : nums) { ... }</code></li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h3>
+          Object-Oriented Programming
+          <span class="badge">core</span>
+        </h3>
+        <div class="meta">Classes, objects, inheritance, interfaces</div>
+        <p>
+          Java is centered around <strong>classes</strong> and <strong>objects</strong>. You
+          encapsulate state (fields) and behavior (methods). Inheritance and interfaces are used to
+          create hierarchies and shared contracts.
+        </p>
+        <div class="code">
+          <pre>class Animal {
+  protected String name;
+
+  public Animal(String name) {
+    this.name = name;
+  }
+
+  public void speak() {
+    System.out.println("Animal sound");
+  }
+}
+
+class Dog extends Animal {
+  public Dog(String name) {
+    super(name);
+  }
+
+  @Override
+  public void speak() {
+    System.out.println(name + " says: Woof!");
+  }
+}
+
+interface RunnableTask {
+  void run();
+}</pre>
+        </div>
+        <ul>
+          <li>Use <code>extends</code> for single inheritance between classes.</li>
+          <li><code>implements</code> lets a class satisfy one or more interfaces.</li>
+          <li><code>@Override</code> ensures methods correctly override parent declarations.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h3>
+          Collections &amp; Generics
+          <span class="badge">essential</span>
+        </h3>
+        <div class="meta">Lists, Sets, Maps, generic types</div>
+        <p>
+          The <strong>Collections Framework</strong> provides ready‑made data structures. Generics
+          offer type safety at compile time, so you avoid many <code>ClassCastException</code>s at
+          runtime.
+        </p>
+        <div class="code">
+          <pre>import java.util.*;
+
+List&lt;String&gt; names = new ArrayList&lt;&gt;();
+names.add("Alice");
+names.add("Bob");
+
+Set&lt;Integer&gt; uniqueIds = new HashSet&lt;&gt;();
+uniqueIds.add(101);
+
+Map&lt;String, Integer&gt; ages = new HashMap&lt;&gt;();
+ages.put("Alice", 30);
+ages.put("Bob", 25);
+
+for (String n : names) {
+  System.out.println(n);
+}</pre>
+        </div>
+        <p>
+          Choose <code>List</code> when order matters, <code>Set</code> when uniqueness matters, and
+          <code>Map</code> for key–value lookups.
+        </p>
+      </section>
+
+      <section class="section">
+        <h3>
+          Exceptions &amp; Error Handling
+          <span class="badge">runtime</span>
+        </h3>
+        <div class="meta">Checked vs unchecked, try / catch / finally</div>
+        <p>
+          Java uses <strong>exceptions</strong> for error handling. Checked exceptions must be
+          declared or caught; unchecked exceptions (subclasses of
+          <code>RuntimeException</code>) do not.
+        </p>
+        <div class="code">
+          <pre>try {
+  int result = 10 / 0; // ArithmeticException
+} catch (ArithmeticException ex) {
+  System.out.println("Cannot divide by zero");
+} finally {
+  System.out.println("Always executed");
+}</pre>
+        </div>
+        <p>For I/O, the try‑with‑resources syntax automatically closes resources:</p>
+        <div class="code">
+          <pre>try (BufferedReader reader =
+       new BufferedReader(new FileReader("file.txt"))) {
+  String line = reader.readLine();
+} catch (IOException e) {
+  e.printStackTrace();
+}</pre>
+        </div>
+      </section>
+
+      <section class="section">
+        <h3>
+          J2EE / Jakarta EE Fundamentals
+          <span class="badge">enterprise</span>
+        </h3>
+        <div class="meta">Servlets, JSP, JDBC, layers overview</div>
+        <p>
+          <strong>J2EE / Jakarta EE</strong> defines a set of APIs and components for building
+          large‑scale enterprise applications.
+        </p>
+        <ul>
+          <li><strong>Servlets</strong> – Java classes that handle HTTP requests and responses.</li>
+          <li>
+            <strong>JSP</strong> – JavaServer Pages: HTML templates with embedded Java (largely
+            replaced by newer view technologies).
+          </li>
+          <li><strong>JDBC</strong> – Low‑level database access API.</li>
+          <li><strong>JPA</strong> – ORM standard for mapping entities to database tables.</li>
+        </ul>
+        <div class="code">
+          <pre>@WebServlet("/hello")
+public class HelloServlet extends HttpServlet {
+  @Override
+  protected void doGet(HttpServletRequest req,
+                       HttpServletResponse resp)
+                       throws IOException {
+    resp.getWriter().println("Hello from servlet");
+  }
+}</pre>
+        </div>
+        <p>
+          In modern projects you will very often see <strong>Spring Boot</strong> used with Java
+          instead of a classic application server, but the core ideas above still apply.
+        </p>
+      </section>
+      <section class="section">
+        <h3>
+          Multithreading & Concurrency
+          <span class="badge">advanced</span>
+        </h3>
+        <div class="meta">Threads, synchronization, executors</div>
+        <p>
+          Java enables parallel execution using threads. The <code>Thread</code> class and 
+          <code>Runnable</code> interface are the basics, while modern applications use 
+          <code>ExecutorService</code> for efficient thread pooling.
+        </p>
+        <div class="code">
+          <pre>class Worker implements Runnable {
+        public void run() {
+          System.out.println("Running in " + Thread.currentThread().getName());
+        }
+      }
+      
+      public class Demo {
+        public static void main(String[] args) {
+          ExecutorService service = Executors.newFixedThreadPool(2);
+          service.submit(new Worker());
+          service.shutdown();
+        }
+      }</pre>
+        </div>
+        <div class="qa">
+          <h3>Q: Difference between process and thread?</h3>
+          <p>A: A process has its own memory space, while threads share memory within a process.</p>
+        </div>
+        <div class="qa">
+          <h3>Q: What is synchronization?</h3>
+          <p>A: Synchronization prevents race conditions by allowing only one thread to access a resource at a time.</p>
+        </div>
+      </section>
+      
+      <section class="section">
+        <h3>
+          Streams & Lambda Expressions
+          <span class="badge">modern</span>
+        </h3>
+        <div class="meta">Functional programming in Java</div>
+        <p>
+          Java 8 introduced <strong>Streams</strong> and <strong>Lambda expressions</strong> for 
+          declarative data processing. Streams simplify operations like filtering, mapping, and reducing.
+        </p>
+        <div class="code">
+          <pre>List&lt;String&gt; names = Arrays.asList("Alice", "Bob", "Charlie");
+      names.stream()
+           .filter(n -&gt; n.startsWith("A"))
+           .map(String::toUpperCase)
+           .forEach(System.out::println);</pre>
+        </div>
+        <div class="qa">
+          <h3>Q: What is a lambda expression?</h3>
+          <p>A: A lambda is a concise way to represent an anonymous function, e.g. <code>(x) -> x * 2</code>.</p>
+        </div>
+        <div class="qa">
+          <h3>Q: Difference between map() and filter()?</h3>
+          <p>A: <code>map()</code> transforms elements, while <code>filter()</code> selects elements based on a condition.</p>
+        </div>
+      </section>
+      
+      <section class="section">
+        <h3>
+          JVM Internals
+          <span class="badge">system</span>
+        </h3>
+        <div class="meta">Memory model, garbage collection, class loading</div>
+        <p>
+          The JVM manages memory in distinct areas: heap, stack, and metaspace. Garbage collectors 
+          reclaim unused memory automatically. Class loaders dynamically load classes at runtime.
+        </p>
+        <div class="qa">
+          <h3>Q: What is the heap vs stack?</h3>
+          <p>A: Heap stores objects, while stack stores method calls and local variables.</p>
+        </div>
+        <div class="qa">
+          <h3>Q: How does garbage collection work?</h3>
+          <p>A: GC identifies unreachable objects and frees memory, using algorithms like G1 or Parallel GC.</p>
+        </div>
+      </section>
+      
+      <section class="section">
+        <h3>
+          Design Patterns
+          <span class="badge">best practices</span>
+        </h3>
+        <div class="meta">Singleton, Factory, Observer, Strategy</div>
+        <p>
+          Design patterns are reusable solutions to common problems. They improve maintainability and 
+          scalability of applications.
+        </p>
+        <div class="code">
+          <pre>// Singleton
+      public class Config {
+        private static Config instance;
+        private Config() {}
+        public static Config getInstance() {
+          if (instance == null) instance = new Config();
+          return instance;
+        }
+      }</pre>
+        </div>
+        <div class="qa">
+          <h3>Q: Why use design patterns?</h3>
+          <p>A: They provide proven solutions, reduce code duplication, and improve readability.</p>
+        </div>
+      </section>
+      
+      <section class="section">
+        <h3>
+          Spring Boot & Modern Frameworks
+          <span class="badge">enterprise</span>
+        </h3>
+        <div class="meta">Dependency injection, REST APIs, microservices</div>
+        <p>
+          Spring Boot simplifies enterprise development with auto‑configuration, embedded servers, and 
+          production‑ready features. It is widely used for REST APIs and microservices.
+        </p>
+        <div class="code">
+          <pre>@RestController
+      public class HelloController {
+        @GetMapping("/hello")
+        public String sayHello() {
+          return "Hello, Spring Boot!";
+        }
+      }</pre>
+        </div>
+        <div class="qa">
+          <h3>Q: What is dependency injection?</h3>
+          <p>A: It is a design principle where objects are provided their dependencies rather than creating them internally.</p>
+        </div>
+        <div class="qa">
+          <h3>Q: Why use Spring Boot?</h3>
+          <p>A: It reduces boilerplate, integrates with modern tools, and accelerates development of scalable applications.</p>
+        </div>
+      </section>
+      
+
+
+      
+
+
+
+
+      <section class="section" id="intro">
+        <h3>
+          Java Introduction
+          <span class="badge">start here</span>
+        </h3>
+        <div class="meta">What is Java?</div>
+        <p>
+          Java is a popular programming language, created in 1995. It is owned by Oracle, and more than 3 billion devices run Java today.
+        </p>
+        <ul>
+          <li>Platform-independent: “Write Once, Run Anywhere” (WORA).</li>
+          <li>Used for mobile apps, web apps, desktop apps, games, and more.</li>
+          <li>Runs on the Java Virtual Machine (JVM).</li>
+        </ul>
+        <div class="qa">
+          <h3>Q: Why is Java platform-independent?</h3>
+          <p>A: Because Java code compiles to bytecode, which runs on any JVM regardless of operating system.</p>
+        </div>
+      </section>
+      
+      <section class="section" id="syntax">
+        <h3>
+          Java Syntax
+          <span class="badge">basics</span>
+        </h3>
+        <div class="meta">Structure of a Java program</div>
+        <p>
+          Every Java program must have a <code>main()</code> method. Statements end with semicolons, and code blocks are wrapped in braces.
+        </p>
+        <div class="code">
+          <pre>public class Main {
+        public static void main(String[] args) {
+          System.out.println("Hello World");
+        }
+      }</pre>
+        </div>
+      </section>
+      
+      <section class="section" id="comments">
+        <h3>
+          Java Comments
+          <span class="badge">basics</span>
+        </h3>
+        <div class="meta">Single-line and multi-line comments</div>
+        <p>
+          Comments are ignored by the compiler and used to explain code.
+        </p>
+        <div class="code">
+          <pre>// Single-line comment
+      /* Multi-line
+         comment */
+      /** Documentation comment */</pre>
+        </div>
+        <div class="qa">
+          <h3>Q: What is a documentation comment?</h3>
+          <p>A: It starts with <code>/**</code> and is used by tools like Javadoc to generate API docs.</p>
+        </div>
+      </section>
+      
+      <section class="section" id="variables">
+        <h3>
+          Java Variables
+          <span class="badge">basics</span>
+        </h3>
+        <div class="meta">Declaring, initializing, multiple variables, constants</div>
+        <p>
+          Variables are containers for storing data values. Java is statically typed, so you must declare a type before use.
+        </p>
+        <div class="code">
+          <pre>int age = 25;
+      String name = "Alice";
+      double price = 19.99;</pre>
+        </div>
+        <p>You can declare multiple variables of the same type in one line:</p>
+        <div class="code">
+          <pre>int x = 5, y = 10, z = 15;</pre>
+        </div>
+        <p>Use <code>final</code> to declare constants:</p>
+        <div class="code">
+          <pre>final int BIRTH_YEAR = 1990;</pre>
+        </div>
+      </section>
+      
+      <section class="section" id="datatypes">
+        <h3>
+          Java Data Types
+          <span class="badge">basics</span>
+        </h3>
+        <div class="meta">Primitive and reference types</div>
+        <p>
+          Java has 8 primitive types: byte, short, int, long, float, double, char, boolean. Reference types include objects, arrays, and classes.
+        </p>
+        <div class="code">
+          <pre>int num = 100;
+      double pi = 3.14;
+      char grade = 'A';
+      boolean active = true;
+      String text = "Hello";</pre>
+        </div>
+      </section>
+      
+      <section class="section" id="operators">
+        <h3>
+          Java Operators
+          <span class="badge">basics</span>
+        </h3>
+        <div class="meta">Arithmetic, comparison, logical</div>
+        <p>
+          Operators perform operations on variables and values.
+        </p>
+        <div class="code">
+          <pre>int sum = 5 + 3;   // 8
+      int diff = 5 - 3;  // 2
+      int prod = 5 * 3;  // 15
+      int div = 10 / 2;  // 5
+      boolean check = (5 > 3); // true</pre>
+        </div>
+      </section>
+      
+      <section class="section" id="strings">
+        <h3>
+          Java Strings
+          <span class="badge">basics</span>
+        </h3>
+        <div class="meta">Working with text</div>
+        <p>
+          Strings are objects in Java. They have many useful methods like <code>length()</code>, <code>toUpperCase()</code>, <code>concat()</code>, and <code>substring()</code>.
+        </p>
+        <div class="code">
+          <pre>String txt = "Hello World";
+      System.out.println(txt.length());       // 11
+      System.out.println(txt.toUpperCase());  // HELLO WORLD
+      System.out.println(txt.substring(0,5)); // Hello</pre>
+        </div>
+      </section>
+      
+      <section class="section" id="math">
+        <h3>
+          Java Math
+          <span class="badge">basics</span>
+        </h3>
+        <div class="meta">Math class methods</div>
+        <p>
+          The <code>Math</code> class provides methods like <code>Math.max()</code>, <code>Math.min()</code>, <code>Math.sqrt()</code>, <code>Math.abs()</code>, and <code>Math.random()</code>.
+        </p>
+        <div class="code">
+          <pre>System.out.println(Math.max(5, 10));   // 10
+      System.out.println(Math.sqrt(64));     // 8.0
+      System.out.println(Math.random());     // 0.0 to 1.0</pre>
+        </div>
+      </section>
+      
+      <section class="section" id="booleans">
+        <h3>
+          Java Booleans
+          <span class="badge">basics</span>
+        </h3>
+        <div class="meta">True/false values</div>
+        <p>
+          Booleans represent two values: true or false. Often used in conditions and loops.
+        </p>
+        <div class="code">
+          <pre>boolean isJavaFun = true;
+      boolean isFishTasty = false;</pre>
+        </div>
+      </section>
+      
+      <section class="section" id="ifelse">
+        <h3>
+          Java If...Else
+          <span class="badge">control flow</span>
+        </h3>
+        <div class="meta">Conditional statements</div>
+        <p>
+          Use if/else to execute code based on conditions.
+        </p>
+        <div class="code">
+          <pre>if (age >= 18) {
+        System.out.println("Adult");
+      } else {
+        System.out.println("Minor");
+      }</pre>
+        </div>
+      </section>
+      
+      <section class="section" id="switch">
+        <h3>
+          Java Switch
+          <span class="badge">control flow</span>
+        </h3>
+        <div class="meta">Multiple conditions</div>
+        <p>
+          Switch statements test a variable against multiple values.
+        </p>
+        <div class="code">
+          <pre>int day = 2;
+      switch (day) {
+        case 1: System.out.println("Monday"); break;
+        case 2: System.out.println("Tuesday"); break;
+        default: System.out.println("Other day");
+      }</pre>
+        </div>
+      </section>
+      
+      <section class="section" id="loops">
+        <h3>
+          Java Loops
+          <span class="badge">control flow</span>
+        </h3>
+        <div class="meta">While, for, for-each</div>
+        <p>
+          Loops repeat code while conditions are true.
+        </p>
+        <div class="code">
+          <pre>for (int i = 0; i < 5; i++) {
+        System.out.println(i);
+      }
+      
+      int j = 0;
+      while (j < 5) {
+        System.out.println(j);
+        j++;
+      }</pre>
+        </div>
+      </section>
+      
+      <section class="section" id="breakcontinue">
+        <h3>
+          Break & Continue
+          <span class="badge">control flow</span>
+        </h3>
+        <div class="meta">Loop control</div>
+        <p>
+          <code>break</code> exits a loop immediately, while <code>continue</code> skips the current iteration and moves to the next.
+        </p>
+        <div class="code">
+          <pre>for (int i = 0; i < 10; i++) {
+        if (i == 4) {
+          break; // exits loop when i = 4
+        }
+        System.out.println(i);
+      }
+      
+      for (int j = 0; j < 10; j++) {
+        if (j == 4) {
+          continue; // skips printing when j = 4
+        }
+        System.out.println(j);
+      }</pre>
+        </div>
+        <div class="qa">
+          <h3>Q: When should you use break vs continue?</h3>
+          <p>A: Use <code>break</code> to stop looping entirely, and <code>continue</code> to skip just one iteration but keep looping.</p>
+        </div>
+      </section>
+      <section class="section" id="arrays">
+        <h3>
+          Java Arrays
+          <span class="badge">basics</span>
+        </h3>
+        <div class="meta">Storing multiple values</div>
+        <p>
+          Arrays hold multiple values of the same type. They are fixed in size once created.
+        </p>
+        <div class="code">
+          <pre>String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+      System.out.println(cars[0]); // Volvo
+      
+      int[] numbers = {10, 20, 30, 40};
+      for (int n : numbers) {
+        System.out.println(n);
+      }</pre>
+        </div>
+        <p>You can also create arrays with a specified size:</p>
+        <div class="code">
+          <pre>int[] myNums = new int[5];
+      myNums[0] = 100;
+      myNums[1] = 200;</pre>
+        </div>
+        <div class="qa">
+          <h3>Q: What happens if you access an index outside the array size?</h3>
+          <p>A: Java throws an <code>ArrayIndexOutOfBoundsException</code>.</p>
+        </div>
+      </section>
+    --><section class="section"id="q1"><h3>Q1: Difference between JDK, JRE, and JVM <span class="badge">basics</span></h3><div class="meta">Core Java</div><p>JVM executes bytecode, JRE provides JVM + libraries, JDK includes JRE + compiler and tools.</p><!--<div class="code"></div>--></section><section class="section"id="q2"><h3>Q2: Explain platform independence in Java <span class="badge">basics</span></h3><div class="meta">Core Java</div><p>Java compiles to bytecode, which runs on any JVM regardless of operating system.</section><section class="section"id="q3"><h3>Q3: Difference between == and equals() in Java <span class="badge">basics</span></h3><div class="meta">Core Java</div><p>== compares references, equals() compares values (if overridden properly).</section><section class="section"id="q4"><h3>Q4: What is the difference between String, StringBuilder, and StringBuffer? <span class="badge">basics</span></h3><div class="meta">Strings</div><p>String is immutable, StringBuilder is mutable and not synchronized, StringBuffer is mutable and synchronized.</section><section class="section"id="q5"><h3>Q5: Explain autoboxing and unboxing in Java <span class="badge">basics</span></h3><div class="meta">Wrapper Classes</div><p>Autoboxing converts primitives to wrapper objects, unboxing converts wrapper objects back to primitives.</section><section class="section"id="q6"><h3>Q6: Difference between primitive types and wrapper classes <span class="badge">basics</span></h3><div class="meta">Core Java</div><p>Primitives are basic data types, wrapper classes are objects that encapsulate primitives and provide methods.</section><section class="section"id="q7"><h3>Q7: What is type casting in Java? <span class="badge">basics</span></h3><div class="meta">Core Java</div><p>Type casting converts one data type into another. Implicit casting is automatic, explicit casting requires syntax.</section><section class="section"id="q8"><h3>Q8: Difference between final, finally, and finalize <span class="badge">basics</span></h3><div class="meta">Keywords</div><p>final is a keyword for constants, finally is a block for cleanup in try-catch, finalize() is a method called by GC.</section><section class="section"id="q9"><h3>Q9: Explain static keyword in Java <span class="badge">basics</span></h3><div class="meta">Core Java</div><p>Static members belong to the class rather than instances. Useful for utility methods and constants.</section><section class="section"id="q10"><h3>Q10: Difference between static and instance methods <span class="badge">basics</span></h3><div class="meta">Core Java</div><p>Static methods belong to the class and can be called without objects, instance methods require an object.</section><section class="section"id="q11"><h3>Q11: What is a constructor in Java? <span class="badge">basics</span></h3><div class="meta">Core Java</div><p>A constructor initializes objects. It has the same name as the class and no return type.</section><section class="section"id="q12"><h3>Q12: Difference between constructor and method <span class="badge">basics</span></h3><div class="meta">Core Java</div><p>Constructor initializes objects, methods define behavior. Constructors have no return type, methods do.</section><section class="section"id="q13"><h3>Q13: Explain method overloading vs overriding <span class="badge">basics</span></h3><div class="meta">Core Java</div><p>Overloading: same method name, different parameters. Overriding: subclass redefines parent method.</section><section class="section"id="q14"><h3>Q14: What is the difference between this and super keyword? <span class="badge">basics</span></h3><div class="meta">Core Java</div><p>this refers to current object, super refers to parent class object.</section><section class="section"id="q15"><h3>Q15: Explain access modifiers in Java <span class="badge">basics</span></h3><div class="meta">Core Java</div><p>public, protected, default, private — control visibility of classes, methods, and variables.</section><section class="section"id="q16"><h3>Q16: Difference between shallow copy and deep copy <span class="badge">basics</span></h3><div class="meta">Core Java</div><p>Shallow copy copies references, deep copy duplicates actual objects.</section><section class="section"id="q17"><h3>Q17: What is immutability in Java? <span class="badge">basics</span></h3><div class="meta">Strings</div><p>Immutable objects cannot be changed after creation. String is a prime example.</section><section class="section"id="q18"><h3>Q18: Difference between String pool and heap <span class="badge">basics</span></h3><div class="meta">Memory</div><p>String pool stores unique string literals, heap stores objects created with new keyword.</section><section class="section"id="q19"><h3>Q19: Explain garbage collection in Java <span class="badge">basics</span></h3><div class="meta">Memory Management</div><p>Automatic process that reclaims memory by removing unused objects. Triggered by JVM.</section><section class="section"id="q20"><h3>Q20: Difference between stack and heap memory <span class="badge">basics</span></h3><div class="meta">Memory Management</div><p>Stack stores method calls and local variables, heap stores objects and class instances.</section><section class="section"id="q21"><h3>Q21: What are the four pillars of OOP in Java? <span class="badge">OOP</span></h3><div class="meta">Object-Oriented Programming</div><p>Encapsulation, Inheritance, Polymorphism, and Abstraction are the four pillars of OOP in Java.</section><section class="section"id="q22"><h3>Q22: Difference between abstract class and interface <span class="badge">OOP</span></h3><div class="meta">Design</div><p>Abstract classes can have both abstract and concrete methods; interfaces (before Java 8) only had abstract methods. From Java 8 onward, interfaces can have default and static methods.</section><section class="section"id="q23"><h3>Q23: What is encapsulation in Java? <span class="badge">OOP</span></h3><div class="meta">Core Concept</div><p>Encapsulation is the practice of hiding internal details and exposing only necessary functionality through public methods. Achieved using private fields and getters/setters.</section><section class="section"id="q24"><h3>Q24: Explain inheritance in Java <span class="badge">OOP</span></h3><div class="meta">Core Concept</div><p>Inheritance allows a class to acquire properties and behaviors of another class using the <code>extends</code> keyword. Promotes code reuse.</section><section class="section"id="q25"><h3>Q25: What is polymorphism in Java? <span class="badge">OOP</span></h3><div class="meta">Core Concept</div><p>Polymorphism allows one interface to be used for different data types. Achieved through method overloading (compile-time) and overriding (runtime).</section><section class="section"id="q26"><h3>Q26: What is abstraction in Java? <span class="badge">OOP</span></h3><div class="meta">Core Concept</div><p>Abstraction hides implementation details and shows only essential features. Achieved using abstract classes and interfaces.</section><section class="section"id="q27"><h3>Q27: Difference between method overloading and overriding <span class="badge">OOP</span></h3><div class="meta">Core Concept</div><p>Overloading: same method name, different parameters (compile-time). Overriding: subclass redefines parent method (runtime).</section><section class="section"id="q28"><h3>Q28: Can a constructor be overridden? <span class="badge">OOP</span></h3><div class="meta">Core Concept</div><p>No, constructors cannot be overridden. They can be overloaded (multiple constructors with different parameters).</section><section class="section"id="q29"><h3>Q29: Difference between composition and inheritance <span class="badge">OOP</span></h3><div class="meta">Design</div><p>Inheritance is an “is-a” relationship, composition is a “has-a” relationship. Composition is often preferred for flexibility.</section><section class="section"id="q30"><h3>Q30: What is the difference between an inner class and a nested static class? <span class="badge">OOP</span></h3><div class="meta">Classes</div><p>Inner classes are tied to an instance of the outer class, nested static classes are not and can be instantiated without an outer class object.</section><section class="section"id="q31"><h3>Q31: What is multiple inheritance in Java? <span class="badge">OOP</span></h3><div class="meta">Inheritance</div><p>Java does not support multiple inheritance with classes to avoid ambiguity. It supports multiple inheritance through interfaces.</section><section class="section"id="q32"><h3>Q32: Difference between interface and marker interface <span class="badge">OOP</span></h3><div class="meta">Interfaces</div><p>Marker interfaces have no methods; they signal metadata to the JVM (e.g., Serializable, Cloneable).</section><section class="section"id="q33"><h3>Q33: Can an interface extend another interface? <span class="badge">OOP</span></h3><div class="meta">Interfaces</div><p>Yes, interfaces can extend other interfaces, allowing multiple inheritance of type.</section><section class="section"id="q34"><h3>Q34: Difference between abstract class and concrete class <span class="badge">OOP</span></h3><div class="meta">Classes</div><p>Abstract classes cannot be instantiated and may contain abstract methods. Concrete classes provide full implementation and can be instantiated.</section><section class="section"id="q35"><h3>Q35: What is the diamond problem in Java? <span class="badge">OOP</span></h3><div class="meta">Inheritance</div><p>Occurs when multiple inheritance leads to ambiguity. Java avoids this by not supporting multiple inheritance with classes.</section><section class="section"id="q36"><h3>Q36: Difference between super() and this() in constructors <span class="badge">OOP</span></h3><div class="meta">Constructors</div><p>super() calls the parent class constructor, this() calls another constructor in the same class.</section><section class="section"id="q37"><h3>Q37: Can we declare a class as final in Java? <span class="badge">OOP</span></h3><div class="meta">Classes</div><p>Yes, a final class cannot be extended. Example: String class is final.</section><section class="section"id="q38"><h3>Q38: What is the difference between instanceof and isAssignableFrom()? <span class="badge">OOP</span></h3><div class="meta">Type Checking</div><p>instanceof checks if an object is an instance of a class, isAssignableFrom() checks if a class is assignable from another class.</section><section class="section"id="q39"><h3>Q39: Explain method hiding in Java <span class="badge">OOP</span></h3><div class="meta">Methods</div><p>When a static method in a subclass has the same signature as one in the parent class, it hides the parent method instead of overriding it.</section><section class="section"id="q40"><h3>Q40: Difference between early binding and late binding <span class="badge">OOP</span></h3><div class="meta">Polymorphism</div><p>Early binding happens at compile-time (method overloading), late binding happens at runtime (method overriding).</section><section class="section"id="q41"><h3>Q41: Difference between HashMap and Hashtable <span class="badge">collections</span></h3><div class="meta">Collections Framework</div><p>HashMap is non-synchronized, allows one null key and multiple null values. Hashtable is synchronized, does not allow null keys or values, and is legacy.</section><section class="section"id="q42"><h3>Q42: Explain fail-fast vs fail-safe iterators <span class="badge">collections</span></h3><div class="meta">Concurrency</div><p>Fail-fast iterators throw ConcurrentModificationException if the collection is modified during iteration. Fail-safe iterators work on a copy, so they don’t throw exceptions.</section><section class="section"id="q43"><h3>Q43: Difference between ArrayList and LinkedList <span class="badge">collections</span></h3><div class="meta">Lists</div><p>ArrayList is backed by a dynamic array, better for random access. LinkedList is backed by a doubly linked list, better for frequent insertions/deletions.</section><section class="section"id="q44"><h3>Q44: Difference between HashSet and TreeSet <span class="badge">collections</span></h3><div class="meta">Sets</div><p>HashSet stores elements in a hash table, does not guarantee order. TreeSet stores elements in a Red-Black tree, maintains sorted order.</section><section class="section"id="q45"><h3>Q45: Difference between HashMap and ConcurrentHashMap <span class="badge">collections</span></h3><div class="meta">Concurrency</div><p>HashMap is not thread-safe. ConcurrentHashMap is thread-safe, uses segment locking for better concurrency, and does not allow null keys/values.</section><section class="section"id="q46"><h3>Q46: What is the difference between Comparable and Comparator? <span class="badge">collections</span></h3><div class="meta">Sorting</div><p>Comparable defines natural ordering via compareTo(), Comparator defines custom ordering via compare().</section><section class="section"id="q47"><h3>Q47: Explain difference between List, Set, and Map <span class="badge">collections</span></h3><div class="meta">Collections Framework</div><p>List: ordered, allows duplicates. Set: unordered, no duplicates. Map: key-value pairs, keys unique.</section><section class="section"id="q48"><h3>Q48: What is the difference between Iterator and ListIterator? <span class="badge">collections</span></h3><div class="meta">Iteration</div><p>Iterator can traverse forward only. ListIterator can traverse both forward and backward, and modify elements.</section><section class="section"id="q49"><h3>Q49: Explain difference between HashMap and TreeMap <span class="badge">collections</span></h3><div class="meta">Maps</div><p>HashMap stores entries in a hash table, no order guarantee. TreeMap stores entries in a Red-Black tree, maintains sorted order by keys.</section><section class="section"id="q50"><h3>Q50: What is the difference between WeakHashMap and HashMap? <span class="badge">collections</span></h3><div class="meta">Maps</div><p>WeakHashMap uses weak references for keys, allowing GC to reclaim them. HashMap uses strong references, keys are not garbage collected.</section><section class="section"id="q51"><h3>Q51: Explain difference between Enumeration and Iterator <span class="badge">collections</span></h3><div class="meta">Iteration</div><p>Enumeration is legacy, only supports read-only traversal. Iterator is modern, supports element removal during iteration.</section><section class="section"id="q52"><h3>Q52: What is the difference between Vector and ArrayList? <span class="badge">collections</span></h3><div class="meta">Lists</div><p>Vector is synchronized and legacy. ArrayList is not synchronized, preferred in modern applications.</section><section class="section"id="q53"><h3>Q53: Explain difference between LinkedHashMap and HashMap <span class="badge">collections</span></h3><div class="meta">Maps</div><p>LinkedHashMap maintains insertion order using a doubly linked list. HashMap does not guarantee order.</section><section class="section"id="q54"><h3>Q54: What is the difference between generic and non-generic collections? <span class="badge">generics</span></h3><div class="meta">Generics</div><p>Generic collections enforce type safety at compile-time. Non-generic collections store objects as type Object, requiring casting.</section><section class="section"id="q55"><h3>Q55: Explain type erasure in Java generics <span class="badge">generics</span></h3><div class="meta">Generics</div><p>Type erasure removes generic type information at runtime. Generics are enforced at compile-time, but erased during execution.</section><section class="section"id="q56"><h3>Q56: Difference between checked and unchecked exceptions <span class="badge">exceptions</span></h3><div class="meta">Error Handling</div><p>Checked exceptions must be declared in method signatures or handled with try-catch. Unchecked exceptions (RuntimeException and its subclasses) occur at runtime and don’t require explicit handling.</section><section class="section"id="q57"><h3>Q57: What is the difference between throw and throws in Java? <span class="badge">exceptions</span></h3><div class="meta">Error Handling</div><p><code>throw</code> is used to explicitly throw an exception object. <code>throws</code> is used in method signatures to declare exceptions that a method may throw.</section><section class="section"id="q58"><h3>Q58: Explain try-catch-finally in Java <span class="badge">exceptions</span></h3><div class="meta">Error Handling</div><p><code>try</code> encloses code that may throw exceptions, <code>catch</code> handles them, and <code>finally</code> executes cleanup code regardless of whether an exception occurred.</section><section class="section"id="q59"><h3>Q59: Difference between Error and Exception <span class="badge">exceptions</span></h3><div class="meta">Error Handling</div><p>Errors represent serious problems (like OutOfMemoryError) that applications should not try to handle. Exceptions represent conditions that applications can catch and handle.</section><section class="section"id="q60"><h3>Q60: What is the difference between throw and Throwable? <span class="badge">exceptions</span></h3><div class="meta">Error Handling</div><p><code>throw</code> is a keyword used to throw exceptions. <code>Throwable</code> is the superclass of all errors and exceptions in Java.</section><section class="section"id="q61"><h3>Q61: Explain custom exceptions in Java <span class="badge">exceptions</span></h3><div class="meta">Error Handling</div><p>Custom exceptions are user-defined classes extending Exception or RuntimeException. They allow developers to represent application-specific error conditions.</section><section class="section"id="q62"><h3>Q62: Difference between final, finally, and finalize <span class="badge">exceptions</span></h3><div class="meta">Keywords</div><p><code>final</code> is used for constants, <code>finally</code> is a block for cleanup in exception handling, and <code>finalize()</code> is a method called by the garbage collector before object destruction.</section><section class="section"id="q63"><h3>Q63: What is the difference between multiple catch blocks and multi-catch in Java? <span class="badge">exceptions</span></h3><div class="meta">Error Handling</div><p>Multiple catch blocks handle different exceptions separately. Multi-catch (Java 7+) allows handling multiple exceptions in a single catch block using the <code>|</code> operator.</section><section class="section"id="q64"><h3>Q64: Explain exception propagation in Java <span class="badge">exceptions</span></h3><div class="meta">Error Handling</div><p>Exception propagation is the process where an exception is passed up the call stack until it is caught or the program terminates.</section><section class="section"id="q65"><h3>Q65: Difference between try-with-resources and finally block <span class="badge">exceptions</span></h3><div class="meta">Error Handling</div><p>try-with-resources (Java 7+) automatically closes resources that implement AutoCloseable. finally block requires manual resource cleanup.</section><section class="section"id="q66"><h3>Q66: Difference between Thread and Runnable <span class="badge">multithreading</span></h3><div class="meta">Concurrency</div><p>Thread is a class that can be extended to create a new thread. Runnable is an interface that can be implemented by a class to define the run() method. Runnable is preferred for better resource sharing and flexibility.</section><section class="section"id="q67"><h3>Q67: Difference between process and thread <span class="badge">multithreading</span></h3><div class="meta">Concurrency</div><p>A process is an independent program with its own memory space. A thread is a lightweight unit of execution within a process that shares memory with other threads of the same process.</section><section class="section"id="q68"><h3>Q68: Explain synchronized keyword in Java <span class="badge">multithreading</span></h3><div class="meta">Concurrency</div><p>The synchronized keyword ensures that only one thread can access a block of code or method at a time, preventing race conditions.</section><section class="section"id="q69"><h3>Q69: Difference between synchronized method and synchronized block <span class="badge">multithreading</span></h3><div class="meta">Concurrency</div><p>Synchronized methods lock the entire method, while synchronized blocks allow finer control by locking only a specific section of code.</section><section class="section"id="q70"><h3>Q70: What is the difference between volatile and synchronized? <span class="badge">multithreading</span></h3><div class="meta">Concurrency</div><p>volatile ensures visibility of changes to variables across threads. synchronized ensures both visibility and atomicity by locking code blocks or methods.</section><section class="section"id="q71"><h3>Q71: Explain difference between wait(), notify(), and notifyAll() <span class="badge">multithreading</span></h3><div class="meta">Concurrency</div><p>wait() makes a thread wait until notified. notify() wakes up one waiting thread. notifyAll() wakes up all waiting threads on the same object monitor.</section><section class="section"id="q72"><h3>Q72: Difference between Callable and Runnable <span class="badge">multithreading</span></h3><div class="meta">Concurrency</div><p>Runnable’s run() method does not return a result or throw checked exceptions. Callable’s call() method returns a result and can throw checked exceptions.</section><section class="section"id="q73"><h3>Q73: What is the difference between ExecutorService and ForkJoinPool? <span class="badge">multithreading</span></h3><div class="meta">Concurrency</div><p>ExecutorService manages a pool of threads for tasks. ForkJoinPool is designed for divide-and-conquer tasks, splitting work into smaller subtasks and merging results.</section><section class="section"id="q74"><h3>Q74: Explain deadlock in Java <span class="badge">multithreading</span></h3><div class="meta">Concurrency</div><p>Deadlock occurs when two or more threads are waiting for each other’s resources, causing them to block indefinitely. It can be avoided by proper resource ordering and using tryLock.</section><section class="section"id="q75"><h3>Q75: Difference between concurrency and parallelism <span class="badge">multithreading</span></h3><div class="meta">Concurrency</div><p>Concurrency is about dealing with multiple tasks at once (interleaving execution). Parallelism is about executing multiple tasks simultaneously on different processors or cores.</section><section class="section"id="q76"><h3>Q76: Explain JVM memory model <span class="badge">advanced</span></h3><div class="meta">JVM Internals</div><p>The JVM memory model consists of Heap (objects), Stack (method frames), Method Area (class metadata), PC Register, and Native Method Stack. It ensures thread isolation and efficient memory management.</section><section class="section"id="q77"><h3>Q77: Difference between heap and stack memory in JVM <span class="badge">advanced</span></h3><div class="meta">Memory Management</div><p>Heap stores objects and is shared among threads. Stack stores method calls and local variables, and is thread-specific.</section><section class="section"id="q78"><h3>Q78: Explain garbage collection algorithms in Java <span class="badge">advanced</span></h3><div class="meta">Memory Management</div><p>Common algorithms include Mark-and-Sweep, Generational GC, G1 Garbage Collector. They reclaim memory by identifying and removing unreachable objects.</section><section class="section"id="q79"><h3>Q79: Difference between strong, weak, soft, and phantom references <span class="badge">advanced</span></h3><div class="meta">References</div><p>Strong references prevent GC. Weak references allow GC when no strong references exist. Soft references are cleared only under memory pressure. Phantom references are used for post-mortem cleanup.</section><section class="section"id="q80"><h3>Q80: Explain reflection in Java <span class="badge">advanced</span></h3><div class="meta">Advanced Features</div><p>Reflection allows inspection and modification of classes, methods, and fields at runtime. It is used in frameworks, IDEs, and testing tools.</section><section class="section"id="q81"><h3>Q81: Difference between Class.forName() and ClassLoader.loadClass() <span class="badge">advanced</span></h3><div class="meta">Class Loading</div><p>Class.forName() loads and initializes the class. ClassLoader.loadClass() loads the class but does not initialize it until explicitly used.</section><section class="section"id="q82"><h3>Q82: Explain difference between checked and unchecked exceptions in context of reflection <span class="badge">advanced</span></h3><div class="meta">Reflection</div><p>Reflection often throws checked exceptions like ClassNotFoundException, NoSuchMethodException, which must be handled. Runtime exceptions like IllegalAccessException may occur if access rules are violated.</section><section class="section"id="q83"><h3>Q83: What is the difference between serialization and deserialization? <span class="badge">advanced</span></h3><div class="meta">Persistence</div><p>Serialization converts an object into a byte stream for storage or transmission. Deserialization reconstructs the object from the byte stream.</section><section class="section"id="q84"><h3>Q84: Explain transient keyword in Java <span class="badge">advanced</span></h3><div class="meta">Persistence</div><p>Fields marked transient are excluded from serialization. Useful for sensitive or non-persistent data.</section><section class="section"id="q85"><h3>Q85: Difference between Serializable and Externalizable interfaces <span class="badge">advanced</span></h3><div class="meta">Persistence</div><p>Serializable provides default serialization. Externalizable requires implementing writeExternal() and readExternal() for custom serialization logic.</section><section class="section"id="q86"><h3>Q86: Difference between JDBC Statement and PreparedStatement <span class="badge">enterprise</span></h3><div class="meta">Database Access</div><p>Statement executes static SQL queries without parameters. PreparedStatement is precompiled, supports parameters, prevents SQL injection, and is faster for repeated queries.</section><section class="section"id="q87"><h3>Q87: Explain connection pooling in JDBC <span class="badge">enterprise</span></h3><div class="meta">Database Access</div><p>Connection pooling reuses database connections instead of creating new ones for each request, improving performance and resource utilization.</section><section class="section"id="q88"><h3>Q88: Difference between Hibernate and JDBC <span class="badge">enterprise</span></h3><div class="meta">ORM vs JDBC</div><p>JDBC is low-level API for direct SQL execution. Hibernate is an ORM framework that maps Java objects to database tables, reducing boilerplate code.</section><section class="section"id="q89"><h3>Q89: What is the difference between lazy loading and eager loading in Hibernate? <span class="badge">enterprise</span></h3><div class="meta">ORM</div><p>Lazy loading loads data on demand when accessed. Eager loading loads related data immediately with the parent entity.</section><section class="section"id="q90"><h3>Q90: Explain difference between Servlet and JSP <span class="badge">enterprise</span></h3><div class="meta">Web Technologies</div><p>Servlets are Java classes handling HTTP requests and responses. JSPs are HTML pages with embedded Java code, compiled into servlets for dynamic content.</section><section class="section"id="q91"><h3>Q91: Difference between doGet() and doPost() in Servlets <span class="badge">enterprise</span></h3><div class="meta">Web Technologies</div><p>doGet() is used for idempotent requests, parameters are appended to URL. doPost() is used for non-idempotent requests, parameters are sent in request body.</section><section class="section"id="q92"><h3>Q92: Explain MVC architecture in Java web applications <span class="badge">enterprise</span></h3><div class="meta">Web Architecture</div><p>MVC separates concerns: Model (business logic/data), View (UI), Controller (handles requests and updates model/view). Improves maintainability and scalability.</section><section class="section"id="q93"><h3>Q93: Difference between Spring and Spring Boot <span class="badge">enterprise</span></h3><div class="meta">Frameworks</div><p>Spring is a comprehensive framework for enterprise applications. Spring Boot simplifies configuration, provides embedded servers, and enables rapid development.</section><section class="section"id="q94"><h3>Q94: What is dependency injection in Spring? <span class="badge">enterprise</span></h3><div class="meta">Frameworks</div><p>Dependency Injection is a design pattern where Spring manages object creation and injects dependencies, improving testability and reducing coupling.</section><section class="section"id="q95"><h3>Q95: Explain difference between REST and SOAP web services <span class="badge">enterprise</span></h3><div class="meta">Web Services</div><p>REST uses lightweight HTTP methods (GET, POST, PUT, DELETE) and JSON/XML. SOAP uses XML-based protocol with strict standards, more overhead but built-in security.</section><section class="section"id="q96"><h3>Q96: Explain Singleton pattern in Java <span class="badge">design</span></h3><div class="meta">Design Patterns</div><p>The Singleton pattern ensures only one instance of a class exists in the JVM. It is implemented using a private constructor, a static instance, and a public static method to access the instance. Thread safety can be ensured with synchronized blocks or using enums.</section><section class="section"id="q97"><h3>Q97: What is the Factory pattern? <span class="badge">design</span></h3><div class="meta">Design Patterns</div><p>The Factory pattern provides an interface for creating objects but allows subclasses or factory classes to decide which class to instantiate. It promotes loose coupling and flexibility in object creation.</section><section class="section"id="q98"><h3>Q98: Explain Observer pattern in Java <span class="badge">design</span></h3><div class="meta">Design Patterns</div><p>The Observer pattern defines a one-to-many dependency between objects. When one object (subject) changes state, all dependent objects (observers) are notified automatically. Commonly used in event handling and messaging systems.</section><section class="section"id="q99"><h3>Q99: What is the Builder pattern? <span class="badge">design</span></h3><div class="meta">Design Patterns</div><p>The Builder pattern separates the construction of a complex object from its representation. It allows step-by-step object creation and improves readability, especially when dealing with many optional parameters.</section><section class="section"id="q100"><h3>Q100: Explain Dependency Injection in Java <span class="badge">best-practices</span></h3><div class="meta">Best Practices</div><p>Dependency Injection is a design principle where objects are provided their dependencies externally rather than creating them internally. It improves testability, reduces coupling, and is widely used in frameworks like Spring.</section><footer>Back to <a href="..">Home Page</a> | © 2026 skills.enviz.in. All rights reserved | Powered by <a href="https://enviz.in"target="_blank">enviz</a></footer></main>
