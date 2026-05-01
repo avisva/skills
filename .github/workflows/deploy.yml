@@ -26,7 +26,7 @@ jobs:
       - name: Create minified build directory
         run: |
           mkdir -p dist
-          cp -r angular general go java python react spring-boot sql index.html CNAME sitemap.xml favicon.png enviz-l-logo.png README.md dist/ 2>/dev/null || true
+          cp -r angular general go java python react spring-boot sql index.html CNAME sitemap.xml sitemap-index.xml favicon.png enviz-l-logo.png README.md dist/ 2>/dev/null || true
 
       - name: Minify HTML files
         run: |
