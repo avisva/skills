@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://skills.enviz.in/sitemap-index.xml
