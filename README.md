@@ -27,7 +27,7 @@ The project includes comprehensive SEO optimization for interview preparation:
 - **Sitemap Integration**: All pages linked in sitemap.xml for better discoverability
 - **Robots.txt**: Configured to guide search engine crawlers and prevent indexing of unnecessary files
 
-**Sitemap URL:** `https://skills.enviz.in/sitemap.xml`
+**Sitemap URL:** `https://skills.enviz.in/sitemap-index.xml`
 **Robots.txt URL:** `https://skills.enviz.in/robots.txt`
 
 ### SEO Strategy for Interview Preparation
