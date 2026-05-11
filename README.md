@@ -10,7 +10,7 @@ A modern, clean tutorial collection for web development, programming languages, 
 - **Responsive Layout** - Works seamlessly on all devices
 - **Quick Navigation** - Easy-to-use navigation across tutorials
 - **Code Examples** - Real-world code snippets and practical examples
-- **SEO Optimized** - Includes sitemap.xml for search engine indexing
+- **SEO Optimized** - Includes sitemap-index.xml for search engine indexing
 - **Custom Favicon** - Professional rocket favicon for brand recognition
 
 ## SEO & Meta Tags
@@ -24,10 +24,10 @@ The project includes comprehensive SEO optimization for interview preparation:
 - **Twitter Cards**: Enhanced social sharing for interview preparation content
 - **Canonical URLs**: Proper URL canonicalization for search engine indexing
 - **Robots Meta Tags**: Configured for optimal search engine crawling
-- **Sitemap Integration**: All pages linked in sitemap.xml for better discoverability
+- **Sitemap Integration**: All pages linked in sitemap-index.xml for better discoverability
 - **Robots.txt**: Configured to guide search engine crawlers and prevent indexing of unnecessary files
 
-**Sitemap URL:** `https://skills.enviz.in/sitemap.xml`
+**Sitemap URL:** `https://skills.enviz.in/sitemap-index.xml`
 **Robots.txt URL:** `https://skills.enviz.in/robots.txt`
 
 ### SEO Strategy for Interview Preparation
