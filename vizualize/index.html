@@ -185,22 +185,20 @@
 
     <script>
       const IMG_DIR = './img/';
-      const IMG_EXTENSIONS = /\.(jpe?g|png|gif|webp|svg|bmp|avif|ico|tiff?)$/i;
+      const IMAGE_FILES = [
+        'devops-next.png',
+        'devops-stack-now-then.png',
+        'distributed-job-scheduler.png',
+        'fullstack-reality.png',
+        'highest-paid-jobs.png',
+        'monitoring-observability.jpg',
+        'optimistic-pessimistic-locking.jpg',
+        'system-design-decision-tree.png',
+        'whatsapp-working.gif'
+      ];
 
       async function discoverImages() {
-        const response = await fetch(IMG_DIR);
-        if (!response.ok) throw new Error('Could not read ' + IMG_DIR);
-        const html = await response.text();
-        const doc = new DOMParser().parseFromString(html, 'text/html');
-        const filenames = [];
-        doc.querySelectorAll('a').forEach((a) => {
-          const href = decodeURIComponent(a.getAttribute('href') || '');
-          const name = href.replace(/[\\/]+$/, '').split(/[\\/]/).pop();
-          if (name && IMG_EXTENSIONS.test(name) && !filenames.includes(name)) {
-            filenames.push(name);
-          }
-        });
-        return filenames.map((name) => ({ src: 'img/' + name, name }));
+        return IMAGE_FILES.map((name) => ({ src: IMG_DIR + name, name }));
       }
 
       let loadedImages = [];
