@@ -1,15 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P9RFVBCR7D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P9RFVBCR7D');
+</script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="../favicon.png" />
-    <title>Vizualize Software | Visual Learning Gallery | Avisva Skills</title>
-    <meta name="description" content="Vizualize Software presents software learning through a visual gallery of curated examples, rendered as interactive cards within the Skills site shell." />
+    <title>Software Concepts Visually | System Design, Architecture & DevOps Diagrams</title>
+    <meta name="description" content="Explore software concepts visually with architecture diagrams, system design visuals, DevOps workflows, and engineering concepts for quick recall and understanding." />
+    <meta name="keywords" content="software concepts visually, software architecture diagrams, system design visuals, devops architecture diagram, software engineering concepts, visual learning gallery, software patterns, architecture overview, software design visualization, backend architecture diagrams, microservices architecture visual, cloud architecture visuals" />
     <meta name="author" content="Skill Booster" />
     <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
     <meta name="theme-color" content="#22c55e" />
+    <meta name="msapplication-TileColor" content="#22c55e" />
     <link rel="canonical" href="https://skills.enviz.in/vizualize" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://skills.enviz.in/vizualize" />
+    <meta property="og:title" content="Software Concepts Visually | Architecture & System Design Diagrams" />
+    <meta property="og:description" content="Quick visual reference for software architecture, system design, DevOps, and engineering concepts through diagrams and concept maps." />
+    <meta property="og:image" content="https://skills.enviz.in/enviz-l-logo.png" />
+    <meta property="og:site_name" content="Skill Booster" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://skills.enviz.in/vizualize" />
+    <meta property="twitter:title" content="Software Concepts Visually | Architecture & System Design Diagrams" />
+    <meta property="twitter:description" content="Visual references for software architecture, system design, DevOps workflows, and engineering concepts for faster recall." />
+    <meta property="twitter:image" content="https://skills.enviz.in/enviz-l-logo.png" />
+
+    <link rel="icon" type="image/png" href="/favicon.ico" />
+    <link rel="sitemap" type="application/xml" href="https://skills.enviz.in/sitemap-index.xml" />
     <style>
       :root {
         --bg: #070a17;
@@ -79,16 +110,42 @@
       main { max-width: 900px; margin: 0 auto; padding: calc(var(--header-h) + var(--gap) + 22px) 16px 40px; }
       .intro { margin-bottom: 20px; }
       .intro h2 { margin-top: 0; font-size: 18px; }
-      .intro p { font-size: 12px; line-height: 1.6; color: rgba(248, 250, 252, 0.82); }
-      .intro ul { font-size: 12px; line-height: 1.6; margin: 12px 0 0 16px; padding-left: 20px; }
-      .intro li { margin: 6px 0; }
+      .intro p { font-size: 11px; line-height: 1.6; color: #bbb; }
+      .intro ul { font-size: 11px; line-height: 1.6; margin: 12px 0 0 16px; padding-left: 20px; }
+      .intro li { margin: 6px 0; color: #bbb; }
       .count-pill { display: none; margin-top: 8px; padding: 6px 10px; border-radius: 999px; background: rgba(255,255,255,0.08); color: #d8fbe0; font-size: 12px; }
       .gallery { display: grid; grid-template-columns: 1fr; gap: 18px; }
-      .card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; overflow: hidden; box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; cursor: pointer; }
-      .card:hover { transform: translateY(-2px); box-shadow: 0 24px 55px rgba(0, 0, 0, 0.42); }
-      .card img { width: 100%; max-width: 100%; max-height: 70vh; height: auto; object-fit: contain; display: block; }
-      .card-body { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 6px; }
-      .card-name { font-size: 12px; color: #f8fafc; font-weight: 600; word-break: break-word; }
+      .card {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-left: 4px solid rgba(56, 189, 248, 0.85);
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+        transition: box-shadow 0.2s ease;
+        cursor: pointer;
+      }
+      .card:hover { box-shadow: 0 24px 55px rgba(0, 0, 0, 0.42); }
+      .card img { width: 100%; max-width: 100%; max-height: 70vh; height: auto; object-fit: contain; display: block; transition: transform 0.28s ease, filter 0.28s ease; }
+      .card img:hover { transform: translateY(-2px) scale(1.005); filter: brightness(1.04); }
+      .card-body { padding: 10px 12px 12px; display: flex; flex-direction: column; gap: 6px; align-items: center; text-align: center; }
+      .card-name {
+        display: inline-block;
+        max-width: 100%;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #06121a;
+        text-align: center;
+        background: linear-gradient(90deg, rgba(34, 197, 94, 0.95), rgba(56, 189, 248, 0.9));
+        border-radius: 3px;
+        padding: 4px 8px;
+        box-shadow: 0 6px 14px rgba(34, 197, 94, 0.14), 0 10px 18px rgba(56, 189, 248, 0.12);
+        margin: 0 auto;
+        line-height: 1.3;
+        word-break: break-word;
+      }
       .card-index { font-size: 11px; color: rgba(248,250,252,0.7); }
       .loading, .error-box { padding: 24px; background: rgba(255,255,255,0.06); border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); text-align: center; }
       .spinner { width: 28px; height: 28px; border: 3px solid rgba(255,255,255,0.2); border-top-color: var(--accent); border-radius: 50%; margin: 0 auto 12px; animation: spin 0.8s linear infinite; }
@@ -156,7 +213,7 @@
 
     <main>
       <section class="intro">
-        <h2>Learn Software with Visuals</h2>
+        <h2>Decode Software Visually</h2>
         <p>Complex software concepts become simple through <strong>images, diagrams, and GIFs</strong>. Instead of long explanations, you’ll find <strong>architecture flows, fundamentals, and design patterns</strong> presented visually — making it easier to grasp, remember, and apply in real projects.</p>
         <div class="count-pill" id="imageCount">Loading images…</div>
       </section>
@@ -222,10 +279,11 @@
         images.forEach((img, i) => {
           const card = document.createElement('div');
           card.className = 'card';
+          const displayName = img.name.replace(/\.[^/.]+$/, '');
           card.innerHTML = `
-            <img src="${img.src}" alt="${img.name}" loading="lazy" />
             <div class="card-body">
-              <div class="card-name">${img.name}</div>
+              <div class="card-name">${displayName}</div>
+              <img src="${img.src}" alt="${img.name}" loading="lazy" />
               <div class="card-index">${i + 1} / ${images.length}</div>
             </div>`;
           card.addEventListener('click', () => openLightbox(i));
@@ -253,9 +311,10 @@
       function updateLightbox() {
         const img = loadedImages[currentIndex];
         if (!img) return;
+        const displayName = img.name.replace(/\.[^/.]+$/, '');
         lightboxImg.src = img.src;
         lightboxImg.alt = img.name;
-        lightboxInfo.textContent = img.name + ' • ' + (currentIndex + 1) + ' of ' + loadedImages.length;
+        lightboxInfo.textContent = displayName + ' • ' + (currentIndex + 1) + ' of ' + loadedImages.length;
       }
 
       function navigate(dir) {
